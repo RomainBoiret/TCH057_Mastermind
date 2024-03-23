@@ -1,11 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/gradient_accueil"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context="com.Martin_Romain_Felix.mastermind.activites.ConfigurationsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Configuration du jeu"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longueur du code (entre 2 et 6) :"/>
+
+    <EditText
+        android:id="@+id/lengthEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="2-6"
+        android:inputType="number"
+        android:minWidth="48dp"
+        android:minHeight="48dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre de couleurs (entre 2 et 8) :"/>
+
+    <EditText
+        android:id="@+id/colorEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="2-8"
+        android:inputType="number"
+        android:minWidth="48dp"
+        android:minHeight="48dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre maximum de tentatives (entre 8 et 12) :"/>
+
+    <EditText
+        android:id="@+id/attemptEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="8-12"
+        android:inputType="number"
+        android:minWidth="48dp"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enregistrer"/>
+
+</LinearLayout>
