@@ -11,15 +11,17 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Configuration du jeu"
-        android:textSize="24sp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        android:text="Configuration du jeu"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Longueur du code (entre 2 et 6) :"/>
+        android:text="Longueur du code (entre 2 et 6) :"
+        android:textColor="@color/white" />
 
     <EditText
         android:id="@+id/lengthEditText"
@@ -28,12 +30,14 @@
         android:hint="2-6"
         android:inputType="number"
         android:minWidth="48dp"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColor="@color/white" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre de couleurs (entre 2 et 8) :"/>
+        android:text="Nombre de couleurs (entre 2 et 8) :"
+        android:textColor="@color/white" />
 
     <EditText
         android:id="@+id/colorEditText"
@@ -42,12 +46,14 @@
         android:hint="2-8"
         android:inputType="number"
         android:minWidth="48dp"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColor="@color/white" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre maximum de tentatives (entre 8 et 12) :"/>
+        android:text="Nombre maximum de tentatives (entre 8 et 12) :"
+        android:textColor="@color/white" />
 
     <EditText
         android:id="@+id/attemptEditText"
@@ -56,7 +62,8 @@
         android:hint="8-12"
         android:inputType="number"
         android:minWidth="48dp"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/saveButton"
