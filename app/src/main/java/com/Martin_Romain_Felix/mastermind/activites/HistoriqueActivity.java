@@ -26,9 +26,9 @@ public class HistoriqueActivity extends AppCompatActivity {
         historyRecyclerView = findViewById(R.id.history_recycler_view);
         historyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        List<Historique> lvhistorique = // Récupérer les données de la base de données ici
+        // List<Historique> lvhistorique = // Récupérer les données de la base de données ici
 
-        historiqueAdapter = new HistoriqueAdapter(lvhistorique);
-        historyRecyclerView.setAdapter(historiqueAdapter);
+        // historiqueAdapter = new HistoriqueAdapter(lvhistorique);
+        // historyRecyclerView.setAdapter(historiqueAdapter);
     }
 }
