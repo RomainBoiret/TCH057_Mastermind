@@ -61,7 +61,7 @@ public class AccueilActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Créer intention
-                Intent intent = new Intent(getApplicationContext(), JeuActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ConfigurationsActivity.class);
                 startActivity(intent);
             }
         });
@@ -72,7 +72,7 @@ public class AccueilActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Créer intention
-                Intent intent = new Intent(getApplicationContext(), JeuActivity.class);
+                Intent intent = new Intent(getApplicationContext(), HistoriqueActivity.class);
                 startActivity(intent);
             }
         });
