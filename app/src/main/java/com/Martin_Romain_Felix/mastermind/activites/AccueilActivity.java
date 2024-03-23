@@ -1,4 +1,4 @@
-package com.example.mastermind;
+package com.Martin_Romain_Felix.mastermind.activites;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.mastermind.R;
 
 public class AccueilActivity extends AppCompatActivity {
 
@@ -53,5 +55,28 @@ public class AccueilActivity extends AppCompatActivity {
                     Toast.makeText(AccueilActivity.this, "Vous devez inscrire votre courriel pour jouer", Toast.LENGTH_SHORT).show();
             }
         });
+
+        //Démarrer activité Configurations
+        btnConfigurations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Créer intention
+                Intent intent = new Intent(getApplicationContext(), JeuActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        //Démarrer activité historique
+        btnHistorique.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Créer intention
+                Intent intent = new Intent(getApplicationContext(), JeuActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

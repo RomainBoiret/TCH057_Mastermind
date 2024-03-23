@@ -13,16 +13,16 @@
         android:theme="@style/Theme.Mastermind"
         tools:targetApi="31">
         <activity
-            android:name=".HistoriqueActivity"
+            android:name="com.Martin_Romain_Felix.mastermind.activites.HistoriqueActivity"
             android:exported="false" />
         <activity
-            android:name=".ConfigurationsActivity"
+            android:name="com.Martin_Romain_Felix.mastermind.activites.ConfigurationsActivity"
             android:exported="false" />
         <activity
-            android:name=".JeuActivity"
+            android:name="com.Martin_Romain_Felix.mastermind.activites.JeuActivity"
             android:exported="false" />
         <activity
-            android:name=".AccueilActivity"
+            android:name="com.Martin_Romain_Felix.mastermind.activites.AccueilActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

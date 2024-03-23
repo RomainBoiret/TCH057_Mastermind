@@ -6,6 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_accueil"
-    tools:context=".ConfigurationsActivity">
+    tools:context="com.Martin_Romain_Felix.mastermind.activites.ConfigurationsActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

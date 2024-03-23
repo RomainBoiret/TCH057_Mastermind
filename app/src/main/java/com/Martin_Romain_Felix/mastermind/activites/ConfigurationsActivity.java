@@ -1,4 +1,4 @@
-package com.example.mastermind;
+package com.Martin_Romain_Felix.mastermind.activites;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.mastermind.R;
 
 public class ConfigurationsActivity extends AppCompatActivity {
 

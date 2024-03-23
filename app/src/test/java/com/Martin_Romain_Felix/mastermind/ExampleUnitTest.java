@@ -1,4 +1,4 @@
-package com.example.mastermind;
+package com.Martin_Romain_Felix.mastermind;
 
 import org.junit.Test;
 
