@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Jeu de mastermind</string>
+    <string name="bienvenue_sur_mastermind">Bienvenue sur Mastermind!</string>
+    <string name="commencer_une_partie">Commencer une partie</string>
+    <string name="configurations_du_jeu">Configurations du jeu</string>
+    <string name="historique_des_parties">Historique des parties</string>
+    <string name="votre_courriel">Votre courriel:</string>
+    <string name="courriel">ex: xyz@hotmail.com</string>
 </resources>

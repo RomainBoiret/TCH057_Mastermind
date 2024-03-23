@@ -1,6 +1,11 @@
 package com.example.mastermind;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +14,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class AccueilActivity extends AppCompatActivity {
+
+    EditText inputCourriel;
+    Button btnJouer;
+    Button btnConfigurations;
+    Button btnHistorique;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +29,29 @@ public class AccueilActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        //Chercher les boutons et le input de courriel
+        inputCourriel = findViewById(R.id.inputCourriel);
+
+        btnJouer = findViewById(R.id.btnJouer);
+        btnConfigurations = findViewById(R.id.btnConfigurations);
+        btnHistorique = findViewById(R.id.btnHistorique);
+
+        //Démarrer activité jouer
+        btnJouer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Créer intention pour jouer SI le courriel n'est pas vide
+                if (!inputCourriel.getText().toString().matches("")) {
+                    Intent intent = new Intent(getApplicationContext(), JeuActivity.class);
+                    startActivity(intent);
+                }
+
+                //sinon, mettre erreur
+                else
+                    Toast.makeText(AccueilActivity.this, "Vous devez inscrire votre courriel pour jouer", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 }
