@@ -22,7 +22,7 @@ Il s'agit d'une application mobile pour jouer au jeu de Mastermind. Le jeu consi
 ## Détails de l'implémentation
 
 - **Architecture :** Suit les composants d'architecture Android standard.
-- **Structure du code :*** Organisée en packages pour les activités, les modèles, les présentateurs, les adaptateurs et les objets d'accès aux données (DAO).
+- **Structure du code :** Organisée en packages pour les activités, les modèles, les présentateurs, les adaptateurs et les objets d'accès aux données (DAO).
 - **Bibliothèques :** Utilise des bibliothèques telles que Jackson pour le traitement JSON et OkHttp pour la communication avec l'API REST.
 - **Couleurs :** Représente les couleurs sous forme d'entiers au format RGB et fournit une correspondance pour les 8 couleurs utilisées dans le jeu.
 - **Logique du jeu :** Utilise une classe Code pour représenter les codes, une classe Feedback pour fournir des indications sur les propositions, et une classe Mastermind pour gérer les sessions de jeu.
