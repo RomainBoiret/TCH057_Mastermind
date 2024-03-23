@@ -3,17 +3,100 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@drawable/gradient_accueil"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".AccueilActivity">
 
     <TextView
+        android:id="@+id/txtBienvenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Bienvenue sur Mastermind!"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <Button
+        android:id="@+id/btnJouer"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#87AFFF"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Commencer une partie"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputCourriel" />
+
+    <Button
+        android:id="@+id/btnConfigurations"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#4CAF50"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Configurations du jeu"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnJouer" />
+
+    <Button
+        android:id="@+id/btnHistorique"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#4CAF50"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Historique des parties"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConfigurations" />
+
+    <TextView
+        android:id="@+id/txtVotreCourriel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="152dp"
+        android:layout_marginBottom="3dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Votre courriel: "
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/inputCourriel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBienvenue"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/inputCourriel"
+        android:layout_width="300dp"
+        android:layout_height="40sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/input_courriel"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/btnJouer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
