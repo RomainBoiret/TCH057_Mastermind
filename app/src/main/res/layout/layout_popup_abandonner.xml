@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="30dp"
+    android:background="@drawable/popup">
+
+    <TextView
+        android:id="@+id/titrePopupAbandonner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Voulez-vous vraiment abandonner la partie?"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btnAnnulerAbandon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Annuler"
+            android:textSize="18dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black"
+            android:backgroundTint="#4CAF50"/>
+
+        <Button
+            android:id="@+id/btnConfirmerAbandon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Abandonner"
+            android:textSize="18dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black"
+            android:backgroundTint="#F44336"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

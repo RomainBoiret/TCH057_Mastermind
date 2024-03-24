@@ -2,13 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="@drawable/gradient_accueil"
+    android:orientation="horizontal"
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="85"
+        android:orientation="vertical">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,54 +43,58 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="15dp"
-            android:layout_gravity="center">>
-            <ImageView
-                android:id="@+id/menu"
+            android:layout_marginStart="10dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp">
+
+            <TextView
+                android:id="@+id/titreEmailRecord"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_menu" />
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Par: "
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="14dp"
+                tools:layout_editor_absoluteY="40dp" />
+
+            <TextView
+                android:id="@+id/emailRecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="François Legault"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                tools:layout_editor_absoluteX="14dp"
+                tools:layout_editor_absoluteY="7dp" />
 
         </LinearLayout>
+
     </LinearLayout>
+
 
 
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="10dp"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp">
-
-        <TextView
-            android:id="@+id/titreEmailRecord"
+        android:layout_gravity="center"
+        android:layout_weight="15"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Par: "
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="14dp"
-            tools:layout_editor_absoluteY="40dp" />
-
-        <TextView
-            android:id="@+id/emailRecord"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
-            android:text="François Legault"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:layout_marginStart="10dp"
-            tools:layout_editor_absoluteX="14dp"
-            tools:layout_editor_absoluteY="7dp" />
+            android:src="@drawable/ic_menu" />
 
     </LinearLayout>
+
 
 </LinearLayout>

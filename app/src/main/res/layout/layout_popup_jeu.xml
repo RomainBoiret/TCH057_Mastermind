@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="30dp"
+    android:background="@drawable/popup">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="22sp"
+        android:textAlignment="center"
+        android:text="Jeu en pause"
+        android:textColor="@color/black"/>
+
+
+    <Button
+        android:id="@+id/btnNouvellePartie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:text="Nouvelle partie"
+        android:textSize="18dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/btnAbandonner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:text="Abandonner"
+        android:textSize="18dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/btnRetourAccueil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:text="Revenir à l'accueil"
+        android:textSize="18dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/black"/>
+
+
+
+</LinearLayout>
