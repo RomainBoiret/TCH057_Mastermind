@@ -24,4 +24,13 @@
         android:layout_below="@id/history_title"
         android:padding="16dp" />
 
+    <Button
+        android:id="@+id/btnRetour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Retour"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
 </RelativeLayout>

@@ -12,4 +12,5 @@
     <string name="email">Email:</string>
     <string name="nombre_de_tentatives">Nombre de tentatives:</string>
     <string name="r_sultat">Résultat:</string>
+    <string name="Retour" />
 </resources>
