@@ -1,11 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/gradient_accueil"
     tools:context="com.Martin_Romain_Felix.mastermind.activites.JeuActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <include layout="@layout/header_jeu" />
+
+
+    <!--LAYOUT DU JEU-->
+    <GridLayout
+        android:id="@+id/gridJeu"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+
+
+    </GridLayout>
+
+
+    <!--PALETTE DE COULEURS-->
+    <GridLayout
+        android:id="@+id/gridPalette"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+
+    </GridLayout>
+
+    <!-- Bouton VALIDER-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="18dp"
+        android:text="Valider le choix"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Abandonner"
+            android:textSize="18dp"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Nouvelle partie"
+            android:textSize="18dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
