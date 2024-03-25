@@ -3,7 +3,9 @@ package com.Martin_Romain_Felix.mastermind.activites;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
@@ -18,6 +20,8 @@ public class JeuActivity extends AppCompatActivity {
 
 
     private ImageView menu;
+    private GridLayout grilleJeu;
+    private GridLayout grillePalette;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,45 @@ public class JeuActivity extends AppCompatActivity {
                 ouvrirMenu();
             }
         });
+
+        //GRILLE DE JEU
+        grilleJeu = findViewById(R.id.gridJeu);
+        grilleJeu.setColumnCount(6);
+        grilleJeu.setRowCount(12);
+
+
+        for (int i = 0; i < 6*12; i++) {
+            Button btn = new Button(this);
+            btn.setBackground(getDrawable(R.drawable.bouton_rond));
+
+            grilleJeu.addView(btn);
+
+            ViewGroup.LayoutParams params;
+            params = btn.getLayoutParams();
+            params.width = 90;
+            params.height = 90;
+            ((ViewGroup.MarginLayoutParams)params).setMargins(10,5,10,5);
+        }
+
+        //Palette
+        grillePalette = findViewById(R.id.gridPalette);
+        grillePalette.setColumnCount(4);
+        grillePalette.setRowCount(2);
+
+        for (int i = 0; i < 4*2; i++) {
+            Button btn = new Button(this);
+            btn.setBackground(getDrawable(R.drawable.bouton_rond));
+
+            grillePalette.addView(btn);
+
+            ViewGroup.LayoutParams params;
+            params = btn.getLayoutParams();
+            params.width = 110;
+            params.height = 110;
+            ((ViewGroup.MarginLayoutParams)params).setMargins(10,5,10,5);
+        }
+
+
     }
 
     //Fonction ouvrir menu
