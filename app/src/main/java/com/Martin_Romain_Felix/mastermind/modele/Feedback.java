@@ -1,15 +1,14 @@
 package com.Martin_Romain_Felix.mastermind.modele;
 
 public class Feedback {
-    private Code codeJoueur;
-    private Code codeCorrect;
+    //Nombre de positions correctes et de couleurs correctes
     private int correctPosition;
     private int correctCouleur;
 
-    public Feedback(int _correctPosition, int _correctCouleur)
+    public Feedback(int correctPosition, int correctCouleur)
     {
         this.correctPosition = correctPosition;
-        this.correctCouleur = _correctCouleur;
+        this.correctCouleur = correctCouleur;
     }
 
     public int getCorrectPosition()

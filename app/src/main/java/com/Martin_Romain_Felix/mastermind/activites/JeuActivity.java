@@ -104,7 +104,7 @@ public class JeuActivity extends AppCompatActivity {
         }
 
 
-        
+
         //Créer une partie de Mastermind
         partie = new Partie("test@hotmail.com", "ffffa500ffffa500ffffa500ffffa500", 8, "", 0);
 

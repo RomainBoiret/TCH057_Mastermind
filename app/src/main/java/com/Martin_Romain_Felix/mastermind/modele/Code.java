@@ -1,15 +1,50 @@
 package com.Martin_Romain_Felix.mastermind.modele;
 
 public class Code {
-    private int[] couleurs;
+    private String[] couleurs;
 
-    public Code(int[] _couleurs)
+    public Code(String[] couleurs)
     {
-        this.couleurs = _couleurs;
+        this.couleurs = couleurs;
     }
 
-    public int[] getCouleurs()
+    //Getter et setter
+    public String[] getCouleurs()
     {
         return couleurs;
+    }
+    public void setCouleurs(String[] couleurs) { this.couleurs = couleurs; }
+
+
+    //Méthode comparer les codes
+    //  - Retourne un feedback de combien de couleurs ont été trouvées, et combien sont
+    //    dans la bonne position
+    public Feedback comparaisonCodes(Code codeCorrect) {
+        int positionsCorrectes = 0;
+        int couleursCorrectes = 0;
+
+        //On va comparer la couleur du code correct à chaque couleur de l'essai du joueur
+        for (int i = 0; i < codeCorrect.couleurs.length; i++) {
+            for (int j = 0; j < this.couleurs.length; j++) {
+
+                //S'il y a une correspondance de couleurs
+                if (codeCorrect.couleurs[i] == this.couleurs[j]) {
+                    //Si les indices sont égaux, on a trouvé la couleur ET la position
+                    if(i == j)
+                        positionsCorrectes++;
+
+                    //Sinon, juste la couleur est trouvée
+                    else
+                        couleursCorrectes++;
+
+                    //On peut skip le reste des couleurs et recommencer la boucle
+                    j = this.couleurs.length;
+                }
+            }
+        }
+
+        //Retourner ces données sous forme de feedback
+        Feedback feedback = new Feedback(positionsCorrectes, couleursCorrectes);
+        return feedback;
     }
 }
