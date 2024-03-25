@@ -22,6 +22,7 @@ public class JeuActivity extends AppCompatActivity {
     private ImageView menu;
     private GridLayout grilleJeu;
     private GridLayout grillePalette;
+    private GridLayout grilleFeedback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +65,26 @@ public class JeuActivity extends AppCompatActivity {
             ((ViewGroup.MarginLayoutParams)params).setMargins(10,5,10,5);
         }
 
-        //Palette
+        //GRILLE FEEDBACK
+        grilleFeedback = findViewById(R.id.gridFeedback);
+        grilleFeedback.setColumnCount(1);
+        grilleFeedback.setRowCount(12);
+
+
+        for (int i = 0; i < 12; i++) {
+            Button btn = new Button(this);
+            btn.setBackground(getDrawable(R.drawable.bouton_rond));
+
+            grilleFeedback.addView(btn);
+
+            ViewGroup.LayoutParams params;
+            params = btn.getLayoutParams();
+            params.width = 90;
+            params.height = 90;
+            ((ViewGroup.MarginLayoutParams)params).setMargins(10,5,10,5);
+        }
+
+        //GRILLE PALETTE
         grillePalette = findViewById(R.id.gridPalette);
         grillePalette.setColumnCount(4);
         grillePalette.setRowCount(2);

@@ -17,15 +17,35 @@
         android:layout_weight="85"
         android:orientation="vertical">
 
-        <GridLayout
-            android:id="@+id/gridJeu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/grid_background"
-            android:padding="5dp"
-            android:layout_marginTop="15dp"
-            android:layout_gravity="center_horizontal">
-        </GridLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="15dp">
+            <GridLayout
+                android:id="@+id/gridJeu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grid_background"
+                android:padding="5dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_gravity="center_horizontal">
+            </GridLayout>
+
+            <GridLayout
+                android:id="@+id/gridFeedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grid_background"
+                android:padding="5dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_gravity="center_horizontal">
+            </GridLayout>
+
+
+        </LinearLayout>
+
 
     </LinearLayout>
     <!--LAYOUT DU JEU-->
