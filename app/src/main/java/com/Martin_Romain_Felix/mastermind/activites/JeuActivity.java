@@ -14,15 +14,18 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.Martin_Romain_Felix.mastermind.dao.Partie;
 import com.example.mastermind.R;
 
 public class JeuActivity extends AppCompatActivity {
-
-
+    //Attributs éléments graphiques
     private ImageView menu;
     private GridLayout grilleJeu;
     private GridLayout grillePalette;
     private GridLayout grilleFeedback;
+
+    //Attributs partie
+    private Partie partie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +38,8 @@ public class JeuActivity extends AppCompatActivity {
             return insets;
         });
 
-        //Chercher le bouton menu
-        menu = findViewById(R.id.menu);
-
         //Ouvrir/fermer le menu quand on appuie dessus
+        menu = findViewById(R.id.menu);
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,8 +104,22 @@ public class JeuActivity extends AppCompatActivity {
         }
 
 
+        
+        //Créer une partie de Mastermind
+        partie = new Partie("test@hotmail.com", "ffffa500ffffa500ffffa500ffffa500", 8, "", 0);
+
+
     }
 
+
+
+
+
+
+
+
+
+    //-------------------------------------MENU DE PAUSE-----------------------------------
     //Fonction ouvrir menu
     private void ouvrirMenu() {
         //Créer le menu

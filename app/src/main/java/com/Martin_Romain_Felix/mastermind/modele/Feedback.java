@@ -1,4 +1,6 @@
 package com.Martin_Romain_Felix.mastermind.modele;
 
 public class Feedback {
+    private Code codeJoueur;
+    private Code codeCorrect;
 }
