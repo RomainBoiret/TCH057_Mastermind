@@ -22,6 +22,7 @@ public class Mastermind {
     public void setSecretCode(Code code) { this.secretCode = code; }
     public Code getSecretCode() { return this.secretCode; }
 
+    public void setNbTentatives(int nbTentatives) { this.nbTentatives = nbTentatives; }
     public int getNbTentatives() { return this.nbTentatives; };
     public int getMaxTentatives() { return this.maxTentatives; }
 

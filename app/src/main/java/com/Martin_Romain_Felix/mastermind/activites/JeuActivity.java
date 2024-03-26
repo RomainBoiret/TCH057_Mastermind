@@ -43,6 +43,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
     private GridLayout grilleJeu;
     private GridLayout grillePalette;
     private GridLayout grilleFeedback;
+    private Button validerChoix;
 
     //Attributs partie
     static Mastermind partieMastermind;
@@ -55,13 +56,6 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
 
     private int couleurChoisie = 0;
     private int nbCase;
-
-    @Override
-    public void onClick(View v) {
-
-        couleurChoisie = ((ColorDrawable) v.getBackground()).getColor();
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,7 +107,6 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
             ((ViewGroup.MarginLayoutParams)params).setMargins(10,5,10,5);
         }
 
-        nbCase = longueur*tentatives;
         int nbChild = grilleJeu.getChildCount();
 
         //Gestion des clics des boutons de la grille de jeu
@@ -124,9 +117,13 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                 @Override
                 public void onClick(View v) {
 
+                    //Nbr de cases restantes à jouer
+                    nbCase = longueur*(tentatives - partieMastermind.getNbTentatives());
+
                     //Prend 0 ou 1 dependament is situe dans bonne zone
                     int ok = 0;
 
+                    //Trouver la ligne où on peut jouer
                     for(int i = nbCase - longueur; i < nbCase; i++)
                     {
                         if(v == grilleJeu.getChildAt(i))
@@ -148,13 +145,11 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
         grilleFeedback.setColumnCount(1);
         grilleFeedback.setRowCount(tentatives);
 
-
         for (int i = 0; i < tentatives; i++) {
             Button btn = new Button(this);
             btn.setBackground(getDrawable(R.drawable.bouton_rond));
 
             grilleFeedback.addView(btn);
-
 
             ViewGroup.LayoutParams params;
             params = btn.getLayoutParams();
@@ -186,6 +181,9 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
             ((ViewGroup.MarginLayoutParams)params).setMargins(10,5,10,5);
         }
 
+        //Bouton valider choix
+        validerChoix = findViewById(R.id.validerChoix);
+
         //--------------------------------CRÉER PARTIE DE MASTERMIND--------------------------------
 
         //D'abord chercher un code secret
@@ -197,6 +195,12 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
             throw new RuntimeException(e);
         }
 
+    }
+
+    //-------------------Méthode clic pour choisir la couleur de la palette--------------
+    @Override
+    public void onClick(View v) {
+        couleurChoisie = ((ColorDrawable) v.getBackground()).getColor();
     }
 
 
@@ -286,7 +290,12 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
         Log.i(TAG, "Partie commencée!");
         Log.i(TAG, "Code secret pendant partie: " + partieMastermind.getSecretCode().getCouleurs()[0]);
 
-
+        //Gérer la validation de choix
+        validerChoix.setOnClickListener(v -> {
+            Log.i(TAG, "Salut");
+            partieMastermind.setNbTentatives(partieMastermind.getNbTentatives() + 1);
+            Log.i(TAG, "Nb de tentatives: " + partieMastermind.getNbTentatives());
+        });
     }
 
 
