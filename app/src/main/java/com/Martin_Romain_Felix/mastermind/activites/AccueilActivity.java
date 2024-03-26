@@ -48,6 +48,7 @@ public class AccueilActivity extends AppCompatActivity {
                 if (!inputCourriel.getText().toString().matches("")) {
                     //On lance l'activité du jeu en envoyant les configurations
                     Intent intent = new Intent(getApplicationContext(), JeuActivity.class);
+
                     startActivity(intent);
                 }
 

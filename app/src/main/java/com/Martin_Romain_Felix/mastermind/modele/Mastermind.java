@@ -19,11 +19,19 @@ public class Mastermind {
         this.feedbacks = new ArrayList<>();
     }
 
-    public void faireTentative(Code tentatives)
+    public boolean faireTentative(Code tentative)
     {
         // Comparer la tentative avec le code secret et générer un feedback
+        Feedback rep = tentative.comparaisonCodes(secretCode);
+
         // Mettre à jour la liste des tentatives et des feedbacks
+        tentatives.add(tentative);
+        feedbacks.add(rep);
+        nbTentatives++;
+
         // Vérifier si le joueur a trouvé la combinaison secrète ou a épuisé toutes ses tentatives
+        return estPartieTerminee();
+
     }
 
     public boolean estPartieTerminee()
@@ -35,7 +43,8 @@ public class Mastermind {
     public boolean estCodeTrouve()
     {
         // Vérifier si la dernière tentative correspond au code secret
-        return false;
+        return (feedbacks.get(feedbacks.size()-1).getCorrectPosition() == secretCode.getCouleurs().length);
+
     }
 
     // Autres méthodes nécessaires pour interagir avec l'interface utilisateur

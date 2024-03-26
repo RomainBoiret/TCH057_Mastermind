@@ -47,6 +47,7 @@ public class JeuActivity extends AppCompatActivity {
 
     //Attributs partie
     private Partie partie;
+    private Configurations c;
     final String TAG = "MesMessages";
     final String URL_POINT_ENTREE = "http://10.0.2.2:3000";
 
@@ -70,13 +71,16 @@ public class JeuActivity extends AppCompatActivity {
             }
         });
 
+        int longueur = c.getLongueur();
+        int couleurs = c.getNbCouleurs();
+        int tentatives = c.getNbTentatives();
+
         //GRILLE DE JEU
         grilleJeu = findViewById(R.id.gridJeu);
-        grilleJeu.setColumnCount(6);
-        grilleJeu.setRowCount(12);
+        grilleJeu.setColumnCount(longueur);
+        grilleJeu.setRowCount(tentatives);
 
-
-        for (int i = 0; i < 6*12; i++) {
+        for (int i = 0; i < longueur*tentatives; i++) {
             Button btn = new Button(this);
             btn.setBackground(getDrawable(R.drawable.bouton_rond));
 
@@ -92,10 +96,10 @@ public class JeuActivity extends AppCompatActivity {
         //GRILLE FEEDBACK
         grilleFeedback = findViewById(R.id.gridFeedback);
         grilleFeedback.setColumnCount(1);
-        grilleFeedback.setRowCount(12);
+        grilleFeedback.setRowCount(tentatives);
 
 
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < tentatives; i++) {
             Button btn = new Button(this);
             btn.setBackground(getDrawable(R.drawable.bouton_rond));
 
@@ -113,7 +117,7 @@ public class JeuActivity extends AppCompatActivity {
         grillePalette.setColumnCount(4);
         grillePalette.setRowCount(2);
 
-        for (int i = 0; i < 4*2; i++) {
+        for (int i = 0; i < couleurs; i++) {
             Button btn = new Button(this);
             btn.setBackground(getDrawable(R.drawable.bouton_rond));
 
@@ -127,6 +131,9 @@ public class JeuActivity extends AppCompatActivity {
         }
 
 
+
+        //Créer une partie de Mastermind
+        partie = new Partie("test@hotmail.com", "ffffa500ffffa500ffffa500ffffa500", couleurs, "", 0);
 
         //-------------------CRÉER PARTIE DE MASTERMIND----------------
 
