@@ -10,14 +10,18 @@ public class Mastermind {
     private int nbTentatives;
     private int maxTentatives;
 
-    public Mastermind(Code _secretCode, int _nbTentatives, int _maxTentatives)
+    public Mastermind(Code _secretCode, int _maxTentatives)
     {
         this.secretCode = _secretCode;
-        this.nbTentatives = _nbTentatives;
+        this.nbTentatives = 0;
         this.maxTentatives = _maxTentatives;
         this.tentatives = new ArrayList<>();
         this.feedbacks = new ArrayList<>();
     }
+
+    public int getNbTentatives() { return this.nbTentatives; };
+
+    public int getMaxTentatives() { return this.maxTentatives; }
 
     public boolean faireTentative(Code tentative)
     {

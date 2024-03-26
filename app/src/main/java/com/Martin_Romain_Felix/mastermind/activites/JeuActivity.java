@@ -16,8 +16,10 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.Martin_Romain_Felix.mastermind.dao.Partie;
+import com.Martin_Romain_Felix.mastermind.modele.Code;
 import com.Martin_Romain_Felix.mastermind.modele.Configurations;
 import com.Martin_Romain_Felix.mastermind.modele.Couleurs;
+import com.Martin_Romain_Felix.mastermind.modele.Mastermind;
 import com.example.mastermind.R;
 
 import org.json.JSONArray;
@@ -25,6 +27,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
 
 import okhttp3.OkHttpClient;
@@ -40,10 +43,13 @@ public class JeuActivity extends AppCompatActivity {
     private GridLayout grilleFeedback;
 
     //Attributs partie
-    private Partie partie;
-    private Configurations configurations;
+    static Mastermind partieMastermind;
+    static Configurations configurations;
+    static Code code;
+
     final String TAG = "MesMessages";
     final String URL_POINT_ENTREE = "http://10.0.2.2:3000";
+    //final String URL_POINT_ENTREE = "http://192.168.2.68:3000";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,42 +133,25 @@ public class JeuActivity extends AppCompatActivity {
             ((ViewGroup.MarginLayoutParams)params).setMargins(10,5,10,5);
         }
 
-
-
-        //Créer une partie de Mastermind
-        partie = new Partie("test@hotmail.com", "ffffa500ffffa500ffffa500ffffa500", couleurs, "", 0);
-
-        //-------------------CRÉER PARTIE DE MASTERMIND----------------
+        //--------------------------------CRÉER PARTIE DE MASTERMIND--------------------------------
 
         //D'abord chercher un code secret
         try {
+            //Si ça marche, cette fonction cherche le code et lance la partie
             chercherCodeSecret();
         } catch (Exception e) {
             Log.e(TAG, e.getMessage());
             throw new RuntimeException(e);
         }
 
-        //Mastermind partie = new Mastermind();
-        //   À FAIRE...
-
-
-
-
-
-
-
     }
 
 
-    //-----------------------------FONCTION CHERCHER UN CODE SECRET------------------------------
+    //-----------------------------MÉTHODE CHERCHER UN CODE SECRET------------------------------
     private void chercherCodeSecret() throws IOException {
-        //Prendre un indice code au hasard parmi les 450 codes
-        Random rand = new Random();
-        int indexRandomCode = rand.nextInt(450);
-
         OkHttpClient client = new OkHttpClient();
         Request requete = new Request.Builder()
-                .url(URL_POINT_ENTREE + "/codesSecrets/" + indexRandomCode)
+                .url(URL_POINT_ENTREE + "/codesSecrets")
                 .build();
 
         new Thread() {
@@ -173,34 +162,57 @@ public class JeuActivity extends AppCompatActivity {
                     response = client.newCall(requete).execute();
                     ResponseBody responseBody = response.body();
                     String jsonData = responseBody.string();
-                    Log.i(TAG, "Code Mastermind: " + jsonData);
+                    Log.i(TAG, "Données Mastermind : " + jsonData);
 
                     JeuActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             try {
-                                //Créer un tableau JSON avec nos données
-                                JSONObject jsonCode = new JSONObject(jsonData);
-                                Log.i(TAG, "Objet JSON " + jsonCode);
+                                //Créer un tableau JSON avec TOUS les codes
+                                JSONArray tableauJson = new JSONArray(jsonData);
+
+                                //Itérer le tableau pour trouver les codes qui conviennent aux
+                                //configurations choisies par l'utilisateur
+                                ArrayList<Integer> idCandidats = new ArrayList<Integer>();
+
+                                for (int i = 0; i < tableauJson.length(); i++) {
+                                    JSONObject jsonObject = tableauJson.getJSONObject(i);
+
+                                    //Si le code a le nb de couleurs et la longueur conforme
+                                    //aux configurations, on le garde comme candidat
+                                    if (jsonObject.getInt("nbCouleurs") == configurations.getNbCouleurs()
+                                            && jsonObject.getJSONArray("code").length() == configurations.getLongueur()) {
+                                        idCandidats.add(jsonObject.getInt("id"));
+                                    }
+                                }
+
+                                //Choisir un des ID au hasard parmi les candidats
+                                int index = (int) (Math.random() * idCandidats.size());
+                                int idCode = idCandidats.get(index);
+                                Log.i(TAG, "ID au hasard: " + idCode);
 
                                 //Chercher l'objet JSON à l'indice et prendre le tableau
                                 //qui correspond au code
-                                JSONArray tableauCode = jsonCode.getJSONArray("code");
-                                String[] codeSecret = new String[tableauCode.length()];
+                                JSONObject c = tableauJson.getJSONObject(idCode);
+                                JSONArray tableauCode = c.getJSONArray("code");
 
+                                //Mettre le code dans un tableau de strings
+                                String[] codeSecret = new String[tableauCode.length()];
                                 for(int i = 0; i < tableauCode.length(); i++){
                                     codeSecret[i] = tableauCode.getString(i);
                                 }
 
-                                //Chercher l'ID du code secret et le nb de couleurs
-                                int idCode = jsonCode.getInt("id");
-                                int nbCouleurs = jsonCode.getInt("nbCouleurs");
-
                                 //TEST: Afficher tableau[0], id du code et nbCouleurs
                                 Log.v(TAG, codeSecret[0]);
                                 Log.v(TAG, String.valueOf(idCode));
-                                Log.v(TAG, String.valueOf(nbCouleurs));
+                                Log.v(TAG, String.valueOf(configurations.getNbCouleurs()));
 
+                                //INITIALISER LA PARTIE
+                                code = new Code(codeSecret);
+                                partieMastermind = new Mastermind(code, configurations.getNbTentatives());
+
+                                //Lancer la méthode qui gère le jeu
+                                startGame();
 
                             } catch (JSONException e) {
                                 Log.e(TAG, e.getMessage());
@@ -216,11 +228,16 @@ public class JeuActivity extends AppCompatActivity {
         }.start();
     }
 
+    //--------------------------------------MÉTHODE DU JEU-------------------------------------------
+    private void startGame() {
+        Log.i(TAG, "Partie commencée!");
 
 
+    }
 
 
-    //-------------------------------------MENU DE PAUSE-----------------------------------
+    //--------------------------------------MENU DE PAUSE-------------------------------------------
+
     //Fonction ouvrir menu
     private void ouvrirMenu() {
         //Créer le menu
@@ -269,9 +286,9 @@ public class JeuActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 
+    //*********************************************//
 
     //Fonction qui ouvre la 2ème popup pour abandonner
     public void ouvrirMenuAbandon() {
@@ -301,6 +318,9 @@ public class JeuActivity extends AppCompatActivity {
                 //
                 //À FAIRE
                 //
+
+
+
 
 
 
