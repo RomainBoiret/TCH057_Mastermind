@@ -1,6 +1,6 @@
 package com.Martin_Romain_Felix.mastermind.dao;
 
-public class Partie {
+public class  Partie {
     //Attributs d'une partie
     private String courriel;
     private String code;

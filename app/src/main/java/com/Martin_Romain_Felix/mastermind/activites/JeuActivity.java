@@ -1,12 +1,15 @@
 package com.Martin_Romain_Felix.mastermind.activites;
 
 import android.app.Dialog;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +18,25 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.Martin_Romain_Felix.mastermind.dao.Partie;
+import com.Martin_Romain_Felix.mastermind.modele.Code;
+import com.Martin_Romain_Felix.mastermind.modele.Mastermind;
 import com.example.mastermind.R;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Random;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
 
 public class JeuActivity extends AppCompatActivity {
     //Attributs éléments graphiques
@@ -27,6 +48,8 @@ public class JeuActivity extends AppCompatActivity {
     //Attributs partie
     private Partie partie;
     private Configurations c;
+    final String TAG = "MesMessages";
+    final String URL_POINT_ENTREE = "http://10.0.2.2:3000";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,12 +135,83 @@ public class JeuActivity extends AppCompatActivity {
         //Créer une partie de Mastermind
         partie = new Partie("test@hotmail.com", "ffffa500ffffa500ffffa500ffffa500", couleurs, "", 0);
 
+        //-------------------CRÉER PARTIE DE MASTERMIND----------------
+
+        //D'abord chercher un code secret
+        try {
+            chercherCodeSecret();
+        } catch (Exception e) {
+            Log.e(TAG, e.getMessage());
+            throw new RuntimeException(e);
+        }
+
+
+        //Mastermind partie = new Mastermind();
+
 
     }
 
 
+    //-----------------------------FONCTION CHERCHER UN CODE SECRET------------------------------
+    private void chercherCodeSecret() throws IOException {
+
+        OkHttpClient client = new OkHttpClient();
+        Request requete = new Request.Builder()
+                .url(URL_POINT_ENTREE + "/codesSecrets")
+                .build();
+
+        new Thread() {
+            @Override
+            public void run() {
+                Response response = null;
+                try {
+                    response = client.newCall(requete).execute();
+                    ResponseBody responseBody = response.body();
+                    String jsonData = responseBody.string();
+                    Log.i(TAG, "Données Mastermind : " + jsonData);
+
+                    JeuActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                //Créer un tableau JSON avec nos données
+                                JSONArray tableauJson = new JSONArray(jsonData);
+
+                                //Prendre un indice code au hasard
+                                Random rand = new Random();
+                                int indexRandomCode = rand.nextInt(tableauJson.length());
+
+                                Log.i(TAG, "Nombre au hasard: " + indexRandomCode);
+
+                                //Chercher l'objet JSON à l'indice et prendre le tableau
+                                //qui correspond au code
+                                JSONObject c = tableauJson.getJSONObject(indexRandomCode);
+                                JSONArray tableauCode = c.getJSONArray("code");
+
+                                //Mettre le code dans un tableau de strings
+                                String[] codeSecret = new String[tableauCode.length()];
+                                for(int i = 0; i < tableauCode.length(); i++){
+                                    codeSecret[i] = tableauCode.getString(i);
+                                }
 
 
+                                //TEST: Afficher array
+                                Log.v(TAG, codeSecret[0]);
+
+
+                            } catch (JSONException e) {
+                                Log.e(TAG, e.getMessage());
+                                throw new RuntimeException(e);
+                            }
+                        }
+                    });
+                } catch (Exception e) {
+                    Log.d(TAG, e.getMessage());
+                    throw new RuntimeException(e);
+                }
+            }
+        }.start();
+    }
 
 
 
