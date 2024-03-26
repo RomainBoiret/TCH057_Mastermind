@@ -147,10 +147,13 @@ public class JeuActivity extends AppCompatActivity {
 
     //-----------------------------FONCTION CHERCHER UN CODE SECRET------------------------------
     private void chercherCodeSecret() throws IOException {
+        //Prendre un indice code au hasard parmi les 450 codes
+        Random rand = new Random();
+        int indexRandomCode = rand.nextInt(450);
 
         OkHttpClient client = new OkHttpClient();
         Request requete = new Request.Builder()
-                .url(URL_POINT_ENTREE + "/codesSecrets")
+                .url(URL_POINT_ENTREE + "/codesSecrets/" + indexRandomCode)
                 .build();
 
         new Thread() {
@@ -161,35 +164,33 @@ public class JeuActivity extends AppCompatActivity {
                     response = client.newCall(requete).execute();
                     ResponseBody responseBody = response.body();
                     String jsonData = responseBody.string();
-                    Log.i(TAG, "Données Mastermind : " + jsonData);
+                    Log.i(TAG, "Code Mastermind: " + jsonData);
 
                     JeuActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             try {
                                 //Créer un tableau JSON avec nos données
-                                JSONArray tableauJson = new JSONArray(jsonData);
-
-                                //Prendre un indice code au hasard
-                                Random rand = new Random();
-                                int indexRandomCode = rand.nextInt(tableauJson.length());
-
-                                Log.i(TAG, "Nombre au hasard: " + indexRandomCode);
+                                JSONObject jsonCode = new JSONObject(jsonData);
+                                Log.i(TAG, "Objet JSON " + jsonCode);
 
                                 //Chercher l'objet JSON à l'indice et prendre le tableau
                                 //qui correspond au code
-                                JSONObject c = tableauJson.getJSONObject(indexRandomCode);
-                                JSONArray tableauCode = c.getJSONArray("code");
-
-                                //Mettre le code dans un tableau de strings
+                                JSONArray tableauCode = jsonCode.getJSONArray("code");
                                 String[] codeSecret = new String[tableauCode.length()];
+
                                 for(int i = 0; i < tableauCode.length(); i++){
                                     codeSecret[i] = tableauCode.getString(i);
                                 }
 
+                                //Chercher l'ID du code secret et le nb de couleurs
+                                int idCode = jsonCode.getInt("id");
+                                int nbCouleurs = jsonCode.getInt("nbCouleurs");
 
-                                //TEST: Afficher array
+                                //TEST: Afficher tableau[0], id du code et nbCouleurs
                                 Log.v(TAG, codeSecret[0]);
+                                Log.v(TAG, String.valueOf(idCode));
+                                Log.v(TAG, String.valueOf(nbCouleurs));
 
 
                             } catch (JSONException e) {

@@ -1,6 +1,7 @@
 {
   "couleursDisponibles": { "liste" :["ffff0000","ff00ff00","ff0000ff","ffffff00","ffff00ff","ffffa500","ff000000","ffffffff"]},
   "codesSecrets": [
+    { "id": "0", "code": ["ff0000ff","ffffa500","ffffa500","ffff0000","ff00ff00","ff0000ff"], "nbCouleurs": 8 },   
     { "id": "1", "code": ["ffffa500","ff00ff00","ffffff00","ff00ff00"], "nbCouleurs": 8 },
     { "id": "2", "code": ["ffff00ff","ffff0000","ffffa500","ffff00ff"], "nbCouleurs": 8 },
     { "id": "3", "code": ["ff000000","ffffff00","ffffff00","ffffffff"], "nbCouleurs": 8 },
@@ -223,16 +224,6 @@
     { "id": "220", "code": ["ffffff00","ffffa500","ff000000","ffffff00"], "nbCouleurs": 7 },
     { "id": "221", "code": ["ff00ff00","ff0000ff","ff0000ff","ffff0000"], "nbCouleurs": 7 },
     { "id": "222", "code": ["ff0000ff","ffffff00","ff00ff00","ff0000ff"], "nbCouleurs": 7 },
-    { "id": "223", "code": ["ffffa500","ffffa500","ffff00ff","ff000000"], "nbCouleurs": 7 },
-    
-    { "id": "215", "code": ["ffffff00","ffff0000","ff000000","ff00ff00"], "nbCouleurs": 8 },
-    { "id": "216", "code": ["ffffffff","ff000000","ffff00ff","ffffffff"], "nbCouleurs": 8 },
-    { "id": "217", "code": ["ff00ff00","ff00ff00","ffffa500","ffffff00"], "nbCouleurs": 8 },
-    { "id": "218", "code": ["ff00ff00","ff000000","ffffff00","ffffffff"], "nbCouleurs": 8 },
-    { "id": "219", "code": ["ffff00ff","ffffff00","ffffa500","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "220", "code": ["ff0000ff","ffffffff","ffffa500","ffffa500"], "nbCouleurs": 8 },
-    { "id": "221", "code": ["ff000000","ffff0000","ffff0000","ffffa500"], "nbCouleurs": 8 },
-    { "id": "222", "code": ["ff000000","ffffa500","ff0000ff","ff0000ff"], "nbCouleurs": 8 },
     { "id": "223", "code": ["ffffa500","ff00ff00","ff00ff00","ffffff00"], "nbCouleurs": 8 },
     { "id": "224", "code": ["ff000000","ffffa500","ffffff00","ffffffff"], "nbCouleurs": 8 },
     { "id": "225", "code": ["ff000000","ffff00ff","ffff00ff","ff0000ff"], "nbCouleurs": 8 },
@@ -459,8 +450,7 @@
     { "id": "446", "code": ["ffff0000","ffffffff","ffffffff","ffffff00","ff0000ff","ffffa500"], "nbCouleurs": 8 },
     { "id": "447", "code": ["ffffff00","ffffa500","ff0000ff","ff0000ff","ffffff00","ffff00ff"], "nbCouleurs": 8 },
     { "id": "448", "code": ["ffffffff","ffffffff","ffffa500","ffffffff","ffffffff","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "449", "code": ["ff00ff00","ff0000ff","ffffff00","ffff00ff","ff0000ff","ffff0000"], "nbCouleurs": 8 },
-    { "id": "450", "code": ["ff0000ff","ffffa500","ffffa500","ffff0000","ff00ff00","ff0000ff"], "nbCouleurs": 8 }    
+    { "id": "449", "code": ["ff00ff00","ff0000ff","ffffff00","ffff00ff","ff0000ff","ffff0000"], "nbCouleurs": 8 } 
   ],
   "stats": [
     { "id": "1", "idCode": "47", "record": "5", "courriel": "annie@gmail.com" }
