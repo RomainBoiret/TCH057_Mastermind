@@ -50,11 +50,10 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
     static Code code;
 
     final String TAG = "MesMessages";
-    final String URL_POINT_ENTREE = "http://10.0.2.2:3000";
-    //final String URL_POINT_ENTREE = "http://192.168.2.68:3000";
+    //final String URL_POINT_ENTREE = "http://10.0.2.2:3000";
+    final String URL_POINT_ENTREE = "http://192.168.2.68:3000";
 
     private int couleurChoisie = 0;
-
     private int nbCase;
 
     @Override
@@ -75,8 +74,6 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
             return insets;
         });
 
-
-
         //Ouvrir/fermer le menu quand on appuie dessus
         menu = findViewById(R.id.menu);
         menu.setOnClickListener(new View.OnClickListener() {
@@ -86,28 +83,29 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
             }
         });
 
+        //CHERCHER LES CONFIGURATIONS
         configurations = AccueilActivity.configurations;
-
         int longueur = configurations.getLongueur();
         int couleurs = configurations.getNbCouleurs();
         int tentatives = configurations.getNbTentatives();
 
-        nbCase = longueur*tentatives;
+        //Instancier Mastermind avec le nb de tentatives
+        partieMastermind = new Mastermind(configurations.getNbTentatives());
 
-        //GRILLE DE JEU
+        //---------------------GRILLE DE JEU---------------------
+        //
         grilleJeu = findViewById(R.id.gridJeu);
         grilleJeu.setColumnCount(longueur);
         grilleJeu.setRowCount(tentatives);
 
-
-
+        //Ajouter chaque bouton à la grille de jeu
         for (int i = 0; i < longueur*tentatives; i++) {
             Button btn = new Button(this);
             btn.setBackground(getDrawable(R.drawable.bouton_rond));
 
             grilleJeu.addView(btn);
 
-
+            //Paramètres d'affichage des boutons
             ViewGroup.LayoutParams params;
             params = btn.getLayoutParams();
             params.width = 90;
@@ -115,7 +113,10 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
             ((ViewGroup.MarginLayoutParams)params).setMargins(10,5,10,5);
         }
 
+        nbCase = longueur*tentatives;
         int nbChild = grilleJeu.getChildCount();
+
+        //Gestion des clics des boutons de la grille de jeu
         for(int i = 0; i < nbChild; i++)
         {
             Button btn = (Button) grilleJeu.getChildAt(i);
@@ -129,25 +130,20 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                     for(int i = nbCase - longueur; i < nbCase; i++)
                     {
                         if(v == grilleJeu.getChildAt(i))
-                        {
                             ok = 1;
-                        }
                     }
 
                     if(ok == 1 && couleurChoisie != 0)
-                    {
                         btn.getBackground().setTint(couleurChoisie);
-                    }
-                    else
-                    {
-                        Toast.makeText(JeuActivity.this,"Choisir une couleur", Toast.LENGTH_SHORT).show();
-                    }
 
+                    else
+                        Toast.makeText(JeuActivity.this,"Choisir une couleur", Toast.LENGTH_SHORT).show();
                 }
             });
         }
 
-        //GRILLE FEEDBACK
+        //---------------------GRILLE FEEDBACK---------------------
+        //
         grilleFeedback = findViewById(R.id.gridFeedback);
         grilleFeedback.setColumnCount(1);
         grilleFeedback.setRowCount(tentatives);
@@ -167,7 +163,9 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
             ((ViewGroup.MarginLayoutParams)params).setMargins(10,5,10,5);
         }
 
-        //GRILLE PALETTE
+
+        //---------------------GRILLE PALETTE---------------------
+        //
         grillePalette = findViewById(R.id.gridPalette);
         grillePalette.setColumnCount(4);
         grillePalette.setRowCount(2);
@@ -264,7 +262,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
 
                                 //INITIALISER LA PARTIE
                                 code = new Code(codeSecret);
-                                partieMastermind = new Mastermind(code, configurations.getNbTentatives());
+                                partieMastermind.setSecretCode(code);
 
                                 //Lancer la méthode qui gère le jeu
                                 startGame();
@@ -286,6 +284,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
     //--------------------------------------MÉTHODE DU JEU-------------------------------------------
     private void startGame() {
         Log.i(TAG, "Partie commencée!");
+        Log.i(TAG, "Code secret pendant partie: " + partieMastermind.getSecretCode().getCouleurs()[0]);
 
 
     }
