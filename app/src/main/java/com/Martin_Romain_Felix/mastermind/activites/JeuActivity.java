@@ -50,11 +50,12 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
 
     private int couleurChoisie = 0;
 
+    private int nbCase;
+
     @Override
     public void onClick(View v) {
 
         couleurChoisie = ((ColorDrawable) v.getBackground()).getColor();
-
 
     }
 
@@ -89,7 +90,9 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
         grilleJeu.setColumnCount(longueur);
         grilleJeu.setRowCount(tentatives);
 
-        for (int i = 0; i < longueur*tentatives; i++) {
+        nbCase = longueur*tentatives;
+
+        for (int i = 0; i < nbCase; i++) {
             Button btn = new Button(this);
             btn.setBackground(getDrawable(R.drawable.bouton_rond));
 
@@ -111,7 +114,18 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                 @Override
                 public void onClick(View v) {
 
-                    if(couleurChoisie != 0)
+                    //Prend 0 ou 1 dependament is situe dans bonne zone
+                    int ok = 0;
+
+                    for(int i = nbCase - longueur; i < nbCase; i++)
+                    {
+                        if(v == grilleJeu.getChildAt(i))
+                        {
+                            ok = 1;
+                        }
+                    }
+
+                    if(ok == 1 && couleurChoisie != 0)
                     {
                         btn.getBackground().setTint(couleurChoisie);
                     }
