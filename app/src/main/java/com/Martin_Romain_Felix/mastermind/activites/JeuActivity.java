@@ -1,6 +1,7 @@
 package com.Martin_Romain_Felix.mastermind.activites;
 
 import android.app.Dialog;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,7 +37,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
-public class JeuActivity extends AppCompatActivity {
+public class JeuActivity extends AppCompatActivity implements View.OnClickListener {
     //Attributs éléments graphiques
     private ImageView menu;
     private GridLayout grilleJeu;
@@ -51,6 +53,17 @@ public class JeuActivity extends AppCompatActivity {
     final String URL_POINT_ENTREE = "http://10.0.2.2:3000";
     //final String URL_POINT_ENTREE = "http://192.168.2.68:3000";
 
+    private int couleurChoisie = 0;
+
+    private int nbCase;
+
+    @Override
+    public void onClick(View v) {
+
+        couleurChoisie = ((ColorDrawable) v.getBackground()).getColor();
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +74,8 @@ public class JeuActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
 
         //Ouvrir/fermer le menu quand on appuie dessus
         menu = findViewById(R.id.menu);
@@ -77,10 +92,14 @@ public class JeuActivity extends AppCompatActivity {
         int couleurs = configurations.getNbCouleurs();
         int tentatives = configurations.getNbTentatives();
 
+        nbCase = longueur*tentatives;
+
         //GRILLE DE JEU
         grilleJeu = findViewById(R.id.gridJeu);
         grilleJeu.setColumnCount(longueur);
         grilleJeu.setRowCount(tentatives);
+
+
 
         for (int i = 0; i < longueur*tentatives; i++) {
             Button btn = new Button(this);
@@ -88,11 +107,44 @@ public class JeuActivity extends AppCompatActivity {
 
             grilleJeu.addView(btn);
 
+
             ViewGroup.LayoutParams params;
             params = btn.getLayoutParams();
             params.width = 90;
             params.height = 90;
             ((ViewGroup.MarginLayoutParams)params).setMargins(10,5,10,5);
+        }
+
+        int nbChild = grilleJeu.getChildCount();
+        for(int i = 0; i < nbChild; i++)
+        {
+            Button btn = (Button) grilleJeu.getChildAt(i);
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    //Prend 0 ou 1 dependament is situe dans bonne zone
+                    int ok = 0;
+
+                    for(int i = nbCase - longueur; i < nbCase; i++)
+                    {
+                        if(v == grilleJeu.getChildAt(i))
+                        {
+                            ok = 1;
+                        }
+                    }
+
+                    if(ok == 1 && couleurChoisie != 0)
+                    {
+                        btn.getBackground().setTint(couleurChoisie);
+                    }
+                    else
+                    {
+                        Toast.makeText(JeuActivity.this,"Choisir une couleur", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+            });
         }
 
         //GRILLE FEEDBACK
@@ -106,6 +158,7 @@ public class JeuActivity extends AppCompatActivity {
             btn.setBackground(getDrawable(R.drawable.bouton_rond));
 
             grilleFeedback.addView(btn);
+
 
             ViewGroup.LayoutParams params;
             params = btn.getLayoutParams();
@@ -122,7 +175,9 @@ public class JeuActivity extends AppCompatActivity {
         for (int i = 0; i < couleurs; i++) {
             Button btn = new Button(this);
             btn.setBackground(getDrawable(R.drawable.bouton_rond));
+            btn.setBackgroundColor(Couleurs.couleurs[i]);
             btn.getBackground().setTint(Couleurs.couleurs[i]);
+            btn.setOnClickListener(JeuActivity.this);
 
             grillePalette.addView(btn);
 
