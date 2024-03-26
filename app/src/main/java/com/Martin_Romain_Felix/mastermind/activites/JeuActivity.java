@@ -1,7 +1,6 @@
 package com.Martin_Romain_Felix.mastermind.activites;
 
 import android.app.Dialog;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,19 +16,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.Martin_Romain_Felix.mastermind.dao.Partie;
-import com.Martin_Romain_Felix.mastermind.modele.Code;
-import com.Martin_Romain_Felix.mastermind.modele.Mastermind;
+import com.Martin_Romain_Felix.mastermind.modele.Configurations;
 import com.example.mastermind.R;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.Random;
 
 import okhttp3.OkHttpClient;

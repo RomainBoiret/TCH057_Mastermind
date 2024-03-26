@@ -13,6 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.Martin_Romain_Felix.mastermind.modele.Configurations;
 import com.example.mastermind.R;
 
 public class AccueilActivity extends AppCompatActivity {

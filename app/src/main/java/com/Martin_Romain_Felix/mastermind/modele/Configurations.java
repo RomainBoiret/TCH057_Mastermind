@@ -1,4 +1,4 @@
-package com.Martin_Romain_Felix.mastermind.activites;
+package com.Martin_Romain_Felix.mastermind.modele;
 
 public class Configurations {
     private int longueur;

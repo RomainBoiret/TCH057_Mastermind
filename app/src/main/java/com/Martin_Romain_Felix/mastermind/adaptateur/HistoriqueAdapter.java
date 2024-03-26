@@ -1,4 +1,4 @@
-package com.Martin_Romain_Felix.mastermind.activites;
+package com.Martin_Romain_Felix.mastermind.adaptateur;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.Martin_Romain_Felix.mastermind.modele.Historique;
 import com.example.mastermind.R;
 
 import java.util.List;
