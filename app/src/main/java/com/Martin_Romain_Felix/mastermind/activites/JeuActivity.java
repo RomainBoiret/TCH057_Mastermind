@@ -17,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.Martin_Romain_Felix.mastermind.dao.Partie;
 import com.Martin_Romain_Felix.mastermind.modele.Configurations;
+import com.Martin_Romain_Felix.mastermind.modele.Couleurs;
 import com.example.mastermind.R;
 
 import org.json.JSONArray;
@@ -115,6 +116,7 @@ public class JeuActivity extends AppCompatActivity {
         for (int i = 0; i < couleurs; i++) {
             Button btn = new Button(this);
             btn.setBackground(getDrawable(R.drawable.bouton_rond));
+            btn.getBackground().setTint(Couleurs.couleurs[i]);
 
             grillePalette.addView(btn);
 
@@ -140,8 +142,13 @@ public class JeuActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
 
-
         //Mastermind partie = new Mastermind();
+        //   À FAIRE...
+
+
+
+
+
 
 
     }
