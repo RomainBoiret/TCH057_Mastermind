@@ -26,4 +26,10 @@ public class Configurations {
     {
         return nbTentatives;
     }
+
+    public void setLongueur(int longueur) { this.longueur = longueur; }
+
+    public void setNbCouleurs(int nbCouleurs){ this.nbCouleurs = nbCouleurs; }
+
+    public void setNbTentatives(int nbTentatives){ this.nbTentatives =  nbTentatives; }
 }

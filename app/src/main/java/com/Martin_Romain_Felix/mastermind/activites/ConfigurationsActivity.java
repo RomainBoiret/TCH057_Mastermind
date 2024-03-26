@@ -58,10 +58,12 @@ public class ConfigurationsActivity extends AppCompatActivity {
 
                     } else {
 
-                        Configurations configurations = new Configurations(longueur, couleurs, tentatives);
+                        //Mettre les nouvelles configurations
+                        AccueilActivity.configurations.setLongueur(longueur);
+                        AccueilActivity.configurations.setNbCouleurs(couleurs);
+                        AccueilActivity.configurations.setNbTentatives(tentatives);
 
                         Toast.makeText(ConfigurationsActivity.this, "Succès! Les configurations ont été changées.", Toast.LENGTH_SHORT).show();
-
                         finish();
                     }
                 }

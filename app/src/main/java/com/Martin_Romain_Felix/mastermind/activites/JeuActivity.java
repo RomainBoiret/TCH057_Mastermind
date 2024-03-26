@@ -47,7 +47,7 @@ public class JeuActivity extends AppCompatActivity {
 
     //Attributs partie
     private Partie partie;
-    private Configurations c;
+    private Configurations configurations;
     final String TAG = "MesMessages";
     final String URL_POINT_ENTREE = "http://10.0.2.2:3000";
 
@@ -71,9 +71,11 @@ public class JeuActivity extends AppCompatActivity {
             }
         });
 
-        int longueur = c.getLongueur();
-        int couleurs = c.getNbCouleurs();
-        int tentatives = c.getNbTentatives();
+        configurations = AccueilActivity.configurations;
+
+        int longueur = configurations.getLongueur();
+        int couleurs = configurations.getNbCouleurs();
+        int tentatives = configurations.getNbTentatives();
 
         //GRILLE DE JEU
         grilleJeu = findViewById(R.id.gridJeu);

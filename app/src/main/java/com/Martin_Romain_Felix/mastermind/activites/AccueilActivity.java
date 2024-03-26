@@ -21,6 +21,7 @@ public class AccueilActivity extends AppCompatActivity {
     Button btnJouer;
     Button btnConfigurations;
     Button btnHistorique;
+    static Configurations configurations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +36,12 @@ public class AccueilActivity extends AppCompatActivity {
 
         //Chercher les boutons et le input de courriel
         inputCourriel = findViewById(R.id.inputCourriel);
-
         btnJouer = findViewById(R.id.btnJouer);
         btnConfigurations = findViewById(R.id.btnConfigurations);
         btnHistorique = findViewById(R.id.btnHistorique);
+
+        //CONFIGURATIONS INITIALES
+        configurations = new Configurations(4, 8, 10);
 
         //Démarrer activité jouer
         btnJouer.setOnClickListener(new View.OnClickListener() {

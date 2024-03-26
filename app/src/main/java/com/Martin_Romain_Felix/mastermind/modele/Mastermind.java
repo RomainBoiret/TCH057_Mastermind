@@ -37,7 +37,7 @@ public class Mastermind {
     public boolean estPartieTerminee()
     {
         // Vérifier si le joueur a trouvé la combinaison secrète ou a épuisé toutes ses tentatives
-        return tentatives.size() >= maxTentatives || estCodeTrouve();
+        return nbTentatives >= maxTentatives || estCodeTrouve();
     }
 
     public boolean estCodeTrouve()
