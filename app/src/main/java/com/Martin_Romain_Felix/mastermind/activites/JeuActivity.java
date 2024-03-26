@@ -70,6 +70,8 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
             return insets;
         });
 
+
+
         //Ouvrir/fermer le menu quand on appuie dessus
         menu = findViewById(R.id.menu);
         menu.setOnClickListener(new View.OnClickListener() {
@@ -85,14 +87,16 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
         int couleurs = configurations.getNbCouleurs();
         int tentatives = configurations.getNbTentatives();
 
+        nbCase = longueur*tentatives;
+
         //GRILLE DE JEU
         grilleJeu = findViewById(R.id.gridJeu);
         grilleJeu.setColumnCount(longueur);
         grilleJeu.setRowCount(tentatives);
 
-        nbCase = longueur*tentatives;
 
-        for (int i = 0; i < nbCase; i++) {
+
+        for (int i = 0; i < longueur*tentatives; i++) {
             Button btn = new Button(this);
             btn.setBackground(getDrawable(R.drawable.bouton_rond));
 
