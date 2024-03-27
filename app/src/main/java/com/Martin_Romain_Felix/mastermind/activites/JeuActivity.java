@@ -48,7 +48,14 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
     //Attributs partie
     static Mastermind partieMastermind;
     static Configurations configurations;
+    static int longueur;
+    static int couleurs;
+    static int tentatives;
+
+    //Code secret et tentative de code du joueur
     static Code code;
+    static String[] codeJoueur;
+    static Code codeFinalJoueur;
 
     final String TAG = "MesMessages";
     //final String URL_POINT_ENTREE = "http://10.0.2.2:3000";
@@ -79,9 +86,12 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
 
         //CHERCHER LES CONFIGURATIONS
         configurations = AccueilActivity.configurations;
-        int longueur = configurations.getLongueur();
-        int couleurs = configurations.getNbCouleurs();
-        int tentatives = configurations.getNbTentatives();
+        longueur = configurations.getLongueur();
+        couleurs = configurations.getNbCouleurs();
+        tentatives = configurations.getNbTentatives();
+
+        //Instancier le tableau de tentative de code avec la longueur
+        codeJoueur = new String[longueur];
 
         //Instancier Mastermind avec le nb de tentatives
         partieMastermind = new Mastermind(configurations.getNbTentatives());
@@ -113,6 +123,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
         for(int i = 0; i < nbChild; i++)
         {
             Button btn = (Button) grilleJeu.getChildAt(i);
+            int index = i;
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -131,8 +142,15 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                     }
 
                     //Si le clic est sur la bonne ligne et que la couleur est choisie
-                    if(ok == 1 && couleurChoisie != 0)
+                    if(ok == 1 && couleurChoisie != 0) {
+                        //On met la couleur du bouton
                         btn.getBackground().setTint(couleurChoisie);
+
+                        //On met le code de couleur dans le tableau du code du joueur à la position
+                        //du bouton cliqué
+                        codeJoueur[index%longueur] = Couleurs.couleursString[index%longueur];
+
+                    }
 
                     //Sinon, si le clic est sur la bonne ligne et qu'il y a pas de couleur choisie
                     else if (ok == 1)
@@ -208,7 +226,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         couleurChoisie = ((ColorDrawable) v.getBackground()).getColor();
-        v.setPadding();
+        Log.i(TAG, "COULEUR: " + couleurChoisie);
     }
 
 
@@ -298,11 +316,42 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
         Log.i(TAG, "Partie commencée!");
         Log.i(TAG, "Code secret pendant partie: " + partieMastermind.getSecretCode().getCouleurs()[0]);
 
+        //AJOUTER BOUCLE DE JEU
+
+
+
+
         //Gérer la validation de choix
         validerChoix.setOnClickListener(v -> {
-            Log.i(TAG, "Salut");
-            partieMastermind.setNbTentatives(partieMastermind.getNbTentatives() + 1);
-            Log.i(TAG, "Nb de tentatives: " + partieMastermind.getNbTentatives());
+            int nbCouleursMises = 0;
+
+            //Vérifier que toutes les cases ont une couleur
+            for (int i = 0; i < codeJoueur.length; i++) {
+                if (codeJoueur[i] != null)
+                    nbCouleursMises++;
+            }
+
+            //Si toutes les cases n'ont pas une couleur, on ne vérifie pas
+            if (nbCouleursMises != longueur)
+                Toast.makeText(JeuActivity.this,"Il faut remplir toute la ligne pour valider le choix",
+                        Toast.LENGTH_SHORT).show();
+
+            //sinon, on fait la tentative
+            else {
+                //Créer l'instance de code
+                Code codeFinal = new Code(codeJoueur);
+
+                //Faire la tentative
+                Toast.makeText(JeuActivity.this,"TENTATIVE", Toast.LENGTH_SHORT).show();
+                partieMastermind.faireTentative(codeFinal);
+
+                //Réinitialiser le tableau du code du joueur
+                for (int i = 0; i < codeJoueur.length; i++) {
+                    Log.i("Couleur du code: ", codeJoueur[i]);
+                    codeJoueur[i] = null;
+                }
+
+            }
         });
     }
 
