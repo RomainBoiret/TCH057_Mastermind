@@ -62,6 +62,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
     final String URL_POINT_ENTREE = "http://192.168.2.68:3000";
 
     private int couleurChoisie = 0;
+    int indiceCouleurChoisie;
     private int nbCase;
 
     @Override
@@ -146,9 +147,11 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                         //On met la couleur du bouton
                         btn.getBackground().setTint(couleurChoisie);
 
-                        //On met le code de couleur dans le tableau du code du joueur à la position
-                        //du bouton cliqué
-                        codeJoueur[index%longueur] = Couleurs.couleursString[index%longueur];
+                        //On met le code de la couleur choisie dans le tableau du code du joueur à
+                        // la position du bouton cliqué
+                        codeJoueur[index%longueur] = Couleurs.couleursString[indiceCouleurChoisie];
+
+
 
                     }
 
@@ -198,6 +201,16 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
             btn.setOnClickListener(JeuActivity.this);
 
             grillePalette.addView(btn);
+
+            int finalI = i;
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //Choisir la couleur et prendre l'indice de la couleur
+                    indiceCouleurChoisie = finalI;
+                    couleurChoisie = ((ColorDrawable) v.getBackground()).getColor();
+                }
+            });
 
             ViewGroup.LayoutParams params;
             params = btn.getLayoutParams();
@@ -343,12 +356,22 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
 
                 //Faire la tentative
                 Toast.makeText(JeuActivity.this,"TENTATIVE", Toast.LENGTH_SHORT).show();
-                partieMastermind.faireTentative(codeFinal);
+                boolean partieFinie = partieMastermind.faireTentative(codeFinal);
 
                 //Réinitialiser le tableau du code du joueur
                 for (int i = 0; i < codeJoueur.length; i++) {
-                    Log.i("Couleur du code: ", codeJoueur[i]);
+                    Log.i("GUESS DU JOUEUR", codeJoueur[i]);
                     codeJoueur[i] = null;
+                }
+
+                //Vérifier si le joueur a gagné ou pas
+                if(partieFinie) {
+                    if (partieMastermind.estCodeTrouve())
+                        Toast.makeText(JeuActivity.this,"Vous avez gagné!", Toast.LENGTH_SHORT).show();
+                    else {
+                        Toast.makeText(JeuActivity.this,"Vous avez perdu", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
 
             }
