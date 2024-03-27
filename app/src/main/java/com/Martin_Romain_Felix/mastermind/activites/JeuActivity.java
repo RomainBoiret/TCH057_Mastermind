@@ -130,11 +130,18 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                             ok = 1;
                     }
 
+                    //Si le clic est sur la bonne ligne et que la couleur est choisie
                     if(ok == 1 && couleurChoisie != 0)
                         btn.getBackground().setTint(couleurChoisie);
 
-                    else
+                    //Sinon, si le clic est sur la bonne ligne et qu'il y a pas de couleur choisie
+                    else if (ok == 1)
                         Toast.makeText(JeuActivity.this,"Choisir une couleur", Toast.LENGTH_SHORT).show();
+
+                    //Sinon, le clic n'est pas sur la bonne ligne
+                    else
+                        Toast.makeText(JeuActivity.this,"Vous ne pouvez pas jouer sur cette ligne", Toast.LENGTH_SHORT).show();
+
                 }
             });
         }
@@ -201,6 +208,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         couleurChoisie = ((ColorDrawable) v.getBackground()).getColor();
+        v.setPadding();
     }
 
 
