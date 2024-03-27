@@ -2,6 +2,8 @@ package com.Martin_Romain_Felix.mastermind.activites;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -56,11 +58,10 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
     //Code secret et tentative de code du joueur
     static Code code;
     static String[] codeJoueur;
-    static Code codeFinalJoueur;
 
     final String TAG = "MesMessages";
-    //final String URL_POINT_ENTREE = "http://10.0.2.2:3000";
-    final String URL_POINT_ENTREE = "http://192.168.2.68:3000";
+    final String URL_POINT_ENTREE = "http://10.0.2.2:3000";
+    //final String URL_POINT_ENTREE = "http://192.168.2.68:3000";
 
     private int couleurChoisie = 0;
     int indiceCouleurChoisie;
@@ -98,6 +99,26 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
         //Instancier Mastermind avec le nb de tentatives
         partieMastermind = new Mastermind(configurations.getNbTentatives());
 
+        //Initialiser les grilles (Jeu, palette, feedback)
+        initialiserGrilles();
+
+        //--------------------------------CRÉER PARTIE DE MASTERMIND--------------------------------
+
+        //D'abord chercher un code secret
+        try {
+            //Si ça marche, cette fonction cherche le code et lance la partie
+            chercherCodeSecret();
+        } catch (Exception e) {
+            Log.e(TAG, e.getMessage());
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    //************************************************************************************//
+
+    @SuppressLint("ResourceType")
+    private void initialiserGrilles() {
         //---------------------GRILLE DE JEU---------------------
         //
         grilleJeu = findViewById(R.id.gridJeu);
@@ -160,7 +181,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                     else if (ok == 1)
                         Toast.makeText(JeuActivity.this,"Choisir une couleur", Toast.LENGTH_SHORT).show();
 
-                    //Sinon, le clic n'est pas sur la bonne ligne
+                        //Sinon, le clic n'est pas sur la bonne ligne
                     else
                         Toast.makeText(JeuActivity.this,"Vous ne pouvez pas jouer sur cette ligne", Toast.LENGTH_SHORT).show();
 
@@ -222,19 +243,13 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
 
         //Bouton valider choix
         validerChoix = findViewById(R.id.validerChoix);
-
-        //--------------------------------CRÉER PARTIE DE MASTERMIND--------------------------------
-
-        //D'abord chercher un code secret
-        try {
-            //Si ça marche, cette fonction cherche le code et lance la partie
-            chercherCodeSecret();
-        } catch (Exception e) {
-            Log.e(TAG, e.getMessage());
-            throw new RuntimeException(e);
-        }
-
     }
+
+
+
+
+
+
 
     //-------------------Méthode clic pour choisir la couleur de la palette--------------
     @Override
@@ -357,7 +372,6 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                 Code codeFinal = new Code(codeJoueur);
 
                 //Faire la tentative
-                Toast.makeText(JeuActivity.this,"TENTATIVE", Toast.LENGTH_SHORT).show();
                 partieMastermind.faireTentative(codeFinal);
 
                 //Réinitialiser le tableau du code du joueur
