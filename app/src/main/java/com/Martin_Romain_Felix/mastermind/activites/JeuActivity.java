@@ -1,5 +1,6 @@
 package com.Martin_Romain_Felix.mastermind.activites;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -325,6 +326,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
     }
 
     //--------------------------------------MÉTHODE DU JEU-------------------------------------------
+    @SuppressLint("SuspiciousIndentation")
     private void startGame() {
         Log.i(TAG, "Partie commencée!");
         Log.i(TAG, "Code secret pendant partie: " + partieMastermind.getSecretCode().getCouleurs()[0]);
@@ -356,7 +358,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
 
                 //Faire la tentative
                 Toast.makeText(JeuActivity.this,"TENTATIVE", Toast.LENGTH_SHORT).show();
-                boolean partieFinie = partieMastermind.faireTentative(codeFinal);
+                partieMastermind.faireTentative(codeFinal);
 
                 //Réinitialiser le tableau du code du joueur
                 for (int i = 0; i < codeJoueur.length; i++) {
@@ -364,16 +366,12 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                     codeJoueur[i] = null;
                 }
 
+                Log.i(TAG, "NB TENTATIVES: " + partieMastermind.getNbTentatives());
                 //Vérifier si le joueur a gagné ou pas
-                if(partieFinie) {
-                    if (partieMastermind.estCodeTrouve())
-                        Toast.makeText(JeuActivity.this,"Vous avez gagné!", Toast.LENGTH_SHORT).show();
-                    else {
-                        Toast.makeText(JeuActivity.this,"Vous avez perdu", Toast.LENGTH_SHORT).show();
-                    }
-
-                }
-
+                if (partieMastermind.estCodeTrouve())
+                    Toast.makeText(JeuActivity.this,"Vous avez gagné", Toast.LENGTH_SHORT).show();
+                else if (partieMastermind.estPartieTerminee())
+                    Toast.makeText(JeuActivity.this,"Vous avez perdu", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -1,5 +1,7 @@
 package com.Martin_Romain_Felix.mastermind.modele;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +28,7 @@ public class Mastermind {
     public int getNbTentatives() { return this.nbTentatives; };
     public int getMaxTentatives() { return this.maxTentatives; }
 
-    public boolean faireTentative(Code tentative)
+    public void faireTentative(Code tentative)
     {
         // Comparer la tentative avec le code secret et générer un feedback
         Feedback rep = tentative.comparaisonCodes(secretCode);
@@ -34,23 +36,21 @@ public class Mastermind {
         // Mettre à jour la liste des tentatives et des feedbacks
         tentatives.add(tentative);
         feedbacks.add(rep);
-        nbTentatives++;
 
         // Vérifier si le joueur a trouvé la combinaison secrète ou a épuisé toutes ses tentatives
-        return estPartieTerminee();
-
+        nbTentatives++;
     }
 
     public boolean estPartieTerminee()
     {
         // Vérifier si le joueur a trouvé la combinaison secrète ou a épuisé toutes ses tentatives
-        return nbTentatives >= maxTentatives || estCodeTrouve();
+        return nbTentatives >= maxTentatives;
     }
 
     public boolean estCodeTrouve()
     {
         // Vérifier si la dernière tentative correspond au code secret
-        return (feedbacks.get(feedbacks.size()-1).getCorrectPosition() == secretCode.getCouleurs().length);
+        return (feedbacks.get(nbTentatives-1).getCorrectPosition() == secretCode.getCouleurs().length);
 
     }
 
