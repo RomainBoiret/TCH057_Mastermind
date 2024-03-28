@@ -4,14 +4,17 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -192,18 +195,25 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
         //---------------------GRILLE FEEDBACK---------------------
         //
         grilleFeedback = findViewById(R.id.gridFeedback);
-        grilleFeedback.setColumnCount(1);
+        grilleFeedback.setColumnCount(2);
         grilleFeedback.setRowCount(tentatives);
 
-        for (int i = 0; i < tentatives; i++) {
-            Button btn = new Button(this);
-            btn.setBackground(getDrawable(R.drawable.bouton_rond));
+        for (int i = 0; i < tentatives*2; i++) {
+            TextView btn = new TextView(this);
+
+            //Attributs de styles du texte
+            btn.setText("0");
+            btn.setBackgroundResource(R.color.white);
+            btn.setTextColor(getColor(R.color.black));
+            btn.setTypeface(null, Typeface.BOLD);
+            btn.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22);
+            btn.setTextAlignment(grilleFeedback.TEXT_ALIGNMENT_CENTER);
 
             grilleFeedback.addView(btn);
 
             ViewGroup.LayoutParams params;
             params = btn.getLayoutParams();
-            params.width = 90;
+            params.width = 70;
             params.height = 90;
             ((ViewGroup.MarginLayoutParams)params).setMargins(10,5,10,5);
         }
@@ -341,15 +351,10 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
     }
 
     //--------------------------------------MÉTHODE DU JEU-------------------------------------------
-    @SuppressLint("SuspiciousIndentation")
+    @SuppressLint({"SuspiciousIndentation", "ResourceAsColor"})
     private void startGame() {
         Log.i(TAG, "Partie commencée!");
         Log.i(TAG, "Code secret pendant partie: " + partieMastermind.getSecretCode().getCouleurs()[0]);
-
-        //AJOUTER BOUCLE DE JEU
-
-
-
 
         //Gérer la validation de choix
         validerChoix.setOnClickListener(v -> {
@@ -379,6 +384,35 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                     Log.i("GUESS DU JOUEUR", codeJoueur[i]);
                     codeJoueur[i] = null;
                 }
+
+                //Afficher le feedback
+                int nbChild = grilleFeedback.getChildCount();
+
+                //Gestion des clics des boutons de la grille de jeu (on affiche le feedback
+                //dans 2 cases, donc on fait une boucle
+                for(int i = 0; i < 2; i++) {
+                    TextView textFeedback = (TextView) grilleFeedback.getChildAt(tentatives * 2 - i -1 - (partieMastermind.getNbTentatives()-1)*2);
+
+                    //On part du dernier, on affiche le nombre de couleurs trouvées correctement
+                    if(i == 0) {
+                        int couleurCorrectesNb = partieMastermind.getFeedbacks().get(partieMastermind.getNbTentatives() - 1).getCorrectCouleur();
+
+                        Log.e(TAG, "NB DE COULEURS CORRECTES: " + couleurCorrectesNb);
+                        //textFeedback.setText(partieMastermind.getFeedbacks().get(partieMastermind.getNbTentatives()-1).getCorrectCouleur());
+                        textFeedback.setText(String.valueOf(couleurCorrectesNb));
+                        textFeedback.setTextColor(getColor(R.color.yellow));
+                        textFeedback.setTypeface(null, Typeface.BOLD);
+                    }
+
+                    //Le
+                    else if(i == 1) {
+                        int positionsCorrectesNb = partieMastermind.getFeedbacks().get(partieMastermind.getNbTentatives()-1).getCorrectPosition();
+                        textFeedback.setText(String.valueOf(positionsCorrectesNb));
+                        textFeedback.setTextColor(getColor(R.color.green));
+                        textFeedback.setTypeface(null, Typeface.BOLD);
+                    }
+                }
+
 
                 Log.i(TAG, "NB TENTATIVES: " + partieMastermind.getNbTentatives());
                 //Vérifier si le joueur a gagné ou pas

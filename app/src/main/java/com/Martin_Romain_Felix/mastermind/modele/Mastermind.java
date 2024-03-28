@@ -28,6 +28,8 @@ public class Mastermind {
     public int getNbTentatives() { return this.nbTentatives; };
     public int getMaxTentatives() { return this.maxTentatives; }
 
+    public List<Feedback> getFeedbacks() { return this.feedbacks; }
+
     public void faireTentative(Code tentative)
     {
         // Comparer la tentative avec le code secret et générer un feedback
