@@ -63,8 +63,8 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
     static String[] codeJoueur;
 
     final String TAG = "MesMessages";
-    final String URL_POINT_ENTREE = "http://10.0.2.2:3000";
-    //final String URL_POINT_ENTREE = "http://192.168.2.68:3000";
+    //final String URL_POINT_ENTREE = "http://10.0.2.2:3000";
+    final String URL_POINT_ENTREE = "http://192.168.2.68:3000";
 
     private int couleurChoisie = 0;
     int indiceCouleurChoisie;
@@ -132,6 +132,8 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
         for (int i = 0; i < longueur*tentatives; i++) {
             Button btn = new Button(this);
             btn.setBackground(getDrawable(R.drawable.bouton_rond));
+            btn.getBackground().setTint(getColor(R.color.gray));
+
 
             grilleJeu.addView(btn);
 
