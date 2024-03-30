@@ -33,6 +33,7 @@ import com.example.mastermind.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -116,6 +117,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
             throw new RuntimeException(e);
         }
 
+
     }
 
     //************************************************************************************//
@@ -177,9 +179,6 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                         //On met le code de la couleur choisie dans le tableau du code du joueur à
                         // la position du bouton cliqué
                         codeJoueur[index%longueur] = Couleurs.couleursString[indiceCouleurChoisie];
-
-
-
                     }
 
                     //Sinon, si le clic est sur la bonne ligne et qu'il y a pas de couleur choisie
@@ -189,7 +188,6 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                         //Sinon, le clic n'est pas sur la bonne ligne
                     else
                         Toast.makeText(JeuActivity.this,"Vous ne pouvez pas jouer sur cette ligne", Toast.LENGTH_SHORT).show();
-
                 }
             });
         }
@@ -270,6 +268,68 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
         Log.i(TAG, "COULEUR: " + couleurChoisie);
     }
 
+    //-----------------------------MÉTHODE CHERCHER STATISTIQUES------------------------------
+    private void chercherStatistiques(int idCode) throws IOException {
+        OkHttpClient client = new OkHttpClient();
+        Request requete = new Request.Builder()
+                .url(URL_POINT_ENTREE + "/stats/" + idCode)
+                .build();
+
+        Log.e(TAG, "CODE: " + idCode);
+
+        new Thread() {
+            @Override
+            public void run() {
+                Response response = null;
+                try {
+                    response = client.newCall(requete).execute();
+                    ResponseBody responseBody = response.body();
+                    String jsonData = responseBody.string();
+                    Log.i(TAG, "Requête GET stats: " + jsonData);
+
+                    JeuActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+
+                                JSONObject donneesJSON;
+
+                                //S'il y a des statistiques, on va les chercher et les afficher
+                                if (jsonData.contains("id")) {
+                                    //Transformer le string en données json
+                                    donneesJSON = new JSONObject(jsonData);
+
+                                    //Chercher les textview
+                                    TextView record = findViewById(R.id.record);
+                                    TextView emailRecord = findViewById(R.id.emailRecord);
+
+                                    //Mettre le texte
+                                    record.setText(donneesJSON.getString("record"));
+                                    emailRecord.setText(donneesJSON.getString("courriel"));
+
+                                    Toast.makeText(getApplicationContext(), "Ya des stats", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Ya pas de stats", Toast.LENGTH_SHORT).show();
+                                }
+
+
+                            } catch (JSONException e) {
+                                Log.e(TAG, e.getMessage());
+                                throw new RuntimeException(e);
+                            }
+                        }
+                    });
+
+                } catch (Exception e) {
+                    Log.d(TAG, e.getMessage());
+                    throw new RuntimeException(e);
+                }
+            }
+        }.start();
+    }
+
+    //-----------------------------MÉTHODE POST NOUVELLES STATISTIQUES-----------------------------
+    
 
     //-----------------------------MÉTHODE CHERCHER UN CODE SECRET------------------------------
     private void chercherCodeSecret() throws IOException {
@@ -331,6 +391,9 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                                 Log.v(TAG, String.valueOf(idCode));
                                 Log.v(TAG, String.valueOf(configurations.getNbCouleurs()));
 
+                                //Afficher les statistiques selon l'ID de ce code
+                                chercherStatistiques(idCode);
+
                                 //INITIALISER LA PARTIE
                                 code = new Code(codeSecret);
                                 partieMastermind.setSecretCode(code);
@@ -340,6 +403,9 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
 
                             } catch (JSONException e) {
                                 Log.e(TAG, e.getMessage());
+                                throw new RuntimeException(e);
+                            }
+                            catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
                         }
@@ -418,10 +484,29 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
 
                 Log.i(TAG, "NB TENTATIVES: " + partieMastermind.getNbTentatives());
                 //Vérifier si le joueur a gagné ou pas
-                if (partieMastermind.estCodeTrouve())
+                if (partieMastermind.estCodeTrouve()) {
                     Toast.makeText(JeuActivity.this,"Vous avez gagné", Toast.LENGTH_SHORT).show();
-                else if (partieMastermind.estPartieTerminee())
+
+                    //À FAIRE:
+                    //  - Ajouter stat à la BD (et au serveur SI c'est un record)
+
+
+
+
+
+                }
+
+
+                else if (partieMastermind.estPartieTerminee()) {
                     Toast.makeText(JeuActivity.this,"Vous avez perdu", Toast.LENGTH_SHORT).show();
+
+                    //À FAIRE:
+                    //  - Ajouter stat à la BD
+
+
+
+
+                }
             }
         });
     }
