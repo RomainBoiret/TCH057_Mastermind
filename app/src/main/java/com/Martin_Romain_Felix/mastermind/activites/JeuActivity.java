@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
@@ -18,6 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -39,10 +42,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
+import okio.BufferedSink;
 
 public class JeuActivity extends AppCompatActivity implements View.OnClickListener {
     //Attributs éléments graphiques
@@ -62,6 +68,9 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
     //Code secret et tentative de code du joueur
     static Code code;
     static String[] codeJoueur;
+
+    static String idCodeSecret;
+    static String courriel;
 
     final String TAG = "MesMessages";
     //final String URL_POINT_ENTREE = "http://10.0.2.2:3000";
@@ -96,6 +105,8 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
         longueur = configurations.getLongueur();
         couleurs = configurations.getNbCouleurs();
         tentatives = configurations.getNbTentatives();
+
+        Log.e(TAG, "NOMBRE DECOULEURS: " + couleurs);
 
         //Instancier le tableau de tentative de code avec la longueur
         codeJoueur = new String[longueur];
@@ -269,10 +280,10 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
     }
 
     //-----------------------------MÉTHODE CHERCHER STATISTIQUES------------------------------
-    private void chercherStatistiques(int idCode) throws IOException {
+    private void chercherStatistiques(String idCode) throws IOException {
         OkHttpClient client = new OkHttpClient();
         Request requete = new Request.Builder()
-                .url(URL_POINT_ENTREE + "/stats/" + idCode)
+                .url(URL_POINT_ENTREE + "/stats?idCode=" + idCode)
                 .build();
 
         Log.e(TAG, "CODE: " + idCode);
@@ -292,20 +303,21 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                         public void run() {
                             try {
 
-                                JSONObject donneesJSON;
+                                JSONArray donneesJSON = new JSONArray(jsonData);
 
                                 //S'il y a des statistiques, on va les chercher et les afficher
                                 if (jsonData.contains("id")) {
                                     //Transformer le string en données json
-                                    donneesJSON = new JSONObject(jsonData);
+                                    JSONObject objectJSON = donneesJSON.getJSONObject(0);
+
 
                                     //Chercher les textview
                                     TextView record = findViewById(R.id.record);
                                     TextView emailRecord = findViewById(R.id.emailRecord);
 
                                     //Mettre le texte
-                                    record.setText(donneesJSON.getString("record"));
-                                    emailRecord.setText(donneesJSON.getString("courriel"));
+                                    record.setText(objectJSON.getString("record"));
+                                    emailRecord.setText(objectJSON.getString("courriel"));
 
                                     Toast.makeText(getApplicationContext(), "Ya des stats", Toast.LENGTH_SHORT).show();
                                 } else {
@@ -329,7 +341,92 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
     }
 
     //-----------------------------MÉTHODE POST NOUVELLES STATISTIQUES-----------------------------
-    
+    //On appelle cette méthode SI on a battu le record (vérifier à la fin du jeu)
+    private void postStatistique(String idCode, String record, String courriel) {
+
+        //D'abord, chercher le nombre de stats pour déterminer l'ID de la statistique
+        final int[] idStat = new int[1];
+
+        OkHttpClient client = new OkHttpClient();
+        Request requete = new Request.Builder()
+                .url(URL_POINT_ENTREE + "/stats")
+                .get()
+                .build();
+
+        //THREAD EXÉCUTER LA REQUÊTE
+        new Thread() {
+            @Override
+            public void run() {
+                Response response = null;
+                try {
+                    response = client.newCall(requete).execute();
+                    ResponseBody responseBody = response.body();
+                    String jsonData = responseBody.string();
+
+                    JeuActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                //Créer un tableau JSON avec TOUS les codes
+                                JSONArray tableauJson = new JSONArray(jsonData);
+
+                                Log.e(TAG, String.valueOf(tableauJson.length()));
+
+                                //Trouver la taille du tableau
+                                idStat[0] = tableauJson.length() + 1;
+                                Log.e(TAG, String.valueOf(idStat[0]));
+
+                                //Créer l'objet JSON pour y stocker les données qu'on veut POST
+                                JSONObject statsJSON = new JSONObject();
+
+                                //Stocker les données en paramètres dans l'objet JSON
+                                try {
+                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                                        statsJSON.put("id", String.valueOf(idStat[0]));
+                                        statsJSON.put("idCode", idCode);
+                                        statsJSON.put("record", record);
+                                        statsJSON.put("courriel", courriel);
+                                    }
+                                } catch (JSONException e) {
+                                    throw new RuntimeException(e);
+                                }
+
+                                //Faire la requête
+                                final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+                                OkHttpClient client2 = new OkHttpClient();
+
+                                RequestBody corpsRequete = RequestBody.create(String.valueOf(statsJSON), JSON);
+                                Request requete2 = new Request.Builder()
+                                        .url(URL_POINT_ENTREE + "/stats")
+                                        .post(corpsRequete)
+                                        .build();
+
+                                //EXÉCUTER LA REQUÊTE
+                                new Thread() {
+                                    @Override
+                                    public void run() {
+                                        try {
+                                            client2.newCall(requete2).execute();
+                                        } catch (Exception e) {
+                                            throw new RuntimeException(e);
+                                        }
+                                    }
+                                }.start();
+
+
+                            } catch (JSONException e) {
+                                Log.e(TAG, e.getMessage());
+                                throw new RuntimeException(e);
+                            }
+                        }
+                    });
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }.start();
+    }
+
 
     //-----------------------------MÉTHODE CHERCHER UN CODE SECRET------------------------------
     private void chercherCodeSecret() throws IOException {
@@ -346,7 +443,6 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                     response = client.newCall(requete).execute();
                     ResponseBody responseBody = response.body();
                     String jsonData = responseBody.string();
-                    Log.i(TAG, "Données Mastermind : " + jsonData);
 
                     JeuActivity.this.runOnUiThread(new Runnable() {
                         @Override
@@ -364,6 +460,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
 
                                     //Si le code a le nb de couleurs et la longueur conforme
                                     //aux configurations, on le garde comme candidat
+                                    Log.e(TAG, "NOMBRE DE COULEURS: " + jsonObject.getInt("nbCouleurs"));
                                     if (jsonObject.getInt("nbCouleurs") == configurations.getNbCouleurs()
                                             && jsonObject.getJSONArray("code").length() == configurations.getLongueur()) {
                                         idCandidats.add(jsonObject.getInt("id"));
@@ -374,6 +471,8 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                                 int index = (int) (Math.random() * idCandidats.size());
                                 int idCode = idCandidats.get(index);
                                 Log.i(TAG, "ID au hasard: " + idCode);
+
+                                idCodeSecret = String.valueOf(idCode);
 
                                 //Chercher l'objet JSON à l'indice et prendre le tableau
                                 //qui correspond au code
@@ -392,7 +491,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                                 Log.v(TAG, String.valueOf(configurations.getNbCouleurs()));
 
                                 //Afficher les statistiques selon l'ID de ce code
-                                chercherStatistiques(idCode);
+                                chercherStatistiques(idCodeSecret);
 
                                 //INITIALISER LA PARTIE
                                 code = new Code(codeSecret);
@@ -487,8 +586,25 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                 if (partieMastermind.estCodeTrouve()) {
                     Toast.makeText(JeuActivity.this,"Vous avez gagné", Toast.LENGTH_SHORT).show();
 
+                    //Chercher le record
+                    TextView tvRecord = findViewById(R.id.record);
+                    String scoreRecord = tvRecord.getText().toString();
+
+                    //S'il n'y a aucun record pour le code, c'est automatiquement un record
+                    if (scoreRecord.equals("aucun")) {
+                        Toast.makeText(JeuActivity.this,"ON AFFICHE", Toast.LENGTH_SHORT).show();
+                        postStatistique(idCodeSecret, String.valueOf(partieMastermind.getNbTentatives()), courriel);
+                    }
+
+                    //S'il y a déjà un record mais qu'il est égalé, on le remplace
+                    else if (partieMastermind.getNbTentatives() <= Integer.parseInt(scoreRecord)) {
+                            postStatistique(idCodeSecret, String.valueOf(partieMastermind.getNbTentatives()), courriel);
+                    }
+
                     //À FAIRE:
                     //  - Ajouter stat à la BD (et au serveur SI c'est un record)
+
+
 
 
 

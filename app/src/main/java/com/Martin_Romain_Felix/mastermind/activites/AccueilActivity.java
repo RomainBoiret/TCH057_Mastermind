@@ -50,8 +50,10 @@ public class AccueilActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Créer intention pour jouer SI le courriel n'est pas vide
                 if (!inputCourriel.getText().toString().matches("")) {
-                    //On lance l'activité du jeu en envoyant les configurations
+                    //On lance l'activité du jeu
                     Intent intent = new Intent(getApplicationContext(), JeuActivity.class);
+                    JeuActivity.courriel = inputCourriel.getText().toString();
+
 
                     startActivity(intent);
                 }

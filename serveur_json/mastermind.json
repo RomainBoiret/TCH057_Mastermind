@@ -1,458 +1,4662 @@
 {
-  "couleursDisponibles": { "liste" :["ffff0000","ff00ff00","ff0000ff","ffffff00","ffff00ff","ffffa500","ff000000","ffffffff"]},
+  "couleursDisponibles": {
+    "liste": [
+      "ffff0000",
+      "ff00ff00",
+      "ff0000ff",
+      "ffffff00",
+      "ffff00ff",
+      "ffffa500",
+      "ff000000",
+      "ffffffff"
+    ]
+  },
   "codesSecrets": [
-    { "id": "0", "code": ["ff0000ff","ffffa500","ffffa500","ffff0000","ff00ff00","ff0000ff"], "nbCouleurs": 8 },   
-    { "id": "1", "code": ["ffffa500","ff00ff00","ffffff00","ff00ff00"], "nbCouleurs": 8 },
-    { "id": "2", "code": ["ffff00ff","ffff0000","ffffa500","ffff00ff"], "nbCouleurs": 8 },
-    { "id": "3", "code": ["ff000000","ffffff00","ffffff00","ffffffff"], "nbCouleurs": 8 },
-    { "id": "4", "code": ["ffffff00","ffffa500","ffffffff","ffffff00"], "nbCouleurs": 8 },
-    { "id": "5", "code": ["ff000000","ff0000ff","ffff0000","ffffff00"], "nbCouleurs": 8 },
-    { "id": "6", "code": ["ff000000","ff000000","ff00ff00","ffffff00"], "nbCouleurs": 8 },
-    { "id": "7", "code": ["ff0000ff","ffffa500","ffffa500","ffffff00"], "nbCouleurs": 8 },
-    { "id": "8", "code": ["ff000000","ff00ff00","ffff00ff","ffffffff"], "nbCouleurs": 8 },
-    { "id": "9", "code": ["ff000000","ffffff00","ffff0000","ffffffff"], "nbCouleurs": 8 },
-    { "id": "10", "code": ["ffffa500","ffff00ff","ffff00ff","ffffff00"], "nbCouleurs": 8 },
-    { "id": "11", "code": ["ff0000ff","ff000000","ffffffff","ff000000"], "nbCouleurs": 8 },
-    { "id": "12", "code": ["ff00ff00","ff00ff00","ffffff00","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "13", "code": ["ffffa500","ff0000ff","ffffa500","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "14", "code": ["ff00ff00","ffff00ff","ffffffff","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "15", "code": ["ffffff00","ff000000","ffffff00","ffffffff"], "nbCouleurs": 8 },
-    { "id": "16", "code": ["ffffffff","ffffff00","ff00ff00","ffff0000"], "nbCouleurs": 8 },
-    { "id": "17", "code": ["ff00ff00","ffff00ff","ff00ff00","ffffa500"], "nbCouleurs": 8 },
-    { "id": "18", "code": ["ff00ff00","ff00ff00","ffff0000","ffffffff"], "nbCouleurs": 8 },
-    { "id": "19", "code": ["ffffff00","ffff00ff","ff00ff00","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "20", "code": ["ffff0000","ffffff00","ffff00ff","ffff0000"], "nbCouleurs": 8 },
-    { "id": "21", "code": ["ff000000","ff00ff00","ffff0000","ff000000"], "nbCouleurs": 8 },
-    { "id": "22", "code": ["ffff0000","ff00ff00","ffff00ff","ff000000"], "nbCouleurs": 8 },
-    { "id": "23", "code": ["ffffffff","ffffff00","ffffffff","ff000000"], "nbCouleurs": 8 },
-    { "id": "24", "code": ["ff000000","ffffa500","ffffff00","ffffff00"], "nbCouleurs": 8 },
-    { "id": "25", "code": ["ffffa500","ffff0000","ffffff00","ffff00ff"], "nbCouleurs": 8 },
-    { "id": "26", "code": ["ff000000","ffff00ff","ffffa500","ffffff00"], "nbCouleurs": 8 },
-    { "id": "27", "code": ["ff0000ff","ffff0000","ffff0000","ffffff00"], "nbCouleurs": 8 },
-    { "id": "28", "code": ["ff000000","ff000000","ffff00ff","ffff00ff"], "nbCouleurs": 8 },
-    { "id": "29", "code": ["ffffa500","ffff0000","ff00ff00","ffff0000"], "nbCouleurs": 8 },
-    { "id": "30", "code": ["ffffff00","ffffffff","ffff0000","ffffffff"], "nbCouleurs": 8 },
-    { "id": "31", "code": ["ffffff00","ffff00ff","ff0000ff","ffff0000"], "nbCouleurs": 8 },
-    { "id": "32", "code": ["ffffff00","ffffff00","ff00ff00","ffff0000"], "nbCouleurs": 8 },
-    { "id": "33", "code": ["ffff0000","ffff00ff","ff000000","ffff00ff"], "nbCouleurs": 8 },
-    { "id": "34", "code": ["ff00ff00","ffffffff","ffffffff","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "35", "code": ["ffffa500","ffffff00","ffffffff","ffff00ff"], "nbCouleurs": 8 },
-    { "id": "36", "code": ["ffffff00","ff000000","ffffff00","ffff0000"], "nbCouleurs": 8 },
-    { "id": "37", "code": ["ffffa500","ffffa500","ff00ff00","ffff0000"], "nbCouleurs": 8 },
-    { "id": "38", "code": ["ffff0000","ff0000ff","ffffa500","ffffff00"], "nbCouleurs": 8 },
-    { "id": "39", "code": ["ff000000","ff000000","ffffa500","ffffffff"], "nbCouleurs": 8 },
-    { "id": "40", "code": ["ffffff00","ffffa500","ffffa500","ffffffff"], "nbCouleurs": 8 },
-    { "id": "41", "code": ["ffffffff","ff0000ff","ffffff00","ff00ff00"], "nbCouleurs": 8 },
-    { "id": "42", "code": ["ffffa500","ffffffff","ff00ff00","ffffffff"], "nbCouleurs": 8 },
-    { "id": "43", "code": ["ff000000","ff000000","ff000000","ffffff00"], "nbCouleurs": 8 },
-    { "id": "44", "code": ["ffffffff","ffff00ff","ffffffff","ff000000"], "nbCouleurs": 8 },
-    { "id": "45", "code": ["ffff0000","ff0000ff","ff00ff00","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "46", "code": ["ffff00ff","ffff00ff","ffffff00","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "47", "code": ["ffff00ff","ffff00ff","ffffffff","ffffff00"], "nbCouleurs": 8 },
-    { "id": "48", "code": ["ffff0000","ff0000ff","ffffa500","ffffffff"], "nbCouleurs": 8 },
-    { "id": "49", "code": ["ff0000ff","ffff0000","ffffffff","ffffa500"], "nbCouleurs": 8 },
-    { "id": "50", "code": ["ff00ff00","ffffa500","ffff0000","ffffffff"], "nbCouleurs": 8 },
-    { "id": "51", "code": ["ff00ff00","ff00ff00"], "nbCouleurs": 2 },
-    { "id": "52", "code": ["ff00ff00","ffff0000"], "nbCouleurs": 2 },
-    { "id": "53", "code": ["ffff0000","ff00ff00"], "nbCouleurs": 2 },
-    { "id": "54", "code": ["ffff0000","ffff0000"], "nbCouleurs": 2 },
-    { "id": "55", "code": ["ff00ff00","ffff0000"], "nbCouleurs": 3 },
-    { "id": "56", "code": ["ffff0000","ffff0000"], "nbCouleurs": 3 },
-    { "id": "57", "code": ["ff0000ff","ffff0000"], "nbCouleurs": 3 },
-    { "id": "58", "code": ["ffff0000","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "59", "code": ["ff0000ff","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "60", "code": ["ff00ff00","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "61", "code": ["ff00ff00","ff0000ff"], "nbCouleurs": 3 },
-    { "id": "62", "code": ["ff0000ff","ff0000ff"], "nbCouleurs": 3 },
-    { "id": "63", "code": ["ffff0000","ff0000ff"], "nbCouleurs": 3 },
-    { "id": "64", "code": ["ff0000ff","ff0000ff"], "nbCouleurs": 4 },
-    { "id": "65", "code": ["ff00ff00","ff0000ff"], "nbCouleurs": 4 },
-    { "id": "66", "code": ["ff0000ff","ff00ff00"], "nbCouleurs": 4 },
-    { "id": "67", "code": ["ffffff00","ffffff00"], "nbCouleurs": 4 },
-    { "id": "68", "code": ["ffffff00","ffff0000"], "nbCouleurs": 4 },
-    { "id": "69", "code": ["ff0000ff","ffff0000"], "nbCouleurs": 4 },
-    { "id": "70", "code": ["ffff0000","ff00ff00"], "nbCouleurs": 5 },
-    { "id": "71", "code": ["ff0000ff","ffff0000"], "nbCouleurs": 5 },
-    { "id": "72", "code": ["ff00ff00","ffff0000"], "nbCouleurs": 5 },
-    { "id": "73", "code": ["ffff0000","ff0000ff"], "nbCouleurs": 5 },
-    { "id": "74", "code": ["ffff0000","ffff00ff"], "nbCouleurs": 5 },
-    { "id": "75", "code": ["ffffff00","ff0000ff"], "nbCouleurs": 5 },
-    { "id": "76", "code": ["ffffff00","ffff0000"], "nbCouleurs": 5 },
-    { "id": "77", "code": ["ffff0000","ffff0000"], "nbCouleurs": 6 },
-    { "id": "78", "code": ["ff00ff00","ffff00ff"], "nbCouleurs": 6 },
-    { "id": "79", "code": ["ffff0000","ffff0000"], "nbCouleurs": 6 },
-    { "id": "80", "code": ["ffff00ff","ff00ff00"], "nbCouleurs": 6 },
-    { "id": "81", "code": ["ffff0000","ffffa500"], "nbCouleurs": 6 },
-    { "id": "82", "code": ["ff00ff00","ff00ff00"], "nbCouleurs": 6 },
-    { "id": "83", "code": ["ffff00ff","ff0000ff"], "nbCouleurs": 6 },
-    { "id": "84", "code": ["ff00ff00","ffffa500"], "nbCouleurs": 6 },
-    { "id": "85", "code": ["ff0000ff","ffffff00"], "nbCouleurs": 6 },
-    { "id": "86", "code": ["ffff0000","ffff0000"], "nbCouleurs": 7 },
-    { "id": "87", "code": ["ff00ff00","ffff00ff"], "nbCouleurs": 7 },
-    { "id": "88", "code": ["ffff0000","ffff0000"], "nbCouleurs": 7 },
-    { "id": "89", "code": ["ffff00ff","ff00ff00"], "nbCouleurs": 7 },
-    { "id": "90", "code": ["ffff0000","ffffa500"], "nbCouleurs": 7 },
-    { "id": "91", "code": ["ff00ff00","ff00ff00"], "nbCouleurs": 7 },
-    { "id": "92", "code": ["ffff00ff","ff0000ff"], "nbCouleurs": 7 },
-    { "id": "93", "code": ["ff00ff00","ffffa500"], "nbCouleurs": 7 },
-    { "id": "94", "code": ["ff0000ff","ffffff00"], "nbCouleurs": 7 },
-    { "id": "95", "code": ["ffff0000","ffff0000"], "nbCouleurs": 8 },
-    { "id": "96", "code": ["ff00ff00","ffff00ff"], "nbCouleurs": 8 },
-    { "id": "97", "code": ["ffff0000","ffff0000"], "nbCouleurs": 8 },
-    { "id": "98", "code": ["ffff00ff","ff00ff00"], "nbCouleurs": 8 },
-    { "id": "99", "code": ["ffff0000","ffffa500"], "nbCouleurs": 8 },
-    { "id": "100", "code": ["ff00ff00","ff00ff00"], "nbCouleurs": 8 },
-    { "id": "101", "code": ["ffff00ff","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "102", "code": ["ff00ff00","ffffa500"], "nbCouleurs": 8 },
-    { "id": "103", "code": ["ff0000ff","ffffff00"], "nbCouleurs": 8 },
-    { "id": "104", "code": ["ffff0000","ffff0000","ffff0000"], "nbCouleurs": 2 },
-    { "id": "105", "code": ["ffff0000","ffff0000","ff00ff00"], "nbCouleurs": 2 },
-    { "id": "106", "code": ["ffff0000","ffff0000","ffff0000"], "nbCouleurs": 2 },
-    { "id": "107", "code": ["ff00ff00","ffff0000","ff00ff00"], "nbCouleurs": 2 },
-    { "id": "108", "code": ["ff00ff00","ff00ff00","ff00ff00"], "nbCouleurs": 2 },
-    { "id": "109", "code": ["ff00ff00","ff00ff00","ffff0000"], "nbCouleurs": 2 },
-    { "id": "110", "code": ["ff0000ff","ffff0000","ff0000ff"], "nbCouleurs": 3 },
-    { "id": "111", "code": ["ff00ff00","ff00ff00","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "112", "code": ["ff00ff00","ff00ff00","ffff0000"], "nbCouleurs": 3 },
-    { "id": "113", "code": ["ffff0000","ff0000ff","ff0000ff"], "nbCouleurs": 3 },
-    { "id": "114", "code": ["ff00ff00","ff0000ff","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "115", "code": ["ffff0000","ff0000ff","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "116", "code": ["ffff0000","ff00ff00","ff0000ff"], "nbCouleurs": 3 },
-    { "id": "117", "code": ["ff00ff00","ffff0000","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "118", "code": ["ff00ff00","ffff0000","ff0000ff"], "nbCouleurs": 3 },
-    { "id": "119", "code": ["ff0000ff","ff0000ff","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "120", "code": ["ff0000ff","ff0000ff","ff0000ff"], "nbCouleurs": 4 },
-    { "id": "121", "code": ["ff0000ff","ff00ff00","ff0000ff"], "nbCouleurs": 4 },
-    { "id": "122", "code": ["ff00ff00","ff00ff00","ff00ff00"], "nbCouleurs": 4 },
-    { "id": "123", "code": ["ffffff00","ffffff00","ffffff00"], "nbCouleurs": 4 },
-    { "id": "124", "code": ["ff00ff00","ffff0000","ffff0000"], "nbCouleurs": 4 },
-    { "id": "125", "code": ["ffffff00","ffffff00","ff00ff00"], "nbCouleurs": 4 },
-    { "id": "126", "code": ["ffff0000","ff0000ff","ffffff00"], "nbCouleurs": 4 },
-    { "id": "127", "code": ["ffff0000","ff00ff00","ffffff00"], "nbCouleurs": 4 },
-    { "id": "128", "code": ["ff00ff00","ffff0000","ff0000ff"], "nbCouleurs": 4 }, 
-    { "id": "129", "code": ["ffff0000","ff00ff00","ff0000ff"], "nbCouleurs": 5 },
-    { "id": "130", "code": ["ff00ff00","ff0000ff","ff00ff00"], "nbCouleurs": 5 },
-    { "id": "131", "code": ["ffff00ff","ffff0000","ffffff00"], "nbCouleurs": 5 },
-    { "id": "132", "code": ["ff0000ff","ffff00ff","ffff0000"], "nbCouleurs": 5 },
-    { "id": "133", "code": ["ff00ff00","ff00ff00","ffff0000"], "nbCouleurs": 5 },
-    { "id": "134", "code": ["ff0000ff","ffff00ff","ff0000ff"], "nbCouleurs": 5 },
-    { "id": "135", "code": ["ffffff00","ff00ff00","ff0000ff"], "nbCouleurs": 5 },
-    { "id": "136", "code": ["ff00ff00","ffffff00","ff0000ff"], "nbCouleurs": 5 },
-    { "id": "137", "code": ["ffff0000","ffff0000","ffffff00"], "nbCouleurs": 5 },
-    { "id": "138", "code": ["ffff00ff","ff00ff00","ffffff00"], "nbCouleurs": 5 },    
-    { "id": "139", "code": ["ff00ff00","ffff00ff","ff0000ff"], "nbCouleurs": 6 },
-    { "id": "140", "code": ["ff00ff00","ff00ff00","ffff00ff"], "nbCouleurs": 6 },
-    { "id": "141", "code": ["ffffa500","ffffa500","ffffa500"], "nbCouleurs": 6 },
-    { "id": "142", "code": ["ffffff00","ff00ff00","ffffa500"], "nbCouleurs": 6 },
-    { "id": "143", "code": ["ffff00ff","ff0000ff","ffff0000"], "nbCouleurs": 6 },
-    { "id": "144", "code": ["ffff0000","ffffff00","ff0000ff"], "nbCouleurs": 6 },
-    { "id": "145", "code": ["ff0000ff","ffffa500","ff0000ff"], "nbCouleurs": 6 },
-    { "id": "146", "code": ["ff00ff00","ffffff00","ffffa500"], "nbCouleurs": 6 },
-    { "id": "147", "code": ["ff0000ff","ff0000ff","ffffa500"], "nbCouleurs": 6 },
-    { "id": "148", "code": ["ffffff00","ff00ff00","ffff00ff"], "nbCouleurs": 6 },    
-    { "id": "149", "code": ["ffffa500","ffffff00","ffffa500"], "nbCouleurs": 7 },
-    { "id": "150", "code": ["ffffa500","ffff00ff","ffffa500"], "nbCouleurs": 7 },
-    { "id": "151", "code": ["ff000000","ff0000ff","ffffa500"], "nbCouleurs": 7 },
-    { "id": "152", "code": ["ffffa500","ffffff00","ff00ff00"], "nbCouleurs": 7 },
-    { "id": "153", "code": ["ff0000ff","ffffa500","ffffa500"], "nbCouleurs": 7 },
-    { "id": "154", "code": ["ffffa500","ff0000ff","ffff00ff"], "nbCouleurs": 7 },
-    { "id": "155", "code": ["ffffa500","ffffa500","ffffa500"], "nbCouleurs": 7 },
-    { "id": "156", "code": ["ff00ff00","ff00ff00","ffff0000"], "nbCouleurs": 7 },
-    { "id": "157", "code": ["ff0000ff","ff0000ff","ffffff00"], "nbCouleurs": 7 },
-    { "id": "158", "code": ["ff0000ff","ffffff00","ff00ff00"], "nbCouleurs": 7 },
-    { "id": "159", "code": ["ff00ff00","ff0000ff","ffff0000"], "nbCouleurs": 8 },
-    { "id": "160", "code": ["ffff00ff","ffff00ff","ff00ff00"], "nbCouleurs": 8 },
-    { "id": "161", "code": ["ffffff00","ff0000ff","ffff00ff"], "nbCouleurs": 8 },
-    { "id": "162", "code": ["ff000000","ffffffff","ffffa500"], "nbCouleurs": 8 },
-    { "id": "163", "code": ["ffffffff","ff000000","ffffffff"], "nbCouleurs": 8 },
-    { "id": "164", "code": ["ffff0000","ffffff00","ffff0000"], "nbCouleurs": 8 },
-    { "id": "165", "code": ["ff0000ff","ffffff00","ffff0000"], "nbCouleurs": 8 },
-    { "id": "166", "code": ["ffffff00","ffffff00","ffffa500"], "nbCouleurs": 8 },
-    { "id": "167", "code": ["ffff0000","ff0000ff","ff00ff00"], "nbCouleurs": 8 },
-    { "id": "168", "code": ["ffffff00","ff00ff00","ffffff00"], "nbCouleurs": 8 },    
-    { "id": "169", "code": ["ffff0000","ff00ff00","ffff0000","ffff0000"], "nbCouleurs": 2 },
-    { "id": "170", "code": ["ff00ff00","ffff0000","ff00ff00","ffff0000"], "nbCouleurs": 2 },
-    { "id": "171", "code": ["ffff0000","ffff0000","ffff0000","ffff0000"], "nbCouleurs": 2 },
-    { "id": "172", "code": ["ffff0000","ffff0000","ff00ff00","ffff0000"], "nbCouleurs": 2 },
-    { "id": "173", "code": ["ff00ff00","ff00ff00","ff00ff00","ff00ff00"], "nbCouleurs": 2 },
-    { "id": "174", "code": ["ff00ff00","ffff0000","ffff0000","ffff0000"], "nbCouleurs": 2 },
-    { "id": "175", "code": ["ff00ff00","ff00ff00","ffff0000","ff00ff00"], "nbCouleurs": 2 },
-    { "id": "176", "code": ["ffff0000","ffff0000","ffff0000","ffff0000"], "nbCouleurs": 3 },
-    { "id": "177", "code": ["ff00ff00","ff0000ff","ff0000ff","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "178", "code": ["ff00ff00","ff0000ff","ff0000ff","ffff0000"], "nbCouleurs": 3 },
-    { "id": "179", "code": ["ff0000ff","ffff0000","ff00ff00","ff0000ff"], "nbCouleurs": 3 },
-    { "id": "180", "code": ["ff00ff00","ffff0000","ff00ff00","ff0000ff"], "nbCouleurs": 3 },
-    { "id": "181", "code": ["ffff0000","ffff0000","ff0000ff","ffff0000"], "nbCouleurs": 3 },
-    { "id": "182", "code": ["ff0000ff","ffff0000","ff0000ff","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "183", "code": ["ff0000ff","ff00ff00","ff00ff00","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "184", "code": ["ff00ff00","ff0000ff","ff0000ff","ff0000ff"], "nbCouleurs": 3 },
-    { "id": "185", "code": ["ffff0000","ffffff00","ffff0000","ff0000ff"], "nbCouleurs": 4 },
-    { "id": "186", "code": ["ffff0000","ffff0000","ff00ff00","ffff0000"], "nbCouleurs": 4 },
-    { "id": "187", "code": ["ff0000ff","ffff0000","ffff0000","ff0000ff"], "nbCouleurs": 4 },
-    { "id": "188", "code": ["ff0000ff","ff0000ff","ffff0000","ff00ff00"], "nbCouleurs": 4 },
-    { "id": "189", "code": ["ffffff00","ffff0000","ff0000ff","ff00ff00"], "nbCouleurs": 4 },
-    { "id": "190", "code": ["ffffff00","ff00ff00","ffff0000","ffffff00"], "nbCouleurs": 4 },
-    { "id": "191", "code": ["ffffff00","ff00ff00","ff0000ff","ff00ff00"], "nbCouleurs": 4 },
-    { "id": "192", "code": ["ffff0000","ff00ff00","ff0000ff","ff0000ff"], "nbCouleurs": 4 },
-    { "id": "193", "code": ["ffff0000","ff00ff00","ff0000ff","ffff0000"], "nbCouleurs": 4 },
-    { "id": "194", "code": ["ffffff00","ff0000ff","ffff0000","ff0000ff"], "nbCouleurs": 4 },
-    { "id": "195", "code": ["ffff0000","ffffff00","ffffff00","ffff00ff"], "nbCouleurs": 5 },
-    { "id": "196", "code": ["ffff0000","ff0000ff","ffff00ff","ffffff00"], "nbCouleurs": 5 },
-    { "id": "197", "code": ["ffff0000","ffff0000","ffffff00","ffffff00"], "nbCouleurs": 5 },
-    { "id": "198", "code": ["ffffff00","ffffff00","ffff0000","ffff00ff"], "nbCouleurs": 5 },
-    { "id": "199", "code": ["ff0000ff","ffff0000","ff00ff00","ffff00ff"], "nbCouleurs": 5 },
-    { "id": "200", "code": ["ff00ff00","ff0000ff","ffff0000","ffffff00"], "nbCouleurs": 5 },
-    { "id": "201", "code": ["ff0000ff","ff0000ff","ffff00ff","ffff0000"], "nbCouleurs": 5 },
-    { "id": "202", "code": ["ffffff00","ffffff00","ff00ff00","ffff0000"], "nbCouleurs": 5 },
-    { "id": "203", "code": ["ff0000ff","ffffff00","ffffff00","ffffff00"], "nbCouleurs": 5 },
-    { "id": "204", "code": ["ff00ff00","ffff0000","ff0000ff","ffff0000"], "nbCouleurs": 5 },
-    { "id": "205", "code": ["ff00ff00","ff00ff00","ffffff00","ffff00ff"], "nbCouleurs": 6 },
-    { "id": "206", "code": ["ffffff00","ffff00ff","ff00ff00","ffff0000"], "nbCouleurs": 6 },
-    { "id": "207", "code": ["ffffa500","ff00ff00","ff00ff00","ffffff00"], "nbCouleurs": 6 },
-    { "id": "208", "code": ["ff00ff00","ff00ff00","ffffff00","ff00ff00"], "nbCouleurs": 6 },
-    { "id": "209", "code": ["ffffa500","ffffff00","ffffff00","ff0000ff"], "nbCouleurs": 6 },
-    { "id": "210", "code": ["ffffa500","ffffa500","ffffff00","ffff0000"], "nbCouleurs": 6 },
-    { "id": "211", "code": ["ffff00ff","ffffff00","ffffa500","ffffff00"], "nbCouleurs": 6 },
-    { "id": "212", "code": ["ffffff00","ffffff00","ffffff00","ff0000ff"], "nbCouleurs": 6 },
-    { "id": "213", "code": ["ff00ff00","ff0000ff","ffff0000","ffffff00"], "nbCouleurs": 6 },
-    { "id": "214", "code": ["ffffff00","ffff0000","ff0000ff","ffff0000"], "nbCouleurs": 6 },
-    { "id": "215", "code": ["ff00ff00","ffff0000","ffff00ff","ff00ff00"], "nbCouleurs": 7 },
-    { "id": "216", "code": ["ffffa500","ffff00ff","ffffa500","ffffa500"], "nbCouleurs": 7 },
-    { "id": "217", "code": ["ff000000","ff0000ff","ff000000","ffff00ff"], "nbCouleurs": 7 },
-    { "id": "218", "code": ["ffffff00","ff0000ff","ffff0000","ffffa500"], "nbCouleurs": 7 },
-    { "id": "219", "code": ["ffff0000","ffffa500","ffff00ff","ffff00ff"], "nbCouleurs": 7 },
-    { "id": "220", "code": ["ffffff00","ffffa500","ff000000","ffffff00"], "nbCouleurs": 7 },
-    { "id": "221", "code": ["ff00ff00","ff0000ff","ff0000ff","ffff0000"], "nbCouleurs": 7 },
-    { "id": "222", "code": ["ff0000ff","ffffff00","ff00ff00","ff0000ff"], "nbCouleurs": 7 },
-    { "id": "223", "code": ["ffffa500","ff00ff00","ff00ff00","ffffff00"], "nbCouleurs": 8 },
-    { "id": "224", "code": ["ff000000","ffffa500","ffffff00","ffffffff"], "nbCouleurs": 8 },
-    { "id": "225", "code": ["ff000000","ffff00ff","ffff00ff","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "226", "code": ["ffffa500","ff0000ff","ffff0000","ffff00ff"], "nbCouleurs": 8 },
-    { "id": "227", "code": ["ffff00ff","ff00ff00","ff00ff00","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "228", "code": ["ffffff00","ffffff00","ff000000","ffffff00"], "nbCouleurs": 8 },
-    { "id": "229", "code": ["ffff00ff","ffffff00","ffffa500","ffffffff"], "nbCouleurs": 8 },
-    { "id": "230", "code": ["ff0000ff","ffffa500","ffffffff","ff000000"], "nbCouleurs": 8 },
-    { "id": "231", "code": ["ffffff00","ff000000","ffffff00","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "232", "code": ["ffffff00","ffffff00","ffffffff","ffffff00"], "nbCouleurs": 8 },
-    { "id": "233", "code": ["0ff00","ffff0000","ff000000","ffffffff"], "nbCouleurs": 8 },
-    { "id": "234", "code": ["ffff0000","ffffa500","ffff00ff","ffffffff"], "nbCouleurs": 8 },
-    { "id": "235", "code": ["ff0000ff","ffff00ff","ffff0000","ff000000"], "nbCouleurs": 8 },
-    { "id": "236", "code": ["ffffa500","ffff00ff","ffff00ff","ff00ff00"], "nbCouleurs": 8 },
-    { "id": "237", "code": ["ffff0000","ffff00ff","ff0000ff","ffffffff"], "nbCouleurs": 8 },
-    { "id": "238", "code": ["ffffa500","ff00ff00","ffffff00","ffffa500"], "nbCouleurs": 8 },
-    { "id": "239", "code": ["ff000000","ff000000","ffffa500","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "240", "code": ["ffff00ff","ffff00ff","ff00ff00","ffffa500"], "nbCouleurs": 8 },
-    { "id": "241", "code": ["ffffa500","ff000000","ff0000ff","ffff0000"], "nbCouleurs": 8 },
-    { "id": "242", "code": ["ffff0000","ffff00ff","ffffff00","ffffff00"], "nbCouleurs": 8 },
-    { "id": "243", "code": ["ff0000ff","ffff0000","ff000000","ffff00ff"], "nbCouleurs": 8 },
-    { "id": "244", "code": ["ffff0000","ff00ff00","ffffa500","ffffa500"], "nbCouleurs": 8 },
-    { "id": "245", "code": ["ffff00ff","ff00ff00","ff00ff00","ffff0000"], "nbCouleurs": 8 },
-    { "id": "246", "code": ["ffff0000","ffffffff","ff000000","ffff0000"], "nbCouleurs": 8 },
-    { "id": "247", "code": ["ff00ff00","ffffa500","ff0000ff","ffffff00"], "nbCouleurs": 8 },
-    { "id": "248", "code": ["ff000000","ffffff00","ffffffff","ffff0000"], "nbCouleurs": 8 },
-    { "id": "249", "code": ["ff000000","ffffff00","ffffff00","ff000000"], "nbCouleurs": 8 },
-    { "id": "250", "code": ["ff0000ff","ff0000ff","ff000000","ff000000"], "nbCouleurs": 8 },
-    { "id": "251", "code": ["ff0000ff","ff000000","ff00ff00","ff00ff00"], "nbCouleurs": 8 },
-    { "id": "252", "code": ["ffff00ff","ff00ff00","ffffa500","ff000000"], "nbCouleurs": 8 },
-    { "id": "253", "code": ["ff0000ff","ffffff00","ff0000ff","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "254", "code": ["ffffffff","ffffa500","ff0000ff","ffffffff"], "nbCouleurs": 8 },
-    { "id": "255", "code": ["ff00ff00","ffffff00","ff000000","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "256", "code": ["ff000000","ffffa500","ffff00ff","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "257", "code": ["ffff00ff","ff0000ff","ffffffff","ffffffff"], "nbCouleurs": 8 },
-    { "id": "258", "code": ["ffff0000","ff000000","ffff0000","ffff00ff"], "nbCouleurs": 8 },
-    { "id": "259", "code": ["ffffff00","ffffa500","ffffff00","ffff00ff"], "nbCouleurs": 8 },
-    { "id": "260", "code": ["ffff00ff","ff00ff00","ffff00ff","ff000000"], "nbCouleurs": 8 },
-    { "id": "261", "code": ["ff0000ff","ffff0000","ffffa500","ff00ff00"], "nbCouleurs": 8 },
-    { "id": "262", "code": ["ffff0000","ffffffff","ff00ff00","ffffff00"], "nbCouleurs": 8 },   
-    { "id": "263", "code": ["ff00ff00","ff00ff00","ffff0000","ff00ff00","ffff0000"], "nbCouleurs": 2 },
-    { "id": "264", "code": ["ff00ff00","ff00ff00","ffff0000","ffff0000","ff00ff00"], "nbCouleurs": 2 },
-    { "id": "265", "code": ["ffff0000","ff00ff00","ffff0000","ffff0000","ffff0000"], "nbCouleurs": 2 },
-    { "id": "266", "code": ["ffff0000","ffff0000","ffff0000","ff00ff00","ff00ff00"], "nbCouleurs": 2 },
-    { "id": "267", "code": ["ffff0000","ffff0000","ff00ff00","ffff0000","ff00ff00"], "nbCouleurs": 2 },
-    { "id": "268", "code": ["ff00ff00","ff00ff00","ff00ff00","ffff0000","ffff0000"], "nbCouleurs": 2 },
-    { "id": "269", "code": ["ff00ff00","ffff0000","ffff0000","ffff0000","ff00ff00"], "nbCouleurs": 2 },
-    { "id": "270", "code": ["ff00ff00","ff00ff00","ffff0000","ffff0000","ffff0000"], "nbCouleurs": 2 },
-    { "id": "271", "code": ["ffff0000","ff00ff00","ff00ff00","ff00ff00","ffff0000"], "nbCouleurs": 2 },
-    { "id": "272", "code": ["ffff0000","ffff0000","ffff0000","ffff0000","ffff0000"], "nbCouleurs": 3 },
-    { "id": "273", "code": ["ff00ff00","ffff0000","ff0000ff","ff0000ff","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "274", "code": ["ffff0000","ff0000ff","ff00ff00","ffff0000","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "275", "code": ["ff0000ff","ff00ff00","ffff0000","ff00ff00","ff0000ff"], "nbCouleurs": 3 },
-    { "id": "276", "code": ["ff0000ff","ff0000ff","ffff0000","ff00ff00","ffff0000"], "nbCouleurs": 3 },
-    { "id": "277", "code": ["ff00ff00","ff0000ff","ff0000ff","ff00ff00","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "278", "code": ["ff00ff00","ffff0000","ff00ff00","ff00ff00","ffff0000"], "nbCouleurs": 3 },
-    { "id": "279", "code": ["ffff0000","ffff0000","ffff0000","ff0000ff","ff0000ff"], "nbCouleurs": 3 },
-    { "id": "280", "code": ["ff00ff00","ff00ff00","ffff0000","ff0000ff","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "281", "code": ["ff00ff00","ff00ff00","ffff0000","ffff0000","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "282", "code": ["ff00ff00","ffffff00","ffff0000","ffffff00","ffffff00"], "nbCouleurs": 4 },
-    { "id": "283", "code": ["ff0000ff","ffffff00","ff0000ff","ffff0000","ff00ff00"], "nbCouleurs": 4 },
-    { "id": "284", "code": ["ffff0000","ffffff00","ffff0000","ff0000ff","ffff0000"], "nbCouleurs": 4 },
-    { "id": "285", "code": ["ffff0000","ffffff00","ff00ff00","ffffff00","ff00ff00"], "nbCouleurs": 4 },
-    { "id": "286", "code": ["ffff0000","ff0000ff","ffff0000","ff00ff00","ffff0000"], "nbCouleurs": 4 },
-    { "id": "287", "code": ["ff0000ff","ff00ff00","ffff0000","ff0000ff","ffffff00"], "nbCouleurs": 4 },
-    { "id": "288", "code": ["ff00ff00","ffffff00","ff00ff00","ff0000ff","ffffff00"], "nbCouleurs": 4 },
-    { "id": "289", "code": ["ff00ff00","ff00ff00","ff0000ff","ffff0000","ff00ff00"], "nbCouleurs": 4 },
-    { "id": "290", "code": ["ff0000ff","ff00ff00","ff00ff00","ffff0000","ff0000ff"], "nbCouleurs": 4 },
-    { "id": "291", "code": ["ffffff00","ff00ff00","ff00ff00","ffffff00","ff00ff00"], "nbCouleurs": 4 },    
-    { "id": "292", "code": ["ffff00ff","ff00ff00","ffffff00","ffff00ff","ff0000ff"], "nbCouleurs": 5 },
-    { "id": "293", "code": ["ffff0000","ffff0000","ff0000ff","ffff00ff","ff0000ff"], "nbCouleurs": 5 },
-    { "id": "294", "code": ["ffffff00","ff0000ff","ffffff00","ff0000ff","ffffff00"], "nbCouleurs": 5 },
-    { "id": "295", "code": ["ffff00ff","ff00ff00","ff0000ff","ff0000ff","ffff0000"], "nbCouleurs": 5 },
-    { "id": "296", "code": ["ffffff00","ff00ff00","ffff00ff","ff00ff00","ffff0000"], "nbCouleurs": 5 },
-    { "id": "297", "code": ["ffffff00","ffffff00","ff0000ff","ffff00ff","ff00ff00"], "nbCouleurs": 5 },
-    { "id": "298", "code": ["ff0000ff","ffff00ff","ffff00ff","ffff00ff","ff00ff00"], "nbCouleurs": 5 },
-    { "id": "299", "code": ["ff0000ff","ff00ff00","ffffff00","ff0000ff","ffff00ff"], "nbCouleurs": 5 },
-    { "id": "300", "code": ["ffff0000","ffff00ff","ffff0000","ffff00ff","ffff0000"], "nbCouleurs": 5 },
-    { "id": "301", "code": ["ffffff00","ffffff00","ff00ff00","ffffff00","ffffff00"], "nbCouleurs": 5 },    
-    { "id": "302", "code": ["ffff0000","ffffff00","ffffa500","ffffa500","ffffff00"], "nbCouleurs": 6 },
-    { "id": "303", "code": ["ffff00ff","ffff00ff","ff0000ff","ffffff00","ff00ff00"], "nbCouleurs": 6 },
-    { "id": "304", "code": ["ffff0000","ff0000ff","ffff0000","ffff0000","ffff00ff"], "nbCouleurs": 6 },
-    { "id": "305", "code": ["ffffa500","ff0000ff","ffff00ff","ff0000ff","ffff00ff"], "nbCouleurs": 6 },
-    { "id": "306", "code": ["ffff00ff","ff00ff00","ff00ff00","ffffff00","ffffff00"], "nbCouleurs": 6 },
-    { "id": "307", "code": ["ff00ff00","ffffff00","ff00ff00","ffffff00","ffff00ff"], "nbCouleurs": 6 },
-    { "id": "308", "code": ["ff00ff00","ffffff00","ffff0000","ffffa500","ffffff00"], "nbCouleurs": 6 },
-    { "id": "309", "code": ["ffff0000","ffffff00","ff00ff00","ffffa500","ff00ff00"], "nbCouleurs": 6 },
-    { "id": "310", "code": ["ff00ff00","ffff00ff","ff0000ff","ffffff00","ffffa500"], "nbCouleurs": 6 },
-    { "id": "311", "code": ["ffffff00","ffffff00","ffffff00","ff0000ff","ff00ff00"], "nbCouleurs": 6 },   
-    { "id": "312", "code": ["ff000000","ffffa500","ffff0000","ffff00ff","ff00ff00"], "nbCouleurs": 7 },
-    { "id": "313", "code": ["ff000000","ff000000","ffff0000","ffffa500","ff000000"], "nbCouleurs": 7 },
-    { "id": "314", "code": ["ff0000ff","ff00ff00","ffffff00","ff0000ff","ff00ff00"], "nbCouleurs": 7 },
-    { "id": "315", "code": ["ffffff00","ffff00ff","ff000000","ffffff00","ffffa500"], "nbCouleurs": 7 },
-    { "id": "316", "code": ["ffffff00","ff000000","ff000000","ff00ff00","ff0000ff"], "nbCouleurs": 7 },
-    { "id": "317", "code": ["ffff0000","ffff00ff","ff00ff00","ffffff00","ff00ff00"], "nbCouleurs": 7 },
-    { "id": "318", "code": ["ff00ff00","ffff00ff","ffff0000","ffff00ff","ff00ff00"], "nbCouleurs": 7 },
-    { "id": "319", "code": ["ff000000","ff000000","ffff00ff","ffff00ff","ffffff00"], "nbCouleurs": 7 },
-    { "id": "320", "code": ["ff000000","ffff00ff","ffff0000","ffff0000","ff0000ff"], "nbCouleurs": 7 },
-    { "id": "321", "code": ["ff0000ff","ffffa500","ffffff00","ffffa500","ff00ff00"], "nbCouleurs": 7 },        
-    { "id": "322", "code": ["ff0000ff","ff00ff00","ffffff00","ff00ff00","ffffffff"], "nbCouleurs": 8 },
-    { "id": "323", "code": ["ffff00ff","ff000000","ffff00ff","ff0000ff","ffff0000"], "nbCouleurs": 8 },
-    { "id": "324", "code": ["ffffa500","ff00ff00","ffff0000","ffffa500","ffffff00"], "nbCouleurs": 8 },
-    { "id": "325", "code": ["ffffa500","ff0000ff","ffffff00","ffffffff","ff00ff00"], "nbCouleurs": 8 },
-    { "id": "326", "code": ["ff0000ff","ff0000ff","ff00ff00","ffffffff","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "327", "code": ["ff00ff00","ff00ff00","ff000000","ffff00ff","ffff0000"], "nbCouleurs": 8 },
-    { "id": "328", "code": ["ffffa500","ff0000ff","ff000000","ff000000","ffffff00"], "nbCouleurs": 8 },
-    { "id": "329", "code": ["ffff0000","ffffff00","ff00ff00","ff00ff00","ffffffff"], "nbCouleurs": 8 },
-    { "id": "330", "code": ["ffff00ff","ff0000ff","ffffff00","ffff0000","ffffffff"], "nbCouleurs": 8 },
-    { "id": "331", "code": ["ff00ff00","ff00ff00","ffff00ff","ffffa500","ff000000"], "nbCouleurs": 8 },
-    { "id": "332", "code": ["ffffffff","ffffa500","ff0000ff","ff0000ff","ffffa500"], "nbCouleurs": 8 },
-    { "id": "333", "code": ["ff000000","ffffffff","ffffa500","ffffa500","ff000000"], "nbCouleurs": 8 },
-    { "id": "334", "code": ["ffff0000","ff000000","ffffffff","ffffff00","ff00ff00"], "nbCouleurs": 8 },
-    { "id": "335", "code": ["ffff0000","ffffa500","ff0000ff","ff000000","ffffff00"], "nbCouleurs": 8 },
-    { "id": "336", "code": ["ffff00ff","ffff00ff","ffffffff","ff00ff00","ffff0000"], "nbCouleurs": 8 },
-    { "id": "337", "code": ["ff0000ff","ff0000ff","ffffa500","ffffffff","ff000000"], "nbCouleurs": 8 },
-    { "id": "338", "code": ["ff0000ff","ffffffff","ff00ff00","ff000000","ffff0000"], "nbCouleurs": 8 },
-    { "id": "339", "code": ["ff00ff00","ffff0000","ffff00ff","ff000000","ffffffff"], "nbCouleurs": 8 },
-    { "id": "340", "code": ["ffff0000","ffff0000","ffff00ff","ffffa500","ffffffff"], "nbCouleurs": 8 },
-    { "id": "341", "code": ["ffffa500","ffffffff","ff0000ff","ffffff00","ffffff00"], "nbCouleurs": 8 },    
-    { "id": "342", "code": ["ffff0000","ff00ff00","ffff0000","ff00ff00","ffff0000","ffff0000"], "nbCouleurs": 2 },
-    { "id": "343", "code": ["ffff0000","ffff0000","ffff0000","ffff0000","ff00ff00","ff00ff00"], "nbCouleurs": 2 },
-    { "id": "344", "code": ["ff00ff00","ffff0000","ffff0000","ff00ff00","ff00ff00","ffff0000"], "nbCouleurs": 2 },
-    { "id": "345", "code": ["ffff0000","ff00ff00","ff00ff00","ffff0000","ff00ff00","ff00ff00"], "nbCouleurs": 2 },
-    { "id": "346", "code": ["ff00ff00","ffff0000","ff00ff00","ff00ff00","ffff0000","ff00ff00"], "nbCouleurs": 2 },
-    { "id": "347", "code": ["ff00ff00","ffff0000","ff00ff00","ff00ff00","ff00ff00","ffff0000"], "nbCouleurs": 2 },
-    { "id": "348", "code": ["ff00ff00","ff00ff00","ffff0000","ff00ff00","ff00ff00","ffff0000"], "nbCouleurs": 2 },    
-    { "id": "349", "code": ["ff0000ff","ff00ff00","ff00ff00","ffff0000","ffff0000","ff0000ff"], "nbCouleurs": 3 },
-    { "id": "350", "code": ["ffff0000","ffff0000","ffff0000","ff00ff00","ffff0000","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "351", "code": ["ffff0000","ff0000ff","ff0000ff","ff00ff00","ff0000ff","ff0000ff"], "nbCouleurs": 3 },
-    { "id": "352", "code": ["ffff0000","ff0000ff","ff0000ff","ffff0000","ff00ff00","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "353", "code": ["ffff0000","ff0000ff","ffff0000","ff00ff00","ffff0000","ffff0000"], "nbCouleurs": 3 },
-    { "id": "354", "code": ["ff0000ff","ffff0000","ff0000ff","ff00ff00","ff0000ff","ff0000ff"], "nbCouleurs": 3 },
-    { "id": "355", "code": ["ffff0000","ff00ff00","ff0000ff","ff0000ff","ff0000ff","ff0000ff"], "nbCouleurs": 3 },
-    { "id": "356", "code": ["ff00ff00","ffff0000","ff00ff00","ffff0000","ff0000ff","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "357", "code": ["ffff0000","ffff0000","ff0000ff","ffff0000","ff0000ff","ff00ff00"], "nbCouleurs": 3 },
-    { "id": "358", "code": ["ff0000ff","ff0000ff","ff00ff00","ffff0000","ff0000ff","ff0000ff"], "nbCouleurs": 3 },            
-    { "id": "359", "code": ["ffffff00","ff00ff00","ffff0000","ffffff00","ffffff00","ffffff00"], "nbCouleurs": 4 },
-    { "id": "360", "code": ["ffffff00","ff0000ff","ffff0000","ffffff00","ff00ff00","ffffff00"], "nbCouleurs": 4 },
-    { "id": "361", "code": ["ff0000ff","ff0000ff","ff00ff00","ff00ff00","ffffff00","ffffff00"], "nbCouleurs": 4 },
-    { "id": "362", "code": ["ff00ff00","ff0000ff","ffff0000","ffffff00","ffffff00","ffffff00"], "nbCouleurs": 4 },
-    { "id": "363", "code": ["ff00ff00","ff00ff00","ff0000ff","ffffff00","ff0000ff","ff00ff00"], "nbCouleurs": 4 },
-    { "id": "364", "code": ["ffffff00","ff0000ff","ff0000ff","ffff0000","ff0000ff","ff0000ff"], "nbCouleurs": 4 },
-    { "id": "365", "code": ["ff00ff00","ffff0000","ffffff00","ff00ff00","ffff0000","ffffff00"], "nbCouleurs": 4 },
-    { "id": "366", "code": ["ff0000ff","ff0000ff","ff0000ff","ffff0000","ffffff00","ffffff00"], "nbCouleurs": 4 },
-    { "id": "367", "code": ["ffff0000","ffffff00","ff00ff00","ffff0000","ffff0000","ffffff00"], "nbCouleurs": 4 },
-    { "id": "368", "code": ["ffffff00","ffff0000","ffffff00","ffffff00","ffff0000","ffff0000"], "nbCouleurs": 4 },
-    { "id": "369", "code": ["ffffff00","ff0000ff","ffff0000","ffff0000","ffffff00","ffffff00"], "nbCouleurs": 4 },
-    { "id": "370", "code": ["ffff0000","ffff0000","ffff0000","ffff0000","ff00ff00","ff0000ff"], "nbCouleurs": 4 },
-    { "id": "371", "code": ["ff00ff00","ffffff00","ff0000ff","ff0000ff","ff00ff00","ff00ff00"], "nbCouleurs": 4 },
-    { "id": "372", "code": ["ffff0000","ffffff00","ff0000ff","ffff0000","ff00ff00","ffff0000"], "nbCouleurs": 4 },
-    { "id": "373", "code": ["ffffff00","ffff0000","ffff0000","ff0000ff","ffff0000","ff00ff00"], "nbCouleurs": 4 },
-    { "id": "374", "code": ["ff0000ff","ffff0000","ff0000ff","ff00ff00","ff0000ff","ffff0000"], "nbCouleurs": 4 },
-    { "id": "375", "code": ["ff0000ff","ff0000ff","ff0000ff","ff0000ff","ff0000ff","ff0000ff"], "nbCouleurs": 4 },
-    { "id": "376", "code": ["ffff0000","ffff0000","ffffff00","ff0000ff","ff0000ff","ff0000ff"], "nbCouleurs": 4 },
-    { "id": "377", "code": ["ffffff00","ff00ff00","ff00ff00","ff0000ff","ffff0000","ff0000ff"], "nbCouleurs": 4 },
-    { "id": "378", "code": ["ff0000ff","ffff0000","ff0000ff","ffffff00","ffffff00","ff00ff00"], "nbCouleurs": 4 },
-    { "id": "379", "code": ["ffff00ff","ff00ff00","ff00ff00","ffffff00","ffff00ff","ff00ff00"], "nbCouleurs": 5 },
-    { "id": "380", "code": ["ff0000ff","ffff0000","ffffff00","ffff0000","ffff00ff","ff0000ff"], "nbCouleurs": 5 },
-    { "id": "381", "code": ["ff00ff00","ffffff00","ffffff00","ffff00ff","ffff00ff","ffff00ff"], "nbCouleurs": 5 },
-    { "id": "382", "code": ["ffff00ff","ff00ff00","ffffff00","ffffff00","ffff00ff","ffff00ff"], "nbCouleurs": 5 },
-    { "id": "383", "code": ["ffff00ff","ff00ff00","ff0000ff","ffffff00","ffff00ff","ff00ff00"], "nbCouleurs": 5 },
-    { "id": "384", "code": ["ff00ff00","ffff00ff","ffff0000","ffff00ff","ff0000ff","ff0000ff"], "nbCouleurs": 5 },
-    { "id": "385", "code": ["ff0000ff","ffff0000","ffffff00","ff0000ff","ffffff00","ffff0000"], "nbCouleurs": 5 },
-    { "id": "386", "code": ["ffff0000","ffff0000","ff00ff00","ff00ff00","ffffff00","ff0000ff"], "nbCouleurs": 5 },
-    { "id": "387", "code": ["ff0000ff","ffffff00","ffffff00","ffff0000","ffff00ff","ffff00ff"], "nbCouleurs": 5 },
-    { "id": "388", "code": ["ff00ff00","ff0000ff","ffff0000","ff00ff00","ff00ff00","ffff0000"], "nbCouleurs": 5 },
-    { "id": "389", "code": ["ffffff00","ffff0000","ff00ff00","ffffff00","ffff00ff","ff0000ff"], "nbCouleurs": 6 },
-    { "id": "390", "code": ["ffff00ff","ffff00ff","ffffff00","ffffff00","ffff0000","ffff0000"], "nbCouleurs": 6 },
-    { "id": "391", "code": ["ffffa500","ff00ff00","ffff00ff","ffffff00","ff00ff00","ffffff00"], "nbCouleurs": 6 },
-    { "id": "392", "code": ["ffff00ff","ff00ff00","ff00ff00","ff00ff00","ffffff00","ff00ff00"], "nbCouleurs": 6 },
-    { "id": "393", "code": ["ff00ff00","ff00ff00","ffff0000","ffffff00","ffffa500","ffffa500"], "nbCouleurs": 6 },
-    { "id": "394", "code": ["ffffff00","ff00ff00","ff0000ff","ff00ff00","ffff00ff","ffffa500"], "nbCouleurs": 6 },
-    { "id": "395", "code": ["ff0000ff","ff0000ff","ff0000ff","ffffa500","ffff00ff","ff00ff00"], "nbCouleurs": 6 },
-    { "id": "396", "code": ["ff00ff00","ffff0000","ffffff00","ffff0000","ff0000ff","ff00ff00"], "nbCouleurs": 6 },
-    { "id": "397", "code": ["ff00ff00","ff0000ff","ffff00ff","ffff0000","ffff0000","ff0000ff"], "nbCouleurs": 6 },
-    { "id": "398", "code": ["ff00ff00","ffff00ff","ffffff00","ff0000ff","ff00ff00","ff00ff00"], "nbCouleurs": 6 },
-    { "id": "399", "code": ["ffffa500","ffff0000","ffff00ff","ff0000ff","ffff0000","ffffa500"], "nbCouleurs": 6 },
-    { "id": "400", "code": ["ff00ff00","ffffff00","ffffa500","ffffff00","ff0000ff","ffffff00"], "nbCouleurs": 6 },
-    { "id": "401", "code": ["ff00ff00","ffff00ff","ffffa500","ffff00ff","ffff0000","ffff00ff"], "nbCouleurs": 6 },
-    { "id": "402", "code": ["ffffff00","ff0000ff","ffffa500","ff00ff00","ff00ff00","ff0000ff"], "nbCouleurs": 6 },
-    { "id": "403", "code": ["ff00ff00","ffffff00","ffff0000","ffff00ff","ffff00ff","ffffff00"], "nbCouleurs": 6 },
-    { "id": "404", "code": ["ffffff00","ffffa500","ffffff00","ff00ff00","ffffa500","ffff00ff"], "nbCouleurs": 6 },
-    { "id": "405", "code": ["ffff0000","ff0000ff","ffff00ff","ffffff00","ff00ff00","ffff0000"], "nbCouleurs": 6 },
-    { "id": "406", "code": ["ffff0000","ff0000ff","ffff00ff","ffffa500","ff00ff00","ff00ff00"], "nbCouleurs": 6 },
-    { "id": "407", "code": ["ffff0000","ff0000ff","ffff0000","ff00ff00","ffff00ff","ffff0000"], "nbCouleurs": 6 },
-    { "id": "408", "code": ["ffff00ff","ff00ff00","ffff0000","ffff00ff","ffffa500","ffff0000"], "nbCouleurs": 6 },    
-    { "id": "409", "code": ["ffffff00","ff000000","ff000000","ffffff00","ffff00ff","ff0000ff"], "nbCouleurs": 7 },
-    { "id": "410", "code": ["ffffff00","ffff0000","ff000000","ff0000ff","ff000000","ffff00ff"], "nbCouleurs": 7 },
-    { "id": "411", "code": ["ffffff00","ff00ff00","ff000000","ff00ff00","ff000000","ffff00ff"], "nbCouleurs": 7 },
-    { "id": "412", "code": ["ff000000","ffff00ff","ffffa500","ff0000ff","ffffa500","ffffff00"], "nbCouleurs": 7 },
-    { "id": "413", "code": ["ff0000ff","ff000000","ffffff00","ffffa500","ffffff00","ffff00ff"], "nbCouleurs": 7 },
-    { "id": "414", "code": ["ff00ff00","ffffa500","ff0000ff","ffff0000","ffff0000","ff0000ff"], "nbCouleurs": 7 },
-    { "id": "415", "code": ["ff000000","ffffff00","ff00ff00","ffff00ff","ff000000","ffff0000"], "nbCouleurs": 7 },
-    { "id": "416", "code": ["ffff0000","ff000000","ffff00ff","ff0000ff","ff000000","ffff0000"], "nbCouleurs": 7 },
-    { "id": "417", "code": ["ffffff00","ffff0000","ff000000","ffff0000","ffffff00","ff0000ff"], "nbCouleurs": 7 },
-    { "id": "418", "code": ["ffff0000","ffff00ff","ffff0000","ffff00ff","ff000000","ffffff00"], "nbCouleurs": 7 },            
-    { "id": "419", "code": ["ffffa500","ff000000","ffffff00","ff000000","ffff0000","ffff00ff"], "nbCouleurs": 8 },
-    { "id": "420", "code": ["ff000000","ffff00ff","ff00ff00","ffffffff","ffff0000","ff000000"], "nbCouleurs": 8 },
-    { "id": "421", "code": ["ffffff00","ffff00ff","ffffff00","ffffffff","ff000000","ffff00ff"], "nbCouleurs": 8 },
-    { "id": "422", "code": ["ffff00ff","ffff0000","ff0000ff","ffffa500","ff000000","ff000000"], "nbCouleurs": 8 },
-    { "id": "423", "code": ["ffffffff","ff000000","ffffffff","ff0000ff","ff00ff00","ffff0000"], "nbCouleurs": 8 },
-    { "id": "424", "code": ["ffffa500","ffffff00","ffff00ff","ff000000","ffffa500","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "425", "code": ["ff000000","ffff0000","ff0000ff","ffffa500","ffffa500","ff00ff00"], "nbCouleurs": 8 },
-    { "id": "426", "code": ["ff00ff00","ffffa500","ffffffff","ff00ff00","ffff00ff","ff000000"], "nbCouleurs": 8 },
-    { "id": "427", "code": ["ffffa500","ff00ff00","ffffa500","ffff0000","ff0000ff","ffff0000"], "nbCouleurs": 8 },
-    { "id": "428", "code": ["ff0000ff","ff0000ff","ffffa500","ffff00ff","ff000000","ffffff00"], "nbCouleurs": 8 },
-    { "id": "429", "code": ["ff00ff00","ffff0000","ff0000ff","ffffff00","ffff00ff","ffffffff"], "nbCouleurs": 8 },
-    { "id": "430", "code": ["ffff00ff","ff0000ff","ffffffff","ffff00ff","ff00ff00","ff00ff00"], "nbCouleurs": 8 },
-    { "id": "431", "code": ["ff000000","ffff00ff","ff000000","ffffffff","ffffa500","ffffa500"], "nbCouleurs": 8 },
-    { "id": "432", "code": ["ff00ff00","ff00ff00","ffffffff","ff0000ff","ff0000ff","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "433", "code": ["ffffa500","ff0000ff","ff000000","ffff00ff","ffff00ff","ff000000"], "nbCouleurs": 8 },
-    { "id": "434", "code": ["ffffa500","ff0000ff","ff00ff00","ffffffff","ffffffff","ff000000"], "nbCouleurs": 8 },
-    { "id": "435", "code": ["ff000000","ff000000","ff000000","ffffa500","ffffffff","ffffffff"], "nbCouleurs": 8 },
-    { "id": "436", "code": ["ffff0000","ffffa500","ffff00ff","ff0000ff","ff00ff00","ffffff00"], "nbCouleurs": 8 },
-    { "id": "437", "code": ["ff000000","ff000000","ff00ff00","ffffff00","ffff0000","ff00ff00"], "nbCouleurs": 8 },
-    { "id": "438", "code": ["ffffffff","ff0000ff","ffff0000","ffff0000","ffffa500","ff000000"], "nbCouleurs": 8 },
-    { "id": "439", "code": ["ff000000","ffff00ff","ffff00ff","ff000000","ffff0000","ff000000"], "nbCouleurs": 8 },
-    { "id": "440", "code": ["ffffffff","ff0000ff","ffffff00","ff0000ff","ff000000","ffffff00"], "nbCouleurs": 8 },
-    { "id": "441", "code": ["ffffffff","ffffa500","ffffa500","ff000000","ff000000","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "442", "code": ["ffffff00","ffffffff","ff00ff00","ffff0000","ff000000","ffff0000"], "nbCouleurs": 8 },
-    { "id": "443", "code": ["ffffffff","ffff0000","ffffa500","ffffa500","ffffa500","ffff00ff"], "nbCouleurs": 8 },
-    { "id": "444", "code": ["ffff0000","ff0000ff","ff000000","ff0000ff","ffffa500","ffff00ff"], "nbCouleurs": 8 },
-    { "id": "445", "code": ["ff0000ff","ffffffff","ff0000ff","ffffa500","ffff00ff","ffffffff"], "nbCouleurs": 8 },
-    { "id": "446", "code": ["ffff0000","ffffffff","ffffffff","ffffff00","ff0000ff","ffffa500"], "nbCouleurs": 8 },
-    { "id": "447", "code": ["ffffff00","ffffa500","ff0000ff","ff0000ff","ffffff00","ffff00ff"], "nbCouleurs": 8 },
-    { "id": "448", "code": ["ffffffff","ffffffff","ffffa500","ffffffff","ffffffff","ff0000ff"], "nbCouleurs": 8 },
-    { "id": "449", "code": ["ff00ff00","ff0000ff","ffffff00","ffff00ff","ff0000ff","ffff0000"], "nbCouleurs": 8 } 
+    {
+      "id": "0",
+      "code": [
+        "ff0000ff",
+        "ffffa500",
+        "ffffa500",
+        "ffff0000",
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "1",
+      "code": [
+        "ffffa500",
+        "ff00ff00",
+        "ffffff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "2",
+      "code": [
+        "ffff00ff",
+        "ffff0000",
+        "ffffa500",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "3",
+      "code": [
+        "ff000000",
+        "ffffff00",
+        "ffffff00",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "4",
+      "code": [
+        "ffffff00",
+        "ffffa500",
+        "ffffffff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "5",
+      "code": [
+        "ff000000",
+        "ff0000ff",
+        "ffff0000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "6",
+      "code": [
+        "ff000000",
+        "ff000000",
+        "ff00ff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "7",
+      "code": [
+        "ff0000ff",
+        "ffffa500",
+        "ffffa500",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "8",
+      "code": [
+        "ff000000",
+        "ff00ff00",
+        "ffff00ff",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "9",
+      "code": [
+        "ff000000",
+        "ffffff00",
+        "ffff0000",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "10",
+      "code": [
+        "ffffa500",
+        "ffff00ff",
+        "ffff00ff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "11",
+      "code": [
+        "ff0000ff",
+        "ff000000",
+        "ffffffff",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "12",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffffff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "13",
+      "code": [
+        "ffffa500",
+        "ff0000ff",
+        "ffffa500",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "14",
+      "code": [
+        "ff00ff00",
+        "ffff00ff",
+        "ffffffff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "15",
+      "code": [
+        "ffffff00",
+        "ff000000",
+        "ffffff00",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "16",
+      "code": [
+        "ffffffff",
+        "ffffff00",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "17",
+      "code": [
+        "ff00ff00",
+        "ffff00ff",
+        "ff00ff00",
+        "ffffa500"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "18",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "19",
+      "code": [
+        "ffffff00",
+        "ffff00ff",
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "20",
+      "code": [
+        "ffff0000",
+        "ffffff00",
+        "ffff00ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "21",
+      "code": [
+        "ff000000",
+        "ff00ff00",
+        "ffff0000",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "22",
+      "code": [
+        "ffff0000",
+        "ff00ff00",
+        "ffff00ff",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "23",
+      "code": [
+        "ffffffff",
+        "ffffff00",
+        "ffffffff",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "24",
+      "code": [
+        "ff000000",
+        "ffffa500",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "25",
+      "code": [
+        "ffffa500",
+        "ffff0000",
+        "ffffff00",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "26",
+      "code": [
+        "ff000000",
+        "ffff00ff",
+        "ffffa500",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "27",
+      "code": [
+        "ff0000ff",
+        "ffff0000",
+        "ffff0000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "28",
+      "code": [
+        "ff000000",
+        "ff000000",
+        "ffff00ff",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "29",
+      "code": [
+        "ffffa500",
+        "ffff0000",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "30",
+      "code": [
+        "ffffff00",
+        "ffffffff",
+        "ffff0000",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "31",
+      "code": [
+        "ffffff00",
+        "ffff00ff",
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "32",
+      "code": [
+        "ffffff00",
+        "ffffff00",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "33",
+      "code": [
+        "ffff0000",
+        "ffff00ff",
+        "ff000000",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "34",
+      "code": [
+        "ff00ff00",
+        "ffffffff",
+        "ffffffff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "35",
+      "code": [
+        "ffffa500",
+        "ffffff00",
+        "ffffffff",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "36",
+      "code": [
+        "ffffff00",
+        "ff000000",
+        "ffffff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "37",
+      "code": [
+        "ffffa500",
+        "ffffa500",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "38",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ffffa500",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "39",
+      "code": [
+        "ff000000",
+        "ff000000",
+        "ffffa500",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "40",
+      "code": [
+        "ffffff00",
+        "ffffa500",
+        "ffffa500",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "41",
+      "code": [
+        "ffffffff",
+        "ff0000ff",
+        "ffffff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "42",
+      "code": [
+        "ffffa500",
+        "ffffffff",
+        "ff00ff00",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "43",
+      "code": [
+        "ff000000",
+        "ff000000",
+        "ff000000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "44",
+      "code": [
+        "ffffffff",
+        "ffff00ff",
+        "ffffffff",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "45",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "46",
+      "code": [
+        "ffff00ff",
+        "ffff00ff",
+        "ffffff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "47",
+      "code": [
+        "ffff00ff",
+        "ffff00ff",
+        "ffffffff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "48",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ffffa500",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "49",
+      "code": [
+        "ff0000ff",
+        "ffff0000",
+        "ffffffff",
+        "ffffa500"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "50",
+      "code": [
+        "ff00ff00",
+        "ffffa500",
+        "ffff0000",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "51",
+      "code": [
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "52",
+      "code": [
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "53",
+      "code": [
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "54",
+      "code": [
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "55",
+      "code": [
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "56",
+      "code": [
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "57",
+      "code": [
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "58",
+      "code": [
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "59",
+      "code": [
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "60",
+      "code": [
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "61",
+      "code": [
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "62",
+      "code": [
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "63",
+      "code": [
+        "ffff0000",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "64",
+      "code": [
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "65",
+      "code": [
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "66",
+      "code": [
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "67",
+      "code": [
+        "ffffff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "68",
+      "code": [
+        "ffffff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "69",
+      "code": [
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "70",
+      "code": [
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "71",
+      "code": [
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "72",
+      "code": [
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "73",
+      "code": [
+        "ffff0000",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "74",
+      "code": [
+        "ffff0000",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "75",
+      "code": [
+        "ffffff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "76",
+      "code": [
+        "ffffff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "77",
+      "code": [
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "78",
+      "code": [
+        "ff00ff00",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "79",
+      "code": [
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "80",
+      "code": [
+        "ffff00ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "81",
+      "code": [
+        "ffff0000",
+        "ffffa500"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "82",
+      "code": [
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "83",
+      "code": [
+        "ffff00ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "84",
+      "code": [
+        "ff00ff00",
+        "ffffa500"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "85",
+      "code": [
+        "ff0000ff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "86",
+      "code": [
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "87",
+      "code": [
+        "ff00ff00",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "88",
+      "code": [
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "89",
+      "code": [
+        "ffff00ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "90",
+      "code": [
+        "ffff0000",
+        "ffffa500"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "91",
+      "code": [
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "92",
+      "code": [
+        "ffff00ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "93",
+      "code": [
+        "ff00ff00",
+        "ffffa500"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "94",
+      "code": [
+        "ff0000ff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "95",
+      "code": [
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "96",
+      "code": [
+        "ff00ff00",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "97",
+      "code": [
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "98",
+      "code": [
+        "ffff00ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "99",
+      "code": [
+        "ffff0000",
+        "ffffa500"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "100",
+      "code": [
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "101",
+      "code": [
+        "ffff00ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "102",
+      "code": [
+        "ff00ff00",
+        "ffffa500"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "103",
+      "code": [
+        "ff0000ff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "104",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "105",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "106",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "107",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "108",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "109",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "110",
+      "code": [
+        "ff0000ff",
+        "ffff0000",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "111",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "112",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "113",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "114",
+      "code": [
+        "ff00ff00",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "115",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "116",
+      "code": [
+        "ffff0000",
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "117",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "118",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "119",
+      "code": [
+        "ff0000ff",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "120",
+      "code": [
+        "ff0000ff",
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "121",
+      "code": [
+        "ff0000ff",
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "122",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "123",
+      "code": [
+        "ffffff00",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "124",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "125",
+      "code": [
+        "ffffff00",
+        "ffffff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "126",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "127",
+      "code": [
+        "ffff0000",
+        "ff00ff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "128",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "129",
+      "code": [
+        "ffff0000",
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "130",
+      "code": [
+        "ff00ff00",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "131",
+      "code": [
+        "ffff00ff",
+        "ffff0000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "132",
+      "code": [
+        "ff0000ff",
+        "ffff00ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "133",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "134",
+      "code": [
+        "ff0000ff",
+        "ffff00ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "135",
+      "code": [
+        "ffffff00",
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "136",
+      "code": [
+        "ff00ff00",
+        "ffffff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "137",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "138",
+      "code": [
+        "ffff00ff",
+        "ff00ff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "139",
+      "code": [
+        "ff00ff00",
+        "ffff00ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "140",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "141",
+      "code": [
+        "ffffa500",
+        "ffffa500",
+        "ffffa500"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "142",
+      "code": [
+        "ffffff00",
+        "ff00ff00",
+        "ffffa500"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "143",
+      "code": [
+        "ffff00ff",
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "144",
+      "code": [
+        "ffff0000",
+        "ffffff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "145",
+      "code": [
+        "ff0000ff",
+        "ffffa500",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "146",
+      "code": [
+        "ff00ff00",
+        "ffffff00",
+        "ffffa500"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "147",
+      "code": [
+        "ff0000ff",
+        "ff0000ff",
+        "ffffa500"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "148",
+      "code": [
+        "ffffff00",
+        "ff00ff00",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "149",
+      "code": [
+        "ffffa500",
+        "ffffff00",
+        "ffffa500"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "150",
+      "code": [
+        "ffffa500",
+        "ffff00ff",
+        "ffffa500"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "151",
+      "code": [
+        "ff000000",
+        "ff0000ff",
+        "ffffa500"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "152",
+      "code": [
+        "ffffa500",
+        "ffffff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "153",
+      "code": [
+        "ff0000ff",
+        "ffffa500",
+        "ffffa500"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "154",
+      "code": [
+        "ffffa500",
+        "ff0000ff",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "155",
+      "code": [
+        "ffffa500",
+        "ffffa500",
+        "ffffa500"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "156",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "157",
+      "code": [
+        "ff0000ff",
+        "ff0000ff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "158",
+      "code": [
+        "ff0000ff",
+        "ffffff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "159",
+      "code": [
+        "ff00ff00",
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "160",
+      "code": [
+        "ffff00ff",
+        "ffff00ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "161",
+      "code": [
+        "ffffff00",
+        "ff0000ff",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "162",
+      "code": [
+        "ff000000",
+        "ffffffff",
+        "ffffa500"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "163",
+      "code": [
+        "ffffffff",
+        "ff000000",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "164",
+      "code": [
+        "ffff0000",
+        "ffffff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "165",
+      "code": [
+        "ff0000ff",
+        "ffffff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "166",
+      "code": [
+        "ffffff00",
+        "ffffff00",
+        "ffffa500"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "167",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "168",
+      "code": [
+        "ffffff00",
+        "ff00ff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "169",
+      "code": [
+        "ffff0000",
+        "ff00ff00",
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "170",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "171",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "172",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "173",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "174",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "175",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "176",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "177",
+      "code": [
+        "ff00ff00",
+        "ff0000ff",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "178",
+      "code": [
+        "ff00ff00",
+        "ff0000ff",
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "179",
+      "code": [
+        "ff0000ff",
+        "ffff0000",
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "180",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "181",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "182",
+      "code": [
+        "ff0000ff",
+        "ffff0000",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "183",
+      "code": [
+        "ff0000ff",
+        "ff00ff00",
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "184",
+      "code": [
+        "ff00ff00",
+        "ff0000ff",
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "185",
+      "code": [
+        "ffff0000",
+        "ffffff00",
+        "ffff0000",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "186",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "187",
+      "code": [
+        "ff0000ff",
+        "ffff0000",
+        "ffff0000",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "188",
+      "code": [
+        "ff0000ff",
+        "ff0000ff",
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "189",
+      "code": [
+        "ffffff00",
+        "ffff0000",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "190",
+      "code": [
+        "ffffff00",
+        "ff00ff00",
+        "ffff0000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "191",
+      "code": [
+        "ffffff00",
+        "ff00ff00",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "192",
+      "code": [
+        "ffff0000",
+        "ff00ff00",
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "193",
+      "code": [
+        "ffff0000",
+        "ff00ff00",
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "194",
+      "code": [
+        "ffffff00",
+        "ff0000ff",
+        "ffff0000",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "195",
+      "code": [
+        "ffff0000",
+        "ffffff00",
+        "ffffff00",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "196",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ffff00ff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "197",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "198",
+      "code": [
+        "ffffff00",
+        "ffffff00",
+        "ffff0000",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "199",
+      "code": [
+        "ff0000ff",
+        "ffff0000",
+        "ff00ff00",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "200",
+      "code": [
+        "ff00ff00",
+        "ff0000ff",
+        "ffff0000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "201",
+      "code": [
+        "ff0000ff",
+        "ff0000ff",
+        "ffff00ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "202",
+      "code": [
+        "ffffff00",
+        "ffffff00",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "203",
+      "code": [
+        "ff0000ff",
+        "ffffff00",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "204",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "205",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffffff00",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "206",
+      "code": [
+        "ffffff00",
+        "ffff00ff",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "207",
+      "code": [
+        "ffffa500",
+        "ff00ff00",
+        "ff00ff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "208",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffffff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "209",
+      "code": [
+        "ffffa500",
+        "ffffff00",
+        "ffffff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "210",
+      "code": [
+        "ffffa500",
+        "ffffa500",
+        "ffffff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "211",
+      "code": [
+        "ffff00ff",
+        "ffffff00",
+        "ffffa500",
+        "ffffff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "212",
+      "code": [
+        "ffffff00",
+        "ffffff00",
+        "ffffff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "213",
+      "code": [
+        "ff00ff00",
+        "ff0000ff",
+        "ffff0000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "214",
+      "code": [
+        "ffffff00",
+        "ffff0000",
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "215",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ffff00ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "216",
+      "code": [
+        "ffffa500",
+        "ffff00ff",
+        "ffffa500",
+        "ffffa500"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "217",
+      "code": [
+        "ff000000",
+        "ff0000ff",
+        "ff000000",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "218",
+      "code": [
+        "ffffff00",
+        "ff0000ff",
+        "ffff0000",
+        "ffffa500"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "219",
+      "code": [
+        "ffff0000",
+        "ffffa500",
+        "ffff00ff",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "220",
+      "code": [
+        "ffffff00",
+        "ffffa500",
+        "ff000000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "221",
+      "code": [
+        "ff00ff00",
+        "ff0000ff",
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "222",
+      "code": [
+        "ff0000ff",
+        "ffffff00",
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "223",
+      "code": [
+        "ffffa500",
+        "ff00ff00",
+        "ff00ff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "224",
+      "code": [
+        "ff000000",
+        "ffffa500",
+        "ffffff00",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "225",
+      "code": [
+        "ff000000",
+        "ffff00ff",
+        "ffff00ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "226",
+      "code": [
+        "ffffa500",
+        "ff0000ff",
+        "ffff0000",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "227",
+      "code": [
+        "ffff00ff",
+        "ff00ff00",
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "228",
+      "code": [
+        "ffffff00",
+        "ffffff00",
+        "ff000000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "229",
+      "code": [
+        "ffff00ff",
+        "ffffff00",
+        "ffffa500",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "230",
+      "code": [
+        "ff0000ff",
+        "ffffa500",
+        "ffffffff",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "231",
+      "code": [
+        "ffffff00",
+        "ff000000",
+        "ffffff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "232",
+      "code": [
+        "ffffff00",
+        "ffffff00",
+        "ffffffff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "233",
+      "code": [
+        "0ff00",
+        "ffff0000",
+        "ff000000",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "234",
+      "code": [
+        "ffff0000",
+        "ffffa500",
+        "ffff00ff",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "235",
+      "code": [
+        "ff0000ff",
+        "ffff00ff",
+        "ffff0000",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "236",
+      "code": [
+        "ffffa500",
+        "ffff00ff",
+        "ffff00ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "237",
+      "code": [
+        "ffff0000",
+        "ffff00ff",
+        "ff0000ff",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "238",
+      "code": [
+        "ffffa500",
+        "ff00ff00",
+        "ffffff00",
+        "ffffa500"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "239",
+      "code": [
+        "ff000000",
+        "ff000000",
+        "ffffa500",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "240",
+      "code": [
+        "ffff00ff",
+        "ffff00ff",
+        "ff00ff00",
+        "ffffa500"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "241",
+      "code": [
+        "ffffa500",
+        "ff000000",
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "242",
+      "code": [
+        "ffff0000",
+        "ffff00ff",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "243",
+      "code": [
+        "ff0000ff",
+        "ffff0000",
+        "ff000000",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "244",
+      "code": [
+        "ffff0000",
+        "ff00ff00",
+        "ffffa500",
+        "ffffa500"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "245",
+      "code": [
+        "ffff00ff",
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "246",
+      "code": [
+        "ffff0000",
+        "ffffffff",
+        "ff000000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "247",
+      "code": [
+        "ff00ff00",
+        "ffffa500",
+        "ff0000ff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "248",
+      "code": [
+        "ff000000",
+        "ffffff00",
+        "ffffffff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "249",
+      "code": [
+        "ff000000",
+        "ffffff00",
+        "ffffff00",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "250",
+      "code": [
+        "ff0000ff",
+        "ff0000ff",
+        "ff000000",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "251",
+      "code": [
+        "ff0000ff",
+        "ff000000",
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "252",
+      "code": [
+        "ffff00ff",
+        "ff00ff00",
+        "ffffa500",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "253",
+      "code": [
+        "ff0000ff",
+        "ffffff00",
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "254",
+      "code": [
+        "ffffffff",
+        "ffffa500",
+        "ff0000ff",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "255",
+      "code": [
+        "ff00ff00",
+        "ffffff00",
+        "ff000000",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "256",
+      "code": [
+        "ff000000",
+        "ffffa500",
+        "ffff00ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "257",
+      "code": [
+        "ffff00ff",
+        "ff0000ff",
+        "ffffffff",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "258",
+      "code": [
+        "ffff0000",
+        "ff000000",
+        "ffff0000",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "259",
+      "code": [
+        "ffffff00",
+        "ffffa500",
+        "ffffff00",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "260",
+      "code": [
+        "ffff00ff",
+        "ff00ff00",
+        "ffff00ff",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "261",
+      "code": [
+        "ff0000ff",
+        "ffff0000",
+        "ffffa500",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "262",
+      "code": [
+        "ffff0000",
+        "ffffffff",
+        "ff00ff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "263",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "264",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000",
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "265",
+      "code": [
+        "ffff0000",
+        "ff00ff00",
+        "ffff0000",
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "266",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ffff0000",
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "267",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "268",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "269",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ffff0000",
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "270",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000",
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "271",
+      "code": [
+        "ffff0000",
+        "ff00ff00",
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "272",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ffff0000",
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "273",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ff0000ff",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "274",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "275",
+      "code": [
+        "ff0000ff",
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "276",
+      "code": [
+        "ff0000ff",
+        "ff0000ff",
+        "ffff0000",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "277",
+      "code": [
+        "ff00ff00",
+        "ff0000ff",
+        "ff0000ff",
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "278",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "279",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ffff0000",
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "280",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "281",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000",
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "282",
+      "code": [
+        "ff00ff00",
+        "ffffff00",
+        "ffff0000",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "283",
+      "code": [
+        "ff0000ff",
+        "ffffff00",
+        "ff0000ff",
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "284",
+      "code": [
+        "ffff0000",
+        "ffffff00",
+        "ffff0000",
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "285",
+      "code": [
+        "ffff0000",
+        "ffffff00",
+        "ff00ff00",
+        "ffffff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "286",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ffff0000",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "287",
+      "code": [
+        "ff0000ff",
+        "ff00ff00",
+        "ffff0000",
+        "ff0000ff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "288",
+      "code": [
+        "ff00ff00",
+        "ffffff00",
+        "ff00ff00",
+        "ff0000ff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "289",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ff0000ff",
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "290",
+      "code": [
+        "ff0000ff",
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "291",
+      "code": [
+        "ffffff00",
+        "ff00ff00",
+        "ff00ff00",
+        "ffffff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "292",
+      "code": [
+        "ffff00ff",
+        "ff00ff00",
+        "ffffff00",
+        "ffff00ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "293",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ff0000ff",
+        "ffff00ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "294",
+      "code": [
+        "ffffff00",
+        "ff0000ff",
+        "ffffff00",
+        "ff0000ff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "295",
+      "code": [
+        "ffff00ff",
+        "ff00ff00",
+        "ff0000ff",
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "296",
+      "code": [
+        "ffffff00",
+        "ff00ff00",
+        "ffff00ff",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "297",
+      "code": [
+        "ffffff00",
+        "ffffff00",
+        "ff0000ff",
+        "ffff00ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "298",
+      "code": [
+        "ff0000ff",
+        "ffff00ff",
+        "ffff00ff",
+        "ffff00ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "299",
+      "code": [
+        "ff0000ff",
+        "ff00ff00",
+        "ffffff00",
+        "ff0000ff",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "300",
+      "code": [
+        "ffff0000",
+        "ffff00ff",
+        "ffff0000",
+        "ffff00ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "301",
+      "code": [
+        "ffffff00",
+        "ffffff00",
+        "ff00ff00",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "302",
+      "code": [
+        "ffff0000",
+        "ffffff00",
+        "ffffa500",
+        "ffffa500",
+        "ffffff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "303",
+      "code": [
+        "ffff00ff",
+        "ffff00ff",
+        "ff0000ff",
+        "ffffff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "304",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ffff0000",
+        "ffff0000",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "305",
+      "code": [
+        "ffffa500",
+        "ff0000ff",
+        "ffff00ff",
+        "ff0000ff",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "306",
+      "code": [
+        "ffff00ff",
+        "ff00ff00",
+        "ff00ff00",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "307",
+      "code": [
+        "ff00ff00",
+        "ffffff00",
+        "ff00ff00",
+        "ffffff00",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "308",
+      "code": [
+        "ff00ff00",
+        "ffffff00",
+        "ffff0000",
+        "ffffa500",
+        "ffffff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "309",
+      "code": [
+        "ffff0000",
+        "ffffff00",
+        "ff00ff00",
+        "ffffa500",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "310",
+      "code": [
+        "ff00ff00",
+        "ffff00ff",
+        "ff0000ff",
+        "ffffff00",
+        "ffffa500"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "311",
+      "code": [
+        "ffffff00",
+        "ffffff00",
+        "ffffff00",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "312",
+      "code": [
+        "ff000000",
+        "ffffa500",
+        "ffff0000",
+        "ffff00ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "313",
+      "code": [
+        "ff000000",
+        "ff000000",
+        "ffff0000",
+        "ffffa500",
+        "ff000000"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "314",
+      "code": [
+        "ff0000ff",
+        "ff00ff00",
+        "ffffff00",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "315",
+      "code": [
+        "ffffff00",
+        "ffff00ff",
+        "ff000000",
+        "ffffff00",
+        "ffffa500"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "316",
+      "code": [
+        "ffffff00",
+        "ff000000",
+        "ff000000",
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "317",
+      "code": [
+        "ffff0000",
+        "ffff00ff",
+        "ff00ff00",
+        "ffffff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "318",
+      "code": [
+        "ff00ff00",
+        "ffff00ff",
+        "ffff0000",
+        "ffff00ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "319",
+      "code": [
+        "ff000000",
+        "ff000000",
+        "ffff00ff",
+        "ffff00ff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "320",
+      "code": [
+        "ff000000",
+        "ffff00ff",
+        "ffff0000",
+        "ffff0000",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "321",
+      "code": [
+        "ff0000ff",
+        "ffffa500",
+        "ffffff00",
+        "ffffa500",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "322",
+      "code": [
+        "ff0000ff",
+        "ff00ff00",
+        "ffffff00",
+        "ff00ff00",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "323",
+      "code": [
+        "ffff00ff",
+        "ff000000",
+        "ffff00ff",
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "324",
+      "code": [
+        "ffffa500",
+        "ff00ff00",
+        "ffff0000",
+        "ffffa500",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "325",
+      "code": [
+        "ffffa500",
+        "ff0000ff",
+        "ffffff00",
+        "ffffffff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "326",
+      "code": [
+        "ff0000ff",
+        "ff0000ff",
+        "ff00ff00",
+        "ffffffff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "327",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ff000000",
+        "ffff00ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "328",
+      "code": [
+        "ffffa500",
+        "ff0000ff",
+        "ff000000",
+        "ff000000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "329",
+      "code": [
+        "ffff0000",
+        "ffffff00",
+        "ff00ff00",
+        "ff00ff00",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "330",
+      "code": [
+        "ffff00ff",
+        "ff0000ff",
+        "ffffff00",
+        "ffff0000",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "331",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffff00ff",
+        "ffffa500",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "332",
+      "code": [
+        "ffffffff",
+        "ffffa500",
+        "ff0000ff",
+        "ff0000ff",
+        "ffffa500"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "333",
+      "code": [
+        "ff000000",
+        "ffffffff",
+        "ffffa500",
+        "ffffa500",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "334",
+      "code": [
+        "ffff0000",
+        "ff000000",
+        "ffffffff",
+        "ffffff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "335",
+      "code": [
+        "ffff0000",
+        "ffffa500",
+        "ff0000ff",
+        "ff000000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "336",
+      "code": [
+        "ffff00ff",
+        "ffff00ff",
+        "ffffffff",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "337",
+      "code": [
+        "ff0000ff",
+        "ff0000ff",
+        "ffffa500",
+        "ffffffff",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "338",
+      "code": [
+        "ff0000ff",
+        "ffffffff",
+        "ff00ff00",
+        "ff000000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "339",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ffff00ff",
+        "ff000000",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "340",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ffff00ff",
+        "ffffa500",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "341",
+      "code": [
+        "ffffa500",
+        "ffffffff",
+        "ff0000ff",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "342",
+      "code": [
+        "ffff0000",
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00",
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "343",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ffff0000",
+        "ffff0000",
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "344",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ffff0000",
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "345",
+      "code": [
+        "ffff0000",
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "346",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "347",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00",
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "348",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 2
+    },
+    {
+      "id": "349",
+      "code": [
+        "ff0000ff",
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000",
+        "ffff0000",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "350",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ffff0000",
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "351",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ff0000ff",
+        "ff00ff00",
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "352",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ff0000ff",
+        "ffff0000",
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "353",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ffff0000",
+        "ff00ff00",
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "354",
+      "code": [
+        "ff0000ff",
+        "ffff0000",
+        "ff0000ff",
+        "ff00ff00",
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "355",
+      "code": [
+        "ffff0000",
+        "ff00ff00",
+        "ff0000ff",
+        "ff0000ff",
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "356",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ff00ff00",
+        "ffff0000",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "357",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ff0000ff",
+        "ffff0000",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "358",
+      "code": [
+        "ff0000ff",
+        "ff0000ff",
+        "ff00ff00",
+        "ffff0000",
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 3
+    },
+    {
+      "id": "359",
+      "code": [
+        "ffffff00",
+        "ff00ff00",
+        "ffff0000",
+        "ffffff00",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "360",
+      "code": [
+        "ffffff00",
+        "ff0000ff",
+        "ffff0000",
+        "ffffff00",
+        "ff00ff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "361",
+      "code": [
+        "ff0000ff",
+        "ff0000ff",
+        "ff00ff00",
+        "ff00ff00",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "362",
+      "code": [
+        "ff00ff00",
+        "ff0000ff",
+        "ffff0000",
+        "ffffff00",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "363",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ff0000ff",
+        "ffffff00",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "364",
+      "code": [
+        "ffffff00",
+        "ff0000ff",
+        "ff0000ff",
+        "ffff0000",
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "365",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ffffff00",
+        "ff00ff00",
+        "ffff0000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "366",
+      "code": [
+        "ff0000ff",
+        "ff0000ff",
+        "ff0000ff",
+        "ffff0000",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "367",
+      "code": [
+        "ffff0000",
+        "ffffff00",
+        "ff00ff00",
+        "ffff0000",
+        "ffff0000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "368",
+      "code": [
+        "ffffff00",
+        "ffff0000",
+        "ffffff00",
+        "ffffff00",
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "369",
+      "code": [
+        "ffffff00",
+        "ff0000ff",
+        "ffff0000",
+        "ffff0000",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "370",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ffff0000",
+        "ffff0000",
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "371",
+      "code": [
+        "ff00ff00",
+        "ffffff00",
+        "ff0000ff",
+        "ff0000ff",
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "372",
+      "code": [
+        "ffff0000",
+        "ffffff00",
+        "ff0000ff",
+        "ffff0000",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "373",
+      "code": [
+        "ffffff00",
+        "ffff0000",
+        "ffff0000",
+        "ff0000ff",
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "374",
+      "code": [
+        "ff0000ff",
+        "ffff0000",
+        "ff0000ff",
+        "ff00ff00",
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "375",
+      "code": [
+        "ff0000ff",
+        "ff0000ff",
+        "ff0000ff",
+        "ff0000ff",
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "376",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ffffff00",
+        "ff0000ff",
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "377",
+      "code": [
+        "ffffff00",
+        "ff00ff00",
+        "ff00ff00",
+        "ff0000ff",
+        "ffff0000",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "378",
+      "code": [
+        "ff0000ff",
+        "ffff0000",
+        "ff0000ff",
+        "ffffff00",
+        "ffffff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 4
+    },
+    {
+      "id": "379",
+      "code": [
+        "ffff00ff",
+        "ff00ff00",
+        "ff00ff00",
+        "ffffff00",
+        "ffff00ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "380",
+      "code": [
+        "ff0000ff",
+        "ffff0000",
+        "ffffff00",
+        "ffff0000",
+        "ffff00ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "381",
+      "code": [
+        "ff00ff00",
+        "ffffff00",
+        "ffffff00",
+        "ffff00ff",
+        "ffff00ff",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "382",
+      "code": [
+        "ffff00ff",
+        "ff00ff00",
+        "ffffff00",
+        "ffffff00",
+        "ffff00ff",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "383",
+      "code": [
+        "ffff00ff",
+        "ff00ff00",
+        "ff0000ff",
+        "ffffff00",
+        "ffff00ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "384",
+      "code": [
+        "ff00ff00",
+        "ffff00ff",
+        "ffff0000",
+        "ffff00ff",
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "385",
+      "code": [
+        "ff0000ff",
+        "ffff0000",
+        "ffffff00",
+        "ff0000ff",
+        "ffffff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "386",
+      "code": [
+        "ffff0000",
+        "ffff0000",
+        "ff00ff00",
+        "ff00ff00",
+        "ffffff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "387",
+      "code": [
+        "ff0000ff",
+        "ffffff00",
+        "ffffff00",
+        "ffff0000",
+        "ffff00ff",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "388",
+      "code": [
+        "ff00ff00",
+        "ff0000ff",
+        "ffff0000",
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 5
+    },
+    {
+      "id": "389",
+      "code": [
+        "ffffff00",
+        "ffff0000",
+        "ff00ff00",
+        "ffffff00",
+        "ffff00ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "390",
+      "code": [
+        "ffff00ff",
+        "ffff00ff",
+        "ffffff00",
+        "ffffff00",
+        "ffff0000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "391",
+      "code": [
+        "ffffa500",
+        "ff00ff00",
+        "ffff00ff",
+        "ffffff00",
+        "ff00ff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "392",
+      "code": [
+        "ffff00ff",
+        "ff00ff00",
+        "ff00ff00",
+        "ff00ff00",
+        "ffffff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "393",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffff0000",
+        "ffffff00",
+        "ffffa500",
+        "ffffa500"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "394",
+      "code": [
+        "ffffff00",
+        "ff00ff00",
+        "ff0000ff",
+        "ff00ff00",
+        "ffff00ff",
+        "ffffa500"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "395",
+      "code": [
+        "ff0000ff",
+        "ff0000ff",
+        "ff0000ff",
+        "ffffa500",
+        "ffff00ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "396",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ffffff00",
+        "ffff0000",
+        "ff0000ff",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "397",
+      "code": [
+        "ff00ff00",
+        "ff0000ff",
+        "ffff00ff",
+        "ffff0000",
+        "ffff0000",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "398",
+      "code": [
+        "ff00ff00",
+        "ffff00ff",
+        "ffffff00",
+        "ff0000ff",
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "399",
+      "code": [
+        "ffffa500",
+        "ffff0000",
+        "ffff00ff",
+        "ff0000ff",
+        "ffff0000",
+        "ffffa500"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "400",
+      "code": [
+        "ff00ff00",
+        "ffffff00",
+        "ffffa500",
+        "ffffff00",
+        "ff0000ff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "401",
+      "code": [
+        "ff00ff00",
+        "ffff00ff",
+        "ffffa500",
+        "ffff00ff",
+        "ffff0000",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "402",
+      "code": [
+        "ffffff00",
+        "ff0000ff",
+        "ffffa500",
+        "ff00ff00",
+        "ff00ff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "403",
+      "code": [
+        "ff00ff00",
+        "ffffff00",
+        "ffff0000",
+        "ffff00ff",
+        "ffff00ff",
+        "ffffff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "404",
+      "code": [
+        "ffffff00",
+        "ffffa500",
+        "ffffff00",
+        "ff00ff00",
+        "ffffa500",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "405",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ffff00ff",
+        "ffffff00",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "406",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ffff00ff",
+        "ffffa500",
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "407",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ffff0000",
+        "ff00ff00",
+        "ffff00ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "408",
+      "code": [
+        "ffff00ff",
+        "ff00ff00",
+        "ffff0000",
+        "ffff00ff",
+        "ffffa500",
+        "ffff0000"
+      ],
+      "nbCouleurs": 6
+    },
+    {
+      "id": "409",
+      "code": [
+        "ffffff00",
+        "ff000000",
+        "ff000000",
+        "ffffff00",
+        "ffff00ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "410",
+      "code": [
+        "ffffff00",
+        "ffff0000",
+        "ff000000",
+        "ff0000ff",
+        "ff000000",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "411",
+      "code": [
+        "ffffff00",
+        "ff00ff00",
+        "ff000000",
+        "ff00ff00",
+        "ff000000",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "412",
+      "code": [
+        "ff000000",
+        "ffff00ff",
+        "ffffa500",
+        "ff0000ff",
+        "ffffa500",
+        "ffffff00"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "413",
+      "code": [
+        "ff0000ff",
+        "ff000000",
+        "ffffff00",
+        "ffffa500",
+        "ffffff00",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "414",
+      "code": [
+        "ff00ff00",
+        "ffffa500",
+        "ff0000ff",
+        "ffff0000",
+        "ffff0000",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "415",
+      "code": [
+        "ff000000",
+        "ffffff00",
+        "ff00ff00",
+        "ffff00ff",
+        "ff000000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "416",
+      "code": [
+        "ffff0000",
+        "ff000000",
+        "ffff00ff",
+        "ff0000ff",
+        "ff000000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "417",
+      "code": [
+        "ffffff00",
+        "ffff0000",
+        "ff000000",
+        "ffff0000",
+        "ffffff00",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "418",
+      "code": [
+        "ffff0000",
+        "ffff00ff",
+        "ffff0000",
+        "ffff00ff",
+        "ff000000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 7
+    },
+    {
+      "id": "419",
+      "code": [
+        "ffffa500",
+        "ff000000",
+        "ffffff00",
+        "ff000000",
+        "ffff0000",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "420",
+      "code": [
+        "ff000000",
+        "ffff00ff",
+        "ff00ff00",
+        "ffffffff",
+        "ffff0000",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "421",
+      "code": [
+        "ffffff00",
+        "ffff00ff",
+        "ffffff00",
+        "ffffffff",
+        "ff000000",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "422",
+      "code": [
+        "ffff00ff",
+        "ffff0000",
+        "ff0000ff",
+        "ffffa500",
+        "ff000000",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "423",
+      "code": [
+        "ffffffff",
+        "ff000000",
+        "ffffffff",
+        "ff0000ff",
+        "ff00ff00",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "424",
+      "code": [
+        "ffffa500",
+        "ffffff00",
+        "ffff00ff",
+        "ff000000",
+        "ffffa500",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "425",
+      "code": [
+        "ff000000",
+        "ffff0000",
+        "ff0000ff",
+        "ffffa500",
+        "ffffa500",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "426",
+      "code": [
+        "ff00ff00",
+        "ffffa500",
+        "ffffffff",
+        "ff00ff00",
+        "ffff00ff",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "427",
+      "code": [
+        "ffffa500",
+        "ff00ff00",
+        "ffffa500",
+        "ffff0000",
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "428",
+      "code": [
+        "ff0000ff",
+        "ff0000ff",
+        "ffffa500",
+        "ffff00ff",
+        "ff000000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "429",
+      "code": [
+        "ff00ff00",
+        "ffff0000",
+        "ff0000ff",
+        "ffffff00",
+        "ffff00ff",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "430",
+      "code": [
+        "ffff00ff",
+        "ff0000ff",
+        "ffffffff",
+        "ffff00ff",
+        "ff00ff00",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "431",
+      "code": [
+        "ff000000",
+        "ffff00ff",
+        "ff000000",
+        "ffffffff",
+        "ffffa500",
+        "ffffa500"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "432",
+      "code": [
+        "ff00ff00",
+        "ff00ff00",
+        "ffffffff",
+        "ff0000ff",
+        "ff0000ff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "433",
+      "code": [
+        "ffffa500",
+        "ff0000ff",
+        "ff000000",
+        "ffff00ff",
+        "ffff00ff",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "434",
+      "code": [
+        "ffffa500",
+        "ff0000ff",
+        "ff00ff00",
+        "ffffffff",
+        "ffffffff",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "435",
+      "code": [
+        "ff000000",
+        "ff000000",
+        "ff000000",
+        "ffffa500",
+        "ffffffff",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "436",
+      "code": [
+        "ffff0000",
+        "ffffa500",
+        "ffff00ff",
+        "ff0000ff",
+        "ff00ff00",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "437",
+      "code": [
+        "ff000000",
+        "ff000000",
+        "ff00ff00",
+        "ffffff00",
+        "ffff0000",
+        "ff00ff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "438",
+      "code": [
+        "ffffffff",
+        "ff0000ff",
+        "ffff0000",
+        "ffff0000",
+        "ffffa500",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "439",
+      "code": [
+        "ff000000",
+        "ffff00ff",
+        "ffff00ff",
+        "ff000000",
+        "ffff0000",
+        "ff000000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "440",
+      "code": [
+        "ffffffff",
+        "ff0000ff",
+        "ffffff00",
+        "ff0000ff",
+        "ff000000",
+        "ffffff00"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "441",
+      "code": [
+        "ffffffff",
+        "ffffa500",
+        "ffffa500",
+        "ff000000",
+        "ff000000",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "442",
+      "code": [
+        "ffffff00",
+        "ffffffff",
+        "ff00ff00",
+        "ffff0000",
+        "ff000000",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "443",
+      "code": [
+        "ffffffff",
+        "ffff0000",
+        "ffffa500",
+        "ffffa500",
+        "ffffa500",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "444",
+      "code": [
+        "ffff0000",
+        "ff0000ff",
+        "ff000000",
+        "ff0000ff",
+        "ffffa500",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "445",
+      "code": [
+        "ff0000ff",
+        "ffffffff",
+        "ff0000ff",
+        "ffffa500",
+        "ffff00ff",
+        "ffffffff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "446",
+      "code": [
+        "ffff0000",
+        "ffffffff",
+        "ffffffff",
+        "ffffff00",
+        "ff0000ff",
+        "ffffa500"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "447",
+      "code": [
+        "ffffff00",
+        "ffffa500",
+        "ff0000ff",
+        "ff0000ff",
+        "ffffff00",
+        "ffff00ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "448",
+      "code": [
+        "ffffffff",
+        "ffffffff",
+        "ffffa500",
+        "ffffffff",
+        "ffffffff",
+        "ff0000ff"
+      ],
+      "nbCouleurs": 8
+    },
+    {
+      "id": "449",
+      "code": [
+        "ff00ff00",
+        "ff0000ff",
+        "ffffff00",
+        "ffff00ff",
+        "ff0000ff",
+        "ffff0000"
+      ],
+      "nbCouleurs": 8
+    }
   ],
   "stats": [
-    { "id": "1", "idCode": "47", "record": "5", "courriel": "annie@gmail.com" }
+    {
+      "id": "1",
+      "idCode": "47",
+      "record": "5",
+      "courriel": "annie@gmail.com"
+    },
+    {
+      "id": "2",
+      "idCode": "51",
+      "record": "2",
+      "courriel": "a"
+    },
+    {
+      "id": "3",
+      "idCode": "54",
+      "record": "1",
+      "courriel": "a"
+    }
   ]
 }
