@@ -66,6 +66,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
     static int longueur;
     static int couleurs;
     static int tentatives;
+    static boolean fini = false;
 
     //Code secret et tentative de code du joueur
     static Code code;
@@ -185,30 +186,32 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                     //Prend 0 ou 1 dependament is situe dans bonne zone
                     int ok = 0;
 
-                    //Trouver la ligne où on peut jouer
-                    for(int i = nbCase - longueur; i < nbCase; i++)
-                    {
-                        if(v == grilleJeu.getChildAt(i))
-                            ok = 1;
+                    if (!fini) {
+                        //Trouver la ligne où on peut jouer
+                        for(int i = nbCase - longueur; i < nbCase; i++)
+                        {
+                            if(v == grilleJeu.getChildAt(i))
+                                ok = 1;
+                        }
+
+                        //Si le clic est sur la bonne ligne et que la couleur est choisie
+                        if(ok == 1 && couleurChoisie != 0) {
+                            //On met la couleur du bouton
+                            btn.getBackground().setTint(couleurChoisie);
+
+                            //On met le code de la couleur choisie dans le tableau du code du joueur à
+                            // la position du bouton cliqué
+                            codeJoueur[index%longueur] = Couleurs.couleursString[indiceCouleurChoisie];
+                        }
+
+                        //Sinon, si le clic est sur la bonne ligne et qu'il y a pas de couleur choisie
+                        else if (ok == 1)
+                            Toast.makeText(JeuActivity.this,"Choisir une couleur", Toast.LENGTH_SHORT).show();
+
+                            //Sinon, le clic n'est pas sur la bonne ligne
+                        else
+                            Toast.makeText(JeuActivity.this,"Vous ne pouvez pas jouer sur cette ligne", Toast.LENGTH_SHORT).show();
                     }
-
-                    //Si le clic est sur la bonne ligne et que la couleur est choisie
-                    if(ok == 1 && couleurChoisie != 0) {
-                        //On met la couleur du bouton
-                        btn.getBackground().setTint(couleurChoisie);
-
-                        //On met le code de la couleur choisie dans le tableau du code du joueur à
-                        // la position du bouton cliqué
-                        codeJoueur[index%longueur] = Couleurs.couleursString[indiceCouleurChoisie];
-                    }
-
-                    //Sinon, si le clic est sur la bonne ligne et qu'il y a pas de couleur choisie
-                    else if (ok == 1)
-                        Toast.makeText(JeuActivity.this,"Choisir une couleur", Toast.LENGTH_SHORT).show();
-
-                        //Sinon, le clic n'est pas sur la bonne ligne
-                    else
-                        Toast.makeText(JeuActivity.this,"Vous ne pouvez pas jouer sur cette ligne", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -601,6 +604,10 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
 
                    gestionnaireBD.ajouterPartieBD(courriel, Arrays.toString(partieMastermind.getSecretCode().getCouleurs()),
                        couleurs, "Gagné", partieMastermind.getNbTentatives());
+
+                    //DÉSACTIVER ABANDONNER, VALIDER CHOIX
+                    validerChoix.setEnabled(false);
+                    fini = true;
                 }
 
 
@@ -609,6 +616,10 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
 
                     gestionnaireBD.ajouterPartieBD(courriel, Arrays.toString(partieMastermind.getSecretCode().getCouleurs()),
                             couleurs, "Perdu", partieMastermind.getNbTentatives());
+
+                    //DÉSACTIVER ABANDONNER, VALIDER CHOIX
+                    validerChoix.setEnabled(false);
+                    fini = true;
                 }
             }
         });
@@ -635,6 +646,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onClick(View view) {
                 popupMenu.dismiss();
+                fini = false;
                 recreate();
             }
         });
@@ -643,11 +655,13 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
         btnAbandonner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Ouvrir autre popup pour confirmer si le joueur veut vraiment annuler
-                popupMenu.dismiss();
+                if (!fini) {
+                    //Ouvrir autre popup pour confirmer si le joueur veut vraiment annuler
+                    popupMenu.dismiss();
 
-                //Ouvrir menu abandon
-                ouvrirMenuAbandon();
+                    //Ouvrir menu abandon
+                    ouvrirMenuAbandon();
+                }
             }
         });
 
