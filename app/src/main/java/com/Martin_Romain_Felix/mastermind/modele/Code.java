@@ -15,6 +15,12 @@ public class Code {
     //Getter et setter
     public String[] getCouleurs()
     {
+        for (int i = 0; i < couleurs.length; i++) {
+            for (int j = 0; j < Couleurs.couleursString.length; j++) {
+                //Si la couleur est
+            }
+        }
+
         return couleurs;
     }
     public void setCouleurs(String[] couleurs) { this.couleurs = couleurs; }

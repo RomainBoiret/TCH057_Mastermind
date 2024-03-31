@@ -26,6 +26,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.Martin_Romain_Felix.mastermind.dao.GestionBD;
 import com.Martin_Romain_Felix.mastermind.dao.Partie;
 import com.Martin_Romain_Felix.mastermind.modele.Code;
 import com.Martin_Romain_Felix.mastermind.modele.Configurations;
@@ -40,6 +41,7 @@ import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 import okhttp3.MediaType;
@@ -80,6 +82,11 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
     int indiceCouleurChoisie;
     private int nbCase;
 
+    //Données BD
+    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NOM = "Mastermind.db";
+    GestionBD gestionnaireBD;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,6 +97,9 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //Créer la BD
+        gestionnaireBD = new GestionBD(this, DATABASE_NOM, null, DATABASE_VERSION);
 
         //Ouvrir/fermer le menu quand on appuie dessus
         menu = findViewById(R.id.menu);
@@ -302,7 +312,6 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                         @Override
                         public void run() {
                             try {
-
                                 JSONArray donneesJSON = new JSONArray(jsonData);
 
                                 //S'il y a des statistiques, on va les chercher et les afficher
@@ -318,12 +327,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                                     //Mettre le texte
                                     record.setText(objectJSON.getString("record"));
                                     emailRecord.setText(objectJSON.getString("courriel"));
-
-                                    Toast.makeText(getApplicationContext(), "Ya des stats", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    Toast.makeText(getApplicationContext(), "Ya pas de stats", Toast.LENGTH_SHORT).show();
                                 }
-
 
                             } catch (JSONException e) {
                                 Log.e(TAG, e.getMessage());
@@ -591,37 +595,20 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                     String scoreRecord = tvRecord.getText().toString();
 
                     //S'il n'y a aucun record pour le code, c'est automatiquement un record
-                    if (scoreRecord.equals("aucun")) {
-                        Toast.makeText(JeuActivity.this,"ON AFFICHE", Toast.LENGTH_SHORT).show();
+                    if (scoreRecord.equals("aucun") || partieMastermind.getNbTentatives() <= Integer.parseInt(scoreRecord)) {
                         postStatistique(idCodeSecret, String.valueOf(partieMastermind.getNbTentatives()), courriel);
                     }
 
-                    //S'il y a déjà un record mais qu'il est égalé, on le remplace
-                    else if (partieMastermind.getNbTentatives() <= Integer.parseInt(scoreRecord)) {
-                            postStatistique(idCodeSecret, String.valueOf(partieMastermind.getNbTentatives()), courriel);
-                    }
-
-                    //À FAIRE:
-                    //  - Ajouter stat à la BD (et au serveur SI c'est un record)
-
-
-
-
-
-
-
+                   gestionnaireBD.ajouterPartieBD(courriel, Arrays.toString(partieMastermind.getSecretCode().getCouleurs()),
+                       couleurs, "Gagné", partieMastermind.getNbTentatives());
                 }
 
 
                 else if (partieMastermind.estPartieTerminee()) {
                     Toast.makeText(JeuActivity.this,"Vous avez perdu", Toast.LENGTH_SHORT).show();
 
-                    //À FAIRE:
-                    //  - Ajouter stat à la BD
-
-
-
-
+                    gestionnaireBD.ajouterPartieBD(courriel, Arrays.toString(partieMastermind.getSecretCode().getCouleurs()),
+                            couleurs, "Perdu", partieMastermind.getNbTentatives());
                 }
             }
         });
@@ -647,13 +634,8 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
         btnNouvellePartie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //
-                //À FAIRE
-                //
-
-
-
-
+                popupMenu.dismiss();
+                recreate();
             }
         });
 
@@ -707,15 +689,11 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
         btnConfirmerAbandon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
-                //À FAIRE
-                //
+                //Mettre la partie dans la base de données
+                gestionnaireBD.ajouterPartieBD(courriel, Arrays.toString(partieMastermind.getSecretCode().getCouleurs()),
+                        couleurs, "Abandonnée", partieMastermind.getNbTentatives());
 
-
-
-
-
-
+                finish();
             }
         });
     }

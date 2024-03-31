@@ -7,10 +7,10 @@
     <string name="votre_courriel">Votre courriel:</string>
     <string name="courriel">ex: xyz@hotmail.com</string>
     <string name="historique">Historique</string>
-    <string name="code_secret">Code secret:</string>
-    <string name="nombre_de_couleurs">Nombre de couleurs:</string>
-    <string name="email">Email:</string>
-    <string name="nombre_de_tentatives">Nombre de tentatives:</string>
-    <string name="r_sultat">Résultat:</string>
+    <string name="code_secret">Code secret: </string>
+    <string name="nombre_de_couleurs">Nombre de couleurs: </string>
+    <string name="email">Email: </string>
+    <string name="nombre_de_tentatives">Nombre de tentatives: </string>
+    <string name="r_sultat">Résultat: </string>
     <string name="Retour" />
 </resources>

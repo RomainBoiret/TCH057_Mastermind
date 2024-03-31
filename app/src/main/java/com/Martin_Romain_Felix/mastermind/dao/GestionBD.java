@@ -1,10 +1,13 @@
 package com.Martin_Romain_Felix.mastermind.dao;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
@@ -51,20 +54,53 @@ public class GestionBD extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void setPartie(Partie partie) {
+    public void ajouterPartieBD(String courriel, String code, int nbCouleurs, String resultat, int nbTentatives) {
 
         ContentValues valeurs = new ContentValues();
-        valeurs.put(COLONNE_COURRIEL, partie.getCourriel());
-        valeurs.put(COLONNE_CODE, partie.getCode());
-        valeurs.put(COLONNE_NBCOULEURS, partie.getNbCouleurs());
-        valeurs.put(COLONNE_RESULTAT, partie.getResultat());
-        valeurs.put(COLONNE_NBTENTATIVES, partie.getNbTentatives());
-
+        valeurs.put(COLONNE_COURRIEL, courriel);
+        valeurs.put(COLONNE_CODE, code);
+        valeurs.put(COLONNE_NBCOULEURS, nbCouleurs);
+        valeurs.put(COLONNE_RESULTAT, resultat);
+        valeurs.put(COLONNE_NBTENTATIVES, nbTentatives);
 
 
         SQLiteDatabase db = getWritableDatabase();
         db.insert(TABLE_PARTIE, null, valeurs);
         db.close();
+    }
+
+    @SuppressLint("Range")
+    public ArrayList<HashMap<String, String>> getPartiesBD() {
+        //à faire
+        //Get les parties DANS L'ORDRE CHRONOLOGIQUE
+
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<HashMap<String, String>> listeParties = new ArrayList<>();
+
+
+
+        String query = "SELECT * FROM "+ TABLE_PARTIE;
+        Cursor cursor = db.rawQuery(query,null);
+
+        //Chercher toutes les parties et les mettre dans la liste de tableaux de strings
+        while (cursor.moveToNext()){
+            Log.e("TAG", "ON EST DANS LA BOUCLE ");
+            HashMap<String, String> partie = new HashMap<>();
+            partie.put(COLONNE_COURRIEL, cursor.getString(cursor.getColumnIndex(COLONNE_COURRIEL)));
+            partie.put(COLONNE_CODE,cursor.getString(cursor.getColumnIndex(COLONNE_CODE)));
+            partie.put(COLONNE_NBCOULEURS,cursor.getString(cursor.getColumnIndex(COLONNE_NBCOULEURS)));
+            partie.put(COLONNE_RESULTAT,cursor.getString(cursor.getColumnIndex(COLONNE_RESULTAT)));
+            partie.put(COLONNE_NBTENTATIVES,cursor.getString(cursor.getColumnIndex(COLONNE_NBTENTATIVES)));
+
+
+            listeParties.add(partie);
+        }
+
+        cursor.close();
+        db.close();
+
+        return  listeParties;
     }
 }
 
