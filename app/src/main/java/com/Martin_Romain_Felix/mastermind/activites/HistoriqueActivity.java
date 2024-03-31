@@ -21,6 +21,7 @@ import java.util.HashMap;
 
 public class HistoriqueActivity extends AppCompatActivity {
     private Button btnRetour;
+    private Button btnEffacerParties;
     private HistoriqueAdapter historiqueAdapter;
 
     //Données de la BD
@@ -36,7 +37,14 @@ public class HistoriqueActivity extends AppCompatActivity {
         //Créer l'instance de la BD
         gestionnaireDataBase = new GestionBD(this, DATABASE_NOM, null, DATABASE_VERSION);
 
+        //Boutons
         btnRetour = findViewById(R.id.btnRetour);
+        btnEffacerParties = findViewById(R.id.btnEffacerHistorique);
+
+        //AFFICHER L'HISTORIQUE
+        afficherParties();
+
+        //ÉCOUTEURS ÉVÉNEMENT BOUTONS
 
         btnRetour.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,18 +53,18 @@ public class HistoriqueActivity extends AppCompatActivity {
             }
         });
 
+        btnEffacerParties.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gestionnaireDataBase.supprimerParties();
+                afficherParties();
+            }
+        });
+    }
 
-
-        // List<Historique> lvhistorique = // Récupérer les données de la base de données ici
-
-        // historiqueAdapter = new HistoriqueAdapter(lvhistorique);
-        // historyRecyclerView.setAdapter(historiqueAdapter);
-
-
+    public void afficherParties() {
+        //Afficher les parties
         ArrayList<HashMap<String, String>> listeParties = gestionnaireDataBase.getPartiesBD();
-
-        //TEST:
-        //Toast.makeText(getApplicationContext(), listeParties.get(0).get("courriel")).show();
 
         ListView lv = (ListView) findViewById(R.id.lvHistorique);
 
@@ -64,7 +72,5 @@ public class HistoriqueActivity extends AppCompatActivity {
                 new String[]{"courriel","code", "nbCouleurs", "resultat", "nbTentatives"},
                 new int[]{R.id.txtemail, R.id.txtcode, R.id.txtcouleurs, R.id.txtresultat, R.id.txtnbtentatives});
         lv.setAdapter(adapter);
-
-
     }
 }

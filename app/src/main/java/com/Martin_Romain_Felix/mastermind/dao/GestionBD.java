@@ -102,5 +102,13 @@ public class GestionBD extends SQLiteOpenHelper {
 
         return  listeParties;
     }
+
+    public void supprimerParties() {
+
+        SQLiteDatabase db = getWritableDatabase();
+        String query = "DELETE FROM " + TABLE_PARTIE + ";";
+        db.execSQL(query);
+        db.close();
+    }
 }
 
