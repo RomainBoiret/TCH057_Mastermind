@@ -390,7 +390,6 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                                 try {
                                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                                         statsJSON.put("id", String.valueOf(idStat[0]));
-                                        statsJSON.put("idCode", idCode);
                                         statsJSON.put("record", record);
                                         statsJSON.put("courriel", courriel);
                                     }
@@ -404,8 +403,8 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
 
                                 RequestBody corpsRequete = RequestBody.create(String.valueOf(statsJSON), JSON);
                                 Request requete2 = new Request.Builder()
-                                        .url(URL_POINT_ENTREE + "/stats")
-                                        .post(corpsRequete)
+                                        .url(URL_POINT_ENTREE + "/stats/idCode" + idCode)
+                                        .put(corpsRequete)
                                         .build();
 
                                 //EXÉCUTER LA REQUÊTE
