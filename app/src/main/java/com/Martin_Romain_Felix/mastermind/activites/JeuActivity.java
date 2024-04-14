@@ -390,6 +390,7 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                                 try {
                                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                                         statsJSON.put("id", String.valueOf(idStat[0]));
+                                        statsJSON.put("idCode", idCode);
                                         statsJSON.put("record", record);
                                         statsJSON.put("courriel", courriel);
                                     }
@@ -403,8 +404,8 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
 
                                 RequestBody corpsRequete = RequestBody.create(String.valueOf(statsJSON), JSON);
                                 Request requete2 = new Request.Builder()
-                                        .url(URL_POINT_ENTREE + "/stats/idCode" + idCode)
-                                        .put(corpsRequete)
+                                        .url(URL_POINT_ENTREE + "/stats")
+                                        .post(corpsRequete)
                                         .build();
 
                                 //EXÉCUTER LA REQUÊTE
@@ -419,6 +420,90 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                                     }
                                 }.start();
 
+
+                            } catch (JSONException e) {
+                                Log.e(TAG, e.getMessage());
+                                throw new RuntimeException(e);
+                            }
+                        }
+                    });
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }.start();
+    }
+
+    //-----------------------------MÉTHODE REMPLACER NOUVEAU RECORD ---------------------------
+    private void putStatistique(String idCode, String record, String courriel) {
+        //D'abord, chercher l'ID de la statistique
+        final int[] idStat = new int[1];
+
+        OkHttpClient client = new OkHttpClient();
+        Request requete = new Request.Builder()
+                .url(URL_POINT_ENTREE + "/stats?idCode=" + idCode)
+                .get()
+                .build();
+
+        //THREAD EXÉCUTER LA REQUÊTE
+        new Thread() {
+            @Override
+            public void run() {
+                Response response = null;
+                try {
+                    response = client.newCall(requete).execute();
+                    ResponseBody responseBody = response.body();
+                    String jsonData = responseBody.string();
+
+                    JeuActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                //Prendre l'ID de la statistique
+                                JSONArray donneesJSON = new JSONArray(jsonData);
+                                JSONObject objectJSON = donneesJSON.getJSONObject(0);
+
+                                int id = objectJSON.getInt("id");
+
+                                //Créer l'objet JSON pour y stocker les données qu'on veut POST
+                                JSONObject statsJSON = new JSONObject();
+
+                                //Stocker les données en paramètres dans l'objet JSON
+                                try {
+                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                                        statsJSON.put("id", id);
+                                        statsJSON.put("idCode", idCode);
+                                        statsJSON.put("record", record);
+                                        statsJSON.put("courriel", courriel);
+                                    }
+                                } catch (JSONException e) {
+                                    throw new RuntimeException(e);
+                                }
+
+                                final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+                                OkHttpClient client2 = new OkHttpClient();
+
+                                //Créer la requête qui remplace le record de l'ID de la stat correspondant au code secret
+                                //par le nouveau record
+                                RequestBody corpsRequete = RequestBody.create(String.valueOf(statsJSON), JSON);
+                                Request requete2 = new Request.Builder()
+                                        .url(URL_POINT_ENTREE + "/stats/" + id)
+                                        .put(corpsRequete)
+                                        .build();
+
+
+                                //THREAD EXÉCUTER LA REQUÊTE
+                                new Thread() {
+                                    @Override
+                                    public void run() {
+                                        Response response = null;
+                                        try {
+                                            client2.newCall(requete2).execute();
+                                        } catch (Exception e) {
+                                            throw new RuntimeException(e);
+                                        }
+                                    }
+                                }.start();
 
                             } catch (JSONException e) {
                                 Log.e(TAG, e.getMessage());
@@ -597,8 +682,13 @@ public class JeuActivity extends AppCompatActivity implements View.OnClickListen
                     String scoreRecord = tvRecord.getText().toString();
 
                     //S'il n'y a aucun record pour le code, c'est automatiquement un record
-                    if (scoreRecord.equals("aucun") || partieMastermind.getNbTentatives() <= Integer.parseInt(scoreRecord)) {
+                    if (scoreRecord.equals("aucun")) {
                         postStatistique(idCodeSecret, String.valueOf(partieMastermind.getNbTentatives()), courriel);
+                    }
+
+                    //Si le score est un nouveau record, on le put
+                    else if (partieMastermind.getNbTentatives() < Integer.parseInt(scoreRecord)) {
+                        putStatistique(idCodeSecret, String.valueOf(partieMastermind.getNbTentatives()), courriel);
                     }
 
                    gestionnaireBD.ajouterPartieBD(courriel, Arrays.toString(partieMastermind.getSecretCode().getCouleurs()),
